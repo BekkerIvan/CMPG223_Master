@@ -67,10 +67,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin_Emergency_Situation.aspx" />
+    <Content Include="App_Data\testDB.mdf" />
+    <Content Include="App_Data\testDB_log.ldf">
+      <DependentUpon>testDB.mdf</DependentUpon>
+    </Content>
     <Content Include="TestPage.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Emergency_Situation.aspx.cs">
+      <DependentUpon>Admin_Emergency_Situation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Emergency_Situation.aspx.designer.cs">
+      <DependentUpon>Admin_Emergency_Situation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -89,12 +89,10 @@ function initMap() {
     * The callback parameter executes the initMap() function-->
     
     <script defer="defer"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=API_KEY">
     </script>
    
-    <embed src="https://www.latlong.net/convert-address-to-lat-long.html"  style="width:500px; height:300px"/>
-    <iframe height="500" width="500" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo
-    &q=Space+Needle,Seattle+WA" ></iframe>
+    
         
     </form>
 </body>

@@ -86,13 +86,15 @@ function initMap() {
     <!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
     * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
+    * The callback parameter executes the initMap() function-->
+    
     <script defer="defer"
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo&callback=initMap">
     </script>
-    <embed src="https://www.latlong.net/convert-address-to-lat-long.html" style="width:500px; height:300px"/>
-    <iframe src="https://www.latlong.net/convert-address-to-lat-long.html" style="width:500px; height:300px"></iframe>
+   
+    <embed src="https://www.latlong.net/convert-address-to-lat-long.html"  style="width:500px; height:300px"/>
+    <iframe height="500" width="500" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo
+    &q=Space+Needle,Seattle+WA" ></iframe>
         
     </form>
 </body>

@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using GoogleApi.Entities.Common;
+using GoogleApi.Entities.Maps.Geocoding.Location.Request;
+using GoogleApi.Entities.Maps.Geocoding.Address.Request;
+using GoogleApi.Entities.Maps.Geocoding.PlusCode.Response;
 
 namespace CMPG223_Base
 {
@@ -22,6 +26,7 @@ namespace CMPG223_Base
                     tbCoordinates.Text = "index: " + _Type["index"];
                     tbDescription.Text = "item: " + _Type["item"];
                     ddlEmergencyType.SelectedIndex = int.Parse(_Type["index"]);
+                    HttpContext.Current.Response.Cookies.Remove("ET");
                     _Type.Expires = DateTime.Now.AddDays(-1);
                     Response.Cookies.Add(_Type);
 
@@ -52,6 +57,8 @@ namespace CMPG223_Base
             _Type["index"] = ddlEmergencyType.SelectedIndex.ToString();
             _Type["item"] = ddlEmergencyType.SelectedItem.Text;
             Response.Cookies.Add(_Type);
+
+
         }
     }
 }

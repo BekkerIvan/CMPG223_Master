@@ -39,6 +39,7 @@
           height:50px;
       }
     </style>
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -75,12 +76,13 @@
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
+  var pin = {lat: <%=lat%>, lng: <%=lng%>};
   // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
+    var map = new google.maps.Map(
+        document.getElementById('map'), { zoom: 4, center: pin });
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+    var marker = new google.maps.Marker({ position: pin, map: map });
+    //return false;
 }
     </script>
     <!--Load the API from the specified URL
@@ -89,7 +91,7 @@ function initMap() {
     * The callback parameter executes the initMap() function-->
     
     <script defer="defer"
-    src="https://maps.googleapis.com/maps/api/js?key=API_KEY">
+    src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap">
     </script>
    
     

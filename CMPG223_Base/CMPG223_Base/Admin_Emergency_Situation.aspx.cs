@@ -8,14 +8,19 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using GoogleApi.Entities.Common;
-using GoogleApi.Entities.Maps.Geocoding.Location.Request;
+using GoogleApi.Entities.Maps.Geocoding;
 using GoogleApi.Entities.Maps.Geocoding.Address.Request;
-using GoogleApi.Entities.Maps.Geocoding.PlusCode.Response;
+using GoogleApi.Entities.Common.Enums;
+using Newtonsoft.Json;
+
 
 namespace CMPG223_Base
 {
     public partial class Admin_Emergency_Situation : System.Web.UI.Page
     {
+        protected double lat = -25.0;
+        protected double lng = 28.0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack)
@@ -30,6 +35,8 @@ namespace CMPG223_Base
                     _Type.Expires = DateTime.Now.AddDays(-1);
                     Response.Cookies.Add(_Type);
 
+                   // string initializeScript = "<script type='text/javascript'>initMap();</script>";
+                   // this.Page.ClientScript.RegisterStartupScript(this.Page.GetType(), "Startup", initializeScript);
                 }
             }
             else
@@ -57,8 +64,27 @@ namespace CMPG223_Base
             _Type["index"] = ddlEmergencyType.SelectedIndex.ToString();
             _Type["item"] = ddlEmergencyType.SelectedItem.Text;
             Response.Cookies.Add(_Type);
+            address = tbLocation.Text;
+            GeoCodeTest(address);
+           
+        }
+        public void GeoCodeTest(string address)
+        {
+            var _request = new AddressGeocodeRequest { Address = address };
+            _request.Key = "api-key";
+            var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
+            Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
 
-
+            
+            
+            foreach (var item in jPars.results)
+            {
+                lat = item.geometry.location.lat;
+                lng = item.geometry.location.lng;
+            }
+            tbCoordinates.Text = lat.ToString() + "   :   " + lng.ToString();
+            
+            
         }
     }
 }

@@ -4,10 +4,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" ></script>
-
     <title></title>
     <style>
        /* Set the size of the div element that contains the map */
@@ -46,44 +42,26 @@
     
 </head>
 <body>
-    <form id="form1" runat="server" class="container">
+    <form id="form1" runat="server">
         
-        <div class=" text-center" style="font-size:xx-large">
+        <div class="Title">
             <asp:Label ID="lblTitle" runat="server" Text="Maintain Emergency Situations"></asp:Label>
         </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div>
-                    <asp:Label ID="Label1" runat="server" Text="Location:  " AssociatedControlID="tbLocation"></asp:Label>
-                    <asp:TextBox ID="tbLocation" runat="server" CssClass="form-control"></asp:TextBox>
-                </div><br />
-                <div>
-                    <asp:Button ID="Button1" runat="server" Text="Get Coordinates" CssClass="form-control btn btn-primary" OnClick="btnCoordinates_Click" />
-                </div><br />
-                <div>
-                    <asp:Label ID="Label3" runat="server" Text="Coordinates:" AssociatedControlID="tbCoordinates"></asp:Label>
-                    <asp:TextBox ID="tbCoordinates" runat="server" ReadOnly="true" class="form-control"></asp:TextBox>
-                </div><br />
-                <div>
-                    <asp:Label ID="lblDescription" runat="server" Text="Description or details of emergency situation:" AssociatedControlID="tbDescription"></asp:Label>              
-                    <asp:TextBox ID="tbDescription" runat="server" CssClass="Description" TextMode="MultiLine" style="resize:none"></asp:TextBox>
-                </div>
-
-
-
-
-
-
-            </div>
-
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="Location:  "></asp:Label>
+            <asp:TextBox ID="tbLocation" runat="server" CssClass="Location"></asp:TextBox>
+            <asp:Button ID="btnCoordinates" runat="server" Text="Get Coordinates" CssClass="GeoButton" OnClick="btnCoordinates_Click" />
             <asp:Label ID="Label2" runat="server" Text="Type of Emergency:  "></asp:Label>
             <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="Type" >
             </asp:DropDownList>
             <div>
-
+                <asp:Label ID="Label3" runat="server" Text="Coordinates:"></asp:Label>
+                <asp:TextBox ID="tbCoordinates" runat="server" ReadOnly="true" ></asp:TextBox>
             </div>
             <div style="margin-top:10px">
+                <asp:Label ID="lblDescription" runat="server" Text="Description or details of emergency situation:"></asp:Label>              
+                <asp:TextBox ID="tbDescription" runat="server" CssClass="Description" TextMode="MultiLine"></asp:TextBox>
 
             </div>
             <div><asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="SubmitButton" /></div>

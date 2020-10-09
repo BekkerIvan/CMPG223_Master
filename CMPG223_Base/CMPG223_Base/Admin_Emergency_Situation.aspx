@@ -56,11 +56,11 @@
 <body style="background-color:lightgray">
     <form id="form1" runat="server">
         <br /><br />
-        <div class="container" style="background-color:white;box-shadow:2px 2px blue;">
+        <div class="container" style="background-color:white;box-shadow:2px 2px blue">
             <br />
             <div class="text-center">
                 <asp:Label ID="lblTitle" runat="server" Text="Maintain Emergency Situations" style="font-size:xx-large"></asp:Label>
-            </div><br /><br />
+            </div><br />
                 <div class="row">
                 <div class="col-md-6">
                    <div>
@@ -87,9 +87,7 @@
                 </div>
             </div>
 
-
-            
-            <div>
+            <div class="col-md-12">
                 <div>
                     <asp:Label ID="lblDescription" runat="server" Text="Description or details of emergency situation:" AssociatedControlID="tbDescription"></asp:Label>              
                     <asp:TextBox ID="tbDescription" runat="server" CssClass="form-control" TextMode="MultiLine" style="resize:none"></asp:TextBox>
@@ -99,6 +97,31 @@
                 </div>
             </div><br />
         </div>
+         <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var pin = {lat: <%=lat%>, lng: <%=lng%>};
+  // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('map'), { zoom: 4, center: pin });
+  // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({ position: pin, map: map });
+    //return false;
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function-->
+    <script defer="defer"
+    src="https://maps.googleapis.com/maps/api/js?key=API-KEY&callback=initMap">
+    </script>
+    
+        
     </form>
 </body>
 </html>

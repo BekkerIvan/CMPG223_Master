@@ -41,7 +41,7 @@ namespace CMPG223_Base
             }
             else
             {
-                string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
+/*                string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
                 SqlConnection cnn = new SqlConnection(mainconn);
                 string sql = "SELECT DISTINCT Emergency_Type FROM Emergency_Situation";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, cnn);
@@ -52,7 +52,7 @@ namespace CMPG223_Base
                 ddlEmergencyType.DataTextField = "Emergency_Type";
                 ddlEmergencyType.DataValueField = "Emergency_Type";
                 ddlEmergencyType.DataBind();
-                cnn.Close();
+                cnn.Close();*/
             }  
         }
 

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CMPG223_Base {
-    
-    
-    public partial class Admin_Emergency_Situation {
-        
+namespace CMPG223_Base
+{
+
+
+    public partial class Admin_Emergency_Situation
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// lblTitle control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitle;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// tbLocation control.
         /// </summary>
@@ -47,34 +49,16 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbLocation;
-        
+
         /// <summary>
-        /// btnCoordinates control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCoordinates;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// ddlEmergencyType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEmergencyType;
-        
+        protected global::System.Web.UI.WebControls.Button Button1;
+
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -83,7 +67,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// tbCoordinates control.
         /// </summary>
@@ -92,7 +76,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbCoordinates;
-        
+
         /// <summary>
         /// lblDescription control.
         /// </summary>
@@ -101,7 +85,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescription;
-        
+
         /// <summary>
         /// tbDescription control.
         /// </summary>
@@ -110,7 +94,25 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbDescription;
-        
+
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
+        /// ddlEmergencyType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEmergencyType;
+
         /// <summary>
         /// Submit control.
         /// </summary>

@@ -21,6 +21,7 @@
       }
       .Type {
           width:200px;
+          margin-right:100px;
       }
       .Title {
           font-family:Arial;
@@ -32,12 +33,18 @@
       }
       .Description {
           width:100%;
-          height:300px;
+          height:150px;
       }
       .SubmitButton {
           margin:20px;
           height:50px;
       }
+      .EP_ID {
+          height:100px;
+          width:300px;
+          margin-left:850px;
+      }
+      
     </style>
     
 </head>
@@ -53,18 +60,21 @@
             <asp:TextBox ID="tbLocation" runat="server" CssClass="Location"></asp:TextBox>
             <asp:Button ID="btnCoordinates" runat="server" Text="Get Coordinates" CssClass="GeoButton" OnClick="btnCoordinates_Click" />
             <asp:Label ID="Label2" runat="server" Text="Type of Emergency:  "></asp:Label>
-            <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="Type" >
+            <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="Type" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" >
             </asp:DropDownList>
+            <asp:Label ID="Label4" runat="server" Text="Assign emergency personnel: "></asp:Label>
+            
             <div>
-                <asp:Label ID="Label3" runat="server" Text="Coordinates:"></asp:Label>
-                <asp:TextBox ID="tbCoordinates" runat="server" ReadOnly="true" ></asp:TextBox>
+                <asp:Label ID="Label3" runat="server" Text="Coordinates: "></asp:Label>
+                <asp:TextBox ID="tbCoordinates" runat="server" ReadOnly="true"></asp:TextBox>
+                <asp:ListBox ID="lbPersonnel" runat="server" CssClass="EP_ID"></asp:ListBox>
             </div>
             <div style="margin-top:10px">
                 <asp:Label ID="lblDescription" runat="server" Text="Description or details of emergency situation:"></asp:Label>              
                 <asp:TextBox ID="tbDescription" runat="server" CssClass="Description" TextMode="MultiLine"></asp:TextBox>
 
             </div>
-            <div><asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="SubmitButton" /></div>
+            <div><asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="SubmitButton" OnClick="Submit_Click" /></div>
         </div>
 
 
@@ -91,7 +101,7 @@ function initMap() {
     * The callback parameter executes the initMap() function-->
     
     <script defer="defer"
-    src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=API-KEY&callback=initMap">
     </script>
    
     

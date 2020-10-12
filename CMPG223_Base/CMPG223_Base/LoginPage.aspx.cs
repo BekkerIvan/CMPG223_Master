@@ -13,5 +13,10 @@ namespace CMPG223_Base
         {
 
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

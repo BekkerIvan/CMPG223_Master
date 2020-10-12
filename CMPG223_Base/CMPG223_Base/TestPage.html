@@ -71,24 +71,7 @@
     </div>
 </body>
 </html>
-<script>
-    let LoginButtonClickedInt = 0;
-    function checkInput() {
-        if (LoginButtonClickedInt < 3) {
-            let PasswordObj = $("#txtPassword");
-            let UsernameObj = $("#txtUsername");
-            if (!PasswordObj.val() || !UsernameObj.val()) {
-                alert("Invalid input");
-                LoginButtonClickedInt++;
-            }
-        } else {
-            alert('Too many attempts have been logged.');
-            let btnLogin_ClickObj = $("#btnLogin_Click");
-            btnLogin_ClickObj.prop('disabled', true);
-        }
-    }
 
-</script>
 <style>
     .fullWidth {
         width:100%;

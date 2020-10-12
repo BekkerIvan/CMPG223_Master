@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using GoogleApi.Entities.Common;
+/*using GoogleApi.Entities.Common;
 using GoogleApi.Entities.Maps.Geocoding;
 using GoogleApi.Entities.Maps.Geocoding.Address.Request;
 using GoogleApi.Entities.Common.Enums;
-using Newtonsoft.Json;
+using Newtonsoft.Json;*/
 
 
 namespace CMPG223_Base
@@ -68,21 +68,21 @@ namespace CMPG223_Base
         }
         public void GeoCodeTest(string address)
         {
-            var _request = new AddressGeocodeRequest { Address = address };
-            _request.Key = "API-KEY";
-            var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
-            Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
+            /*            var _request = new AddressGeocodeRequest { Address = address };
+                        _request.Key = "API-KEY";
+                        var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
+                        Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
 
-            
-            
-            foreach (var item in jPars.results)
-            {
-                lat = item.geometry.location.lat;
-                lng = item.geometry.location.lng;
-            }
-            tbCoordinates.Text = lat.ToString() + "   :   " + lng.ToString();
-            
-            
+
+
+                        foreach (var item in jPars.results)
+                        {
+                            lat = item.geometry.location.lat;
+                            lng = item.geometry.location.lng;
+                        }
+                        tbCoordinates.Text = lat.ToString() + "   :   " + lng.ToString();
+
+                        */
         }
 
         protected void Submit_Click(object sender, EventArgs e)

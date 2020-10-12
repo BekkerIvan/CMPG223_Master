@@ -68,11 +68,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="download.png" />
+    <Content Include="Employees.aspx" />
     <Content Include="images-removebg-preview.png" />
     <Content Include="TestPage.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Employees.aspx.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees.aspx.designer.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

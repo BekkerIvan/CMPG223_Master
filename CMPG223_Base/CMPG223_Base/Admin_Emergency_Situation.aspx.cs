@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using GoogleApi.Entities.Common;
+/*using GoogleApi.Entities.Common;
 using GoogleApi.Entities.Maps.Geocoding;
 using GoogleApi.Entities.Maps.Geocoding.Address.Request;
 using GoogleApi.Entities.Common.Enums;
-using Newtonsoft.Json;
+using Newtonsoft.Json;*/
 
 
 namespace CMPG223_Base
@@ -41,7 +41,7 @@ namespace CMPG223_Base
             }
             else
             {
-                string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
+/*                string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
                 SqlConnection cnn = new SqlConnection(mainconn);
                 string sql = "SELECT DISTINCT Emercency_Service_Type FROM Emergency_Services";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, cnn);
@@ -54,7 +54,7 @@ namespace CMPG223_Base
                 ddlEmergencyType.DataBind();
                 ddlEmergencyType.Items.Insert(0, new ListItem("---Select---", "N/A"));
                 adapter.Dispose();
-                cnn.Close();
+                cnn.Close();*/
             }  
         }
 
@@ -68,7 +68,7 @@ namespace CMPG223_Base
         }
         public void GeoCodeTest(string address)
         {
-            var _request = new AddressGeocodeRequest { Address = address };
+/*            var _request = new AddressGeocodeRequest { Address = address };
             _request.Key = "API-KEY";
             var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
             Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
@@ -81,7 +81,7 @@ namespace CMPG223_Base
                 lng = item.geometry.location.lng;
             }
             tbCoordinates.Text = lat.ToString() + "   :   " + lng.ToString();
-            
+            */
             
         }
 

@@ -205,5 +205,10 @@ namespace CMPG223_Base
             _Type["item"] = ddlEmergencyType.SelectedItem.Text;
             Response.Cookies.Add(_Type);
         }
+
+        protected void btnAddEService_Click(object sender, EventArgs e)
+        {
+            //Add service to current situation ID
+        }
     }
 }           //Navigation buttons?

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" Async="true" %>
 
 <!DOCTYPE html>
 
@@ -78,11 +78,11 @@
              <div class="col-md-6">
                  <div>
                     <asp:Label ID="Label2" runat="server" Text="Type of Emergency:  " AssociatedControlID="ddlEmergencyType"></asp:Label>
-                    <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" ></asp:DropDownList>
+                    <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="true" ></asp:DropDownList>
                  </div><br />        
                  <div>
                      <asp:Label ID="Label4" runat="server" Text="Assign emergency personnel: " AssociatedControlID="lbPersonnel"></asp:Label>
-                     <asp:ListBox ID="lbPersonnel" runat="server" CssClass="form-control"></asp:ListBox>
+                     <asp:ListBox ID="lbPersonnel" runat="server" CssClass="form-control" SelectionMode="Multiple"></asp:ListBox>
                  </div>
                 </div>
             </div>
@@ -94,6 +94,10 @@
                 </div><br />
                 <div>
                     <asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="form-control btn btn-primary" OnClick="Submit_Click" />
+                </div><br />
+                <div>
+                    <asp:Label ID="lblFeedback" runat="server" Visible="false" AssociatedControlID="btnClear"></asp:Label><br />
+                    <asp:Button ID="btnClear" runat="server" Visible="false" Text="Create new emergency situation" CssClass="form-control btn btn-primary" />
                 </div>
             </div><br />
         </div>

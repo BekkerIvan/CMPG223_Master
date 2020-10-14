@@ -111,8 +111,10 @@ namespace CMPG223_Base
             //retreve province
             foreach (Result item in jPars.results)
             {
-                sProvince = item.address_components[4].long_name;
+                sProvince = item.address_components[5].long_name;
             }
+            
+            //tbDescription.Text = _response.RawJson.ToString();                //Ivan, hier is die raw json array as jy nog wil sien hoe dit lyk
         }
 
         protected void Submit_Click(object sender, EventArgs e)

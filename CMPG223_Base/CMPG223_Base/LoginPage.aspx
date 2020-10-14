@@ -18,7 +18,7 @@
         <br />
         <br />
         <div class="d-flex justify-content-center" >
-            <div class="col-md-6" style="background-color:white;box-shadow:3px 3px red;border-radius:10px">
+            <div class="col-md-6" style="background-color:white;box-shadow:3px 3px red;border-radius:10px" />
                 <div id="modal_Header" class="row">
                     <div class="col-md-12">
                         <img class="fullWidth" style="height:200px;object-fit:contain;" alt="C-Box.logo" src="C-BOX.png" height="150px">

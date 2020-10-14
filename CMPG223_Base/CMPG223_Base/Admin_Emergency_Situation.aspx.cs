@@ -104,6 +104,8 @@ namespace CMPG223_Base
             Session["LAT"] = lat;
             Session["LNG"] = lng;
             
+
+            //retreve province
         }
 
         protected void Submit_Click(object sender, EventArgs e)

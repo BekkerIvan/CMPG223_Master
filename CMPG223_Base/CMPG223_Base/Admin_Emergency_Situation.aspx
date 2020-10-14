@@ -102,7 +102,7 @@
                 </div><br />
                 <div class="col-md-6">
                     <asp:Label ID="lblFeedback" runat="server" Visible="false" AssociatedControlID="btnClear"></asp:Label><br />
-                    <asp:Button ID="btnClear" runat="server" Visible="false" Text="Create new emergency situation" CssClass="form-control btn btn-primary" />
+                    <asp:Button ID="btnClear" runat="server" Visible="false" Text="Create new emergency situation" CssClass="form-control btn btn-primary" OnClick="btnClear_Click" />
                 </div>
             </div><br />
         </div>

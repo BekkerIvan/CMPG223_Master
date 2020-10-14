@@ -97,7 +97,8 @@ namespace CMPG223_Base
                 int iEmployee_ID = 0;
                 string sEmergencyType = "";
                 int iEmergencyPersonnel_ID = 0;
-                int iE_Sit_ID;
+                int iE_Sit_ID = 0;
+                int iLocation_ID = 0;
 
                 if (tbCoordinates.Text == "")
                 {
@@ -143,9 +144,13 @@ namespace CMPG223_Base
 
                 sql = "SELECT MAX([EMERGENCY_SITUATION_ID]) FROM EMERGENCY_SITUATION";
                 command = new SqlCommand(sql, cnn);
+                cnn.Open();
                 reader = command.ExecuteReader();
                 while (reader.Read())
                     int.TryParse(reader.GetValue(0).ToString(), out iE_Sit_ID);
+                cnn.Close();
+                command.Dispose();
+                reader.Close();
 
                 sql = "INSERT INTO LOCATION ([LOCATION_LATITUDE], [LOCATION_LONGITUDE]) VALUES (@lat, @lng)";
                 adapter = new SqlDataAdapter();
@@ -158,6 +163,29 @@ namespace CMPG223_Base
                 command.Dispose();
                 adapter.Dispose();
                 cnn.Close();
+
+                sql = "SELECT MAX([LOCATION_ID]) FROM LOCATION";
+                command = new SqlCommand(sql, cnn);
+                cnn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                    int.TryParse(reader.GetValue(0).ToString(), out iLocation_ID);
+                cnn.Close();
+                command.Dispose();
+                reader.Close();
+
+                sql = "INSERT INTO LOCATION_SITUATION_LINK ([LOCATION_ID], [EMERGENCY_SITUATION_ID]) VALUEs (@locationID, @situationID)";
+                adapter = new SqlDataAdapter();
+                command = new SqlCommand(sql, cnn);
+                cnn.Open();
+                command.Parameters.AddWithValue("@locationID", iLocation_ID);
+                command.Parameters.AddWithValue(" @situationID", iE_Sit_ID);
+                adapter.InsertCommand = command;
+                adapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
+                adapter.Dispose();
+                cnn.Close();
+
 
 
 

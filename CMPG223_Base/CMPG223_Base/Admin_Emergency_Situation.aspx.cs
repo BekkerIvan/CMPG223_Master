@@ -21,6 +21,7 @@ namespace CMPG223_Base
         protected double lat = -25.00000;
         protected double lng = 28.000000;
         private string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
+        private string sProvince;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -148,7 +149,7 @@ namespace CMPG223_Base
                 SqlConnection cnn = new SqlConnection(mainconn);
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlDataReader reader;
-                string sql = "INSERT INTO EMERGENCY_SITUATION ([DESCRIPTION], [EMERGENCY_SITUATION_DATETIME], [EMPLOYEE_ID], [EMERGENCY_SITUATION_TYPE_ID]) VALUES (@Description, @Timestamp, @EmployeeID, @EType)";
+                string sql = "INSERT INTO EMERGENCY_SITUATION ([DESCRIPTION], [EMERGENCY_SITUATION_DATETIME], [EMPLOYEE_ID], [EMERGENCY_SITUATION_TYPE_ID], [PROVINCE]) VALUES (@Description, @Timestamp, @EmployeeID, @EType , @province)";
                 SqlCommand command = new SqlCommand(sql, cnn);
 
                 cnn.Open();
@@ -156,6 +157,7 @@ namespace CMPG223_Base
                 command.Parameters.AddWithValue("@Timestamp", dtTimeStamp);
                 command.Parameters.AddWithValue("@EmployeeID", iEmployee_ID);
                 command.Parameters.AddWithValue("@EType", sEmergencyType);
+                command.Parameters.AddWithValue("@province", sProvince);
 
                 adapter.InsertCommand = command;
                 adapter.InsertCommand.ExecuteNonQuery();
@@ -274,7 +276,35 @@ namespace CMPG223_Base
 
         protected void btnAddEService_Click(object sender, EventArgs e)
         {
-            //Add service to current situation ID
+            int.TryParse(lbPersonnel.SelectedValue.ToString(), out int iE_Service_ID);
+            SqlConnection cnn = new SqlConnection(mainconn);
+            string sql;
+            SqlDataAdapter adapter;
+            SqlCommand command;
+            SqlDataReader reader;
+            int iE_Sit_ID = 0;
+            sql = "SELECT MAX([EMERGENCY_SITUATION_ID]) FROM EMERGENCY_SITUATION";
+            command = new SqlCommand(sql, cnn);
+            cnn.Open();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+                int.TryParse(reader.GetValue(0).ToString(), out iE_Sit_ID);
+            cnn.Close();
+            command.Dispose();
+            reader.Close();
+
+            sql = "INSERT INTO [SERVICE_SITUATION_LINK] ([EMERGENCY_SITUATION_ID], [EMERGENCY_SERVICE_ID]) VALUES (@situationID, @serviceID)";
+            adapter = new SqlDataAdapter();
+            command = new SqlCommand(sql, cnn);
+            cnn.Open();
+            command.Parameters.AddWithValue("@situationID", iE_Sit_ID);
+            command.Parameters.AddWithValue("@serviceID", iE_Service_ID);
+            adapter.InsertCommand = command;
+            adapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+            adapter.Dispose();
+            cnn.Close();
+
         }
     }
-}           //Navigation buttons?
+}          

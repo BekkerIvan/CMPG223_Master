@@ -97,6 +97,7 @@ namespace CMPG223_Base
                 int iEmployee_ID = 0;
                 string sEmergencyType = "";
                 int iEmergencyPersonnel_ID = 0;
+                int iE_Sit_ID;
 
                 if (tbCoordinates.Text == "")
                 {
@@ -124,7 +125,8 @@ namespace CMPG223_Base
                 string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
                 SqlConnection cnn = new SqlConnection(mainconn);
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql = "INSERT INTO Emergency_Situation ([DESCRIPTION], [EMERGENCY_SITUATION_DATETIME], [EMPLOYEE_ID], [EMERGENCY_SITUATION_TYPE_ID]) VALUES (@Description, @Timestamp, @EmployeeID, @EType)";
+                SqlDataReader reader;
+                string sql = "INSERT INTO EMERGENCY_SITUATION ([DESCRIPTION], [EMERGENCY_SITUATION_DATETIME], [EMPLOYEE_ID], [EMERGENCY_SITUATION_TYPE_ID]) VALUES (@Description, @Timestamp, @EmployeeID, @EType)";
                 SqlCommand command = new SqlCommand(sql, cnn);
 
                 cnn.Open();
@@ -139,6 +141,11 @@ namespace CMPG223_Base
                 adapter.Dispose();
                 cnn.Close();
 
+                sql = "SELECT MAX([EMERGENCY_SITUATION_ID]) FROM EMERGENCY_SITUATION";
+                command = new SqlCommand(sql, cnn);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                    int.TryParse(reader.GetValue(0).ToString(), out iE_Sit_ID);
 
                 sql = "INSERT INTO LOCATION ([LOCATION_LATITUDE], [LOCATION_LONGITUDE]) VALUES (@lat, @lng)";
                 adapter = new SqlDataAdapter();
@@ -151,6 +158,8 @@ namespace CMPG223_Base
                 command.Dispose();
                 adapter.Dispose();
                 cnn.Close();
+
+
 
                 lblFeedback.Text = "Emergency situation was successfully created./nTo add another service or service type simply select a new value and click on submit again." +
                     "/nTo create new emergency situation click on the 'Create new emergency situation' button.";

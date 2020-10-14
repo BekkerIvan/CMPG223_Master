@@ -174,3 +174,7 @@ C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Deb
 C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CopyComplete
 C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.dll
 C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.pdb
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csprojAssemblyReference.cache
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CoreCompileInputs.cache
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.dll
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.pdb

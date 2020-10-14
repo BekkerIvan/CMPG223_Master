@@ -42,6 +42,7 @@ namespace CMPG223_Base
                 SqlCommand command = new SqlCommand(sql, cnn);
                 cnn.Open();
                 DataTable dt = new DataTable();
+                adapter.SelectCommand = command;
                 adapter.Fill(dt);
                 ddlEmergencyType.DataSource = dt;
                 ddlEmergencyType.DataTextField = "EMERGENCY_SERVICE_TYPE";
@@ -59,6 +60,7 @@ namespace CMPG223_Base
                 command = new SqlCommand(sql, cnn);
                 cnn.Open();
                 dt = new DataTable();
+                adapter.SelectCommand = command;
                 adapter.Fill(dt);
                 ddlE_Sit_Type.DataSource = dt;
                 ddlE_Sit_Type.DataTextField = "SITUATION_TYPE";
@@ -107,6 +109,10 @@ namespace CMPG223_Base
             
 
             //retreve province
+            foreach (Result item in jPars.results)
+            {
+                sProvince = item.address_components[4].long_name;
+            }
         }
 
         protected void Submit_Click(object sender, EventArgs e)
@@ -125,7 +131,7 @@ namespace CMPG223_Base
 
                 if (tbCoordinates.Text == "")
                 {
-                    btnCoordinates.Click += BtnCoordinates_Click; 
+                    btnCoordinates_Click(btnCoordinates, EventArgs.Empty);
                 }
                 if (Session["E_ID"] != null)
                 {
@@ -143,6 +149,7 @@ namespace CMPG223_Base
                     string sEmergencyPersonnel_ID = lbPersonnel.SelectedItem.Text;
                     int.TryParse(sEmergencyPersonnel_ID, out iEmergencyPersonnel_ID);
                 }
+                else { throw new Exception("No emergency service selected. Please select a service."); }
 
 
 
@@ -156,7 +163,7 @@ namespace CMPG223_Base
                 command.Parameters.AddWithValue("@Description", sDiscription);
                 command.Parameters.AddWithValue("@Timestamp", dtTimeStamp);
                 command.Parameters.AddWithValue("@EmployeeID", iEmployee_ID);
-                command.Parameters.AddWithValue("@EType", sEmergencyType);
+                command.Parameters.AddWithValue("@EType", sEmergencyType);//?
                 command.Parameters.AddWithValue("@province", sProvince);
 
                 adapter.InsertCommand = command;
@@ -226,6 +233,7 @@ namespace CMPG223_Base
                     "/nTo create new emergency situation click on the 'Create new emergency situation' button.";
                 lblFeedback.Visible = true;
                 btnClear.Visible = true;
+                Submit.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -235,10 +243,10 @@ namespace CMPG223_Base
 
         }
 
-        private void BtnCoordinates_Click(object sender, EventArgs e)
+        /*private void BtnCoordinates_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
+            throw new NotImplementedException();                    //HUH???
+        }*/
 
         protected void ddlEmergencyType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -269,7 +277,7 @@ namespace CMPG223_Base
 
             Session["E_Type"] = ddlEmergencyType.SelectedIndex;
             HttpCookie _Type = new HttpCookie("ET");
-            _Type["index"] = ddlEmergencyType.SelectedIndex.ToString();
+            _Type["index"] = ddlEmergencyType.SelectedIndex.ToString();//remove cookie?
             _Type["item"] = ddlEmergencyType.SelectedItem.Text;
             Response.Cookies.Add(_Type);
         }
@@ -305,6 +313,24 @@ namespace CMPG223_Base
             adapter.Dispose();
             cnn.Close();
 
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            Submit.Enabled = true;
+            lat = 25.000;
+            lng = 28.000;
+            sProvince = null;
+            Session["LAT"] = null;
+            Session["LNG"] = null;
+            Session["E_Type"] = null;
+            lbPersonnel.ClearSelection();
+            ddlEmergencyType.SelectedIndex = 0;
+        }
+
+        private void closeCnn()
+        {
+            
         }
     }
 }          

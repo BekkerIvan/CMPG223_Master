@@ -23,10 +23,10 @@
         <br />
         <br />
         <asp:Label ID="lblSelectEmp" runat="server" Font-Bold="True" Text="Select employee username:" Visible="False"></asp:Label>
-        <br />
-        <asp:DropDownList ID="dlEmpUser" runat="server" DataSourceID="CBOX_DB" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="False">
+        `<br />
+        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="EMPLOYEE_USERNAME" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="False">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="CBOX_DB" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_USERNAME] FROM [EMPLOYEE]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="EMPLOYEE_USERNAME" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_USERNAME] FROM [EMPLOYEE]"></asp:SqlDataSource>
         <br />
         <asp:Label ID="Label2" runat="server" Text="Employee ID:"></asp:Label>
 &nbsp;&nbsp;&nbsp;

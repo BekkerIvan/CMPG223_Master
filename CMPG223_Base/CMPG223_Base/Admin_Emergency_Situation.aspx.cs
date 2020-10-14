@@ -38,14 +38,14 @@ namespace CMPG223_Base
             {
                 string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
                 SqlConnection cnn = new SqlConnection(mainconn);
-                string sql = "SELECT DISTINCT Emercency_Service_Type, Emercency_Service_ID FROM Emergency_Services";
+                string sql = "SELECT DISTINCT [EMERGENCY_SERVICE_TYPE], [EMERGENCY_SERVICE_ID] FROM EMERGENCY_SERVICE";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, cnn);
                 cnn.Open();
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 ddlEmergencyType.DataSource = dt;
-                ddlEmergencyType.DataTextField = "Emercency_Service_Type";
-                ddlEmergencyType.DataValueField = "Emercency_Service_ID";
+                ddlEmergencyType.DataTextField = "EMERGENCY_SERVICE_TYPE";
+                ddlEmergencyType.DataValueField = "EMERGENCY_SERVICE_ID";
                 ddlEmergencyType.DataBind();
                 ddlEmergencyType.Items.Insert(0, new ListItem("---Select---", "N/A"));
                 ddlEmergencyType.Items.Insert(1, new ListItem("All"));
@@ -124,14 +124,13 @@ namespace CMPG223_Base
                 string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
                 SqlConnection cnn = new SqlConnection(mainconn);
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql = "INSERT INTO Emergency_Situation ([Description], [Emergency_Situation_DateTime], [Employee_ID], [Emergency_Personnel_ID], [Emergency_Type]) VALUES (@Description, @Timestamp, @EmployeeID, @EPID, @EType)";
+                string sql = "INSERT INTO Emergency_Situation ([DESCRIPTION], [EMERGENCY_SITUATION_DATETIME], [EMPLOYEE_ID], [EMERGENCY_SITUATION_TYPE_ID]) VALUES (@Description, @Timestamp, @EmployeeID, @EType)";
                 SqlCommand command = new SqlCommand(sql, cnn);
 
                 cnn.Open();
                 command.Parameters.AddWithValue("@Description", sDiscription);
                 command.Parameters.AddWithValue("@Timestamp", dtTimeStamp);
                 command.Parameters.AddWithValue("@EmployeeID", iEmployee_ID);
-                command.Parameters.AddWithValue("@EPID", iEmergencyPersonnel_ID);
                 command.Parameters.AddWithValue("@EType", sEmergencyType);
 
                 adapter.InsertCommand = command;
@@ -141,7 +140,7 @@ namespace CMPG223_Base
                 cnn.Close();
 
 
-                sql = "INSERT INTO Location ([Latetude], [Longatude]) VALUES (@lat, @lng)";
+                sql = "INSERT INTO LOCATION ([LOCATION_LATITUDE], [LOCATION_LONGITUDE]) VALUES (@lat, @lng)";
                 adapter = new SqlDataAdapter();
                 command = new SqlCommand(sql, cnn);
                 cnn.Open();
@@ -179,10 +178,10 @@ namespace CMPG223_Base
             string sql;
             if (ddlEmergencyType.SelectedItem.Text == "All")
             {
-                sql = "SELECT [Emercency_Service_ID], [Emergency_Service_Name] + ' - ' + [Emercency_Service_ContactDetails] AS Service FROM Emergency_Services";
+                sql = "SELECT [EMERGENCY_SERVICE_ID], [EMERGENCY_SERVICE_NAME] + ' - ' + [EMERGENCY_SERVICE_CONTACT] AS Service FROM [EMERGENCY_SERVICE]";
             }
             else
-            { sql = "SELECT [Emercency_Service_ID], [Emergency_Service_Name] + ' - ' + [Emercency_Service_ContactDetails] AS Service FROM Emergency_Services WHERE [Emercency_Service_Type] LIKE '%" + ddlEmergencyType.SelectedItem.Text + "%'"; }
+            { sql = "SELECT [EMERGENCY_SERVICE_ID], [EMERGENCY_SERVICE_NAME] + ' - ' + [EMERGENCY_SERVICE_CONTACT] AS Service FROM [EMERGENCY_SERVICE] WHERE [EMERGENCY_SERVICE_TYPE] LIKE '%" + ddlEmergencyType.SelectedItem.Text + "%'"; }
             cnn.Open();
             
             SqlCommand command = new SqlCommand(sql, cnn);
@@ -192,7 +191,7 @@ namespace CMPG223_Base
             adapter.Fill(dt);
             lbPersonnel.DataSource = dt;
             lbPersonnel.DataTextField = "Service";
-            lbPersonnel.DataValueField = "Emercency_Service_ID";
+            lbPersonnel.DataValueField = "EMERGENCY_SERVICE_ID";
             lbPersonnel.DataBind();
 
             command.Dispose();

@@ -58,22 +58,22 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.Label lblSelectEmp;
         
         /// <summary>
-        /// dlEmpUser control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dlEmpUser;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// CBOX_DB control.
+        /// EMPLOYEE_USERNAME control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource CBOX_DB;
+        protected global::System.Web.UI.WebControls.SqlDataSource EMPLOYEE_USERNAME;
         
         /// <summary>
         /// Label2 control.

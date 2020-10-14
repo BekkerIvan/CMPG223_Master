@@ -13,6 +13,7 @@
 </head>
 <body style="background-color:rgb(67, 119, 167)">
     <form id="form1" runat="server">
+        <div data-include="TestPage.html"></div>
         <br />
         <br />
         <br />
@@ -20,7 +21,7 @@
             <div class="col-md-6" style="background-color:white;box-shadow:3px 3px red;border-radius:10px">
                 <div id="modal_Header" class="row">
                     <div class="col-md-12">
-                        <img class="fullWidth" style="height:200px;object-fit:contain;" alt="C-Box.logo" src="WhatsApp_Image_2020-10-13_at_20.49.20-removebg-preview.png" height="150px"></img>
+                        <img class="fullWidth" style="height:200px;object-fit:contain;" alt="C-Box.logo" src="C-BOX.png" height="150px">
                     </div>
                 </div><br />
                 <div id="modal_Body" class="row">
@@ -45,7 +46,8 @@
                     <div class="fullWidth">
                         <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-danger form-control" Text="Login" OnClick="btnLogin_Click"/>
                     </div>
-            </div><br />
+                </div><br />
+            </div>
         </div>
     </form>
 </body>
@@ -58,6 +60,27 @@
 
 </style>
 <script>
-
+    function myHTMLInclude() {
+        var z, i, a, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            if (z[i].getAttribute("w3-include-html")) {
+                a = z[i].cloneNode(false);
+                file = z[i].getAttribute("w3-include-html");
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) {
+                        a.removeAttribute("w3-include-html");
+                        a.innerHTML = xhttp.responseText;
+                        z[i].parentNode.replaceChild(a, z[i]);
+                        myHTMLInclude();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }
+        }
+    }
 </script>
 

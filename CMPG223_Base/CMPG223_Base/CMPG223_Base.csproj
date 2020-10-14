@@ -71,6 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin_Emergency_Situation.aspx" />
+    <Content Include="App_Data\CBOX_DB.mdf" />
+    <Content Include="App_Data\CBOX_DB_log.ldf">
+      <DependentUpon>CBOX_DB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -187,6 +191,7 @@
   <ItemGroup>
     <Compile Include="Admin_Emergency_Situation.aspx.cs">
       <DependentUpon>Admin_Emergency_Situation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin_Emergency_Situation.aspx.designer.cs">
       <DependentUpon>Admin_Emergency_Situation.aspx</DependentUpon>
@@ -200,6 +205,7 @@
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>

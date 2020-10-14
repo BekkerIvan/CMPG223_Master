@@ -45,7 +45,7 @@ namespace CMPG223_Base
                 adapter.Fill(dt);
                 ddlEmergencyType.DataSource = dt;
                 ddlEmergencyType.DataTextField = "EMERGENCY_SERVICE_TYPE";
-                ddlEmergencyType.DataValueField = "EMERGENCY_SERVICE_ID";
+                ddlEmergencyType.DataValueField = "EMERGENCY_SERVICE_ID";       //change to only type
                 ddlEmergencyType.DataBind();
                 ddlEmergencyType.Items.Insert(0, new ListItem("---Select---", "N/A"));
                 ddlEmergencyType.Items.Insert(1, new ListItem("All"));
@@ -112,7 +112,7 @@ namespace CMPG223_Base
                     sEmergencyType = Session["E_Type"].ToString();
                 }
                 else { throw new HttpException("No Emergency type found. Please select an emergency type and submit again. If the problem presist, please contact systm adminastrator."); }
-                // moet ons die exceptions uit haal? waarmee vervang ons dit?
+                
                 if (lbPersonnel.SelectedIndex >= 0)
                 {
                     string sEmergencyPersonnel_ID = lbPersonnel.SelectedItem.Text;

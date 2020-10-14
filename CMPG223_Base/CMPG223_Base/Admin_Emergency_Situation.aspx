@@ -78,7 +78,11 @@
              </div>
              <div class="col-md-6">
                  <div>
-                    <asp:Label ID="Label2" runat="server" Text="Type of Emergency:  " AssociatedControlID="ddlEmergencyType"></asp:Label>
+                     <asp:Label ID="lblE_Sit_Type" runat="server" Text="Type of emergency" AssociatedControlID="ddlE_Sit_Type" ></asp:Label>
+                     <asp:DropDownList ID="ddlE_Sit_Type" runat="server" CssClass="form-control"></asp:DropDownList>
+                 </div><br />
+                 <div>
+                    <asp:Label ID="Label2" runat="server" Text="Type of Emergency service:  " AssociatedControlID="ddlEmergencyType"></asp:Label>
                     <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="true" ></asp:DropDownList>
                  </div><br />        
                  <div>

@@ -20,7 +20,6 @@ namespace CMPG223_Base
     {
         protected double lat = -25.00000;
         protected double lng = 28.000000;
-
         
 
         protected void Page_Load(object sender, EventArgs e)
@@ -99,6 +98,7 @@ namespace CMPG223_Base
                 int iEmergencyPersonnel_ID = 0;
                 int iE_Sit_ID = 0;
                 int iLocation_ID = 0;
+                int.TryParse(lbPersonnel.SelectedValue, out int iE_Service_ID);
 
                 if (tbCoordinates.Text == "")
                 {
@@ -174,7 +174,7 @@ namespace CMPG223_Base
                 command.Dispose();
                 reader.Close();
 
-                sql = "INSERT INTO LOCATION_SITUATION_LINK ([LOCATION_ID], [EMERGENCY_SITUATION_ID]) VALUEs (@locationID, @situationID)";
+                sql = "INSERT INTO [LOCATION_SITUATION_LINK] ([LOCATION_ID], [EMERGENCY_SITUATION_ID]) VALUEs (@locationID, @situationID)";
                 adapter = new SqlDataAdapter();
                 command = new SqlCommand(sql, cnn);
                 cnn.Open();
@@ -186,7 +186,17 @@ namespace CMPG223_Base
                 adapter.Dispose();
                 cnn.Close();
 
-
+                sql = "INSERT INTO [SERVICE_SITUATION_LINK] ([EMERGENCY_SITUATION_ID], [EMERGENCY_SERVICE_ID]) VALUES (@situationID, @serviceID)";
+                adapter = new SqlDataAdapter();
+                command = new SqlCommand(sql, cnn);
+                cnn.Open();
+                command.Parameters.AddWithValue("@situationID", iE_Sit_ID);
+                command.Parameters.AddWithValue("@serviceID", iE_Service_ID);
+                adapter.InsertCommand = command;
+                adapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
+                adapter.Dispose();
+                cnn.Close();
 
 
                 lblFeedback.Text = "Emergency situation was successfully created./nTo add another service or service type simply select a new value and click on submit again." +

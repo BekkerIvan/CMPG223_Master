@@ -20,7 +20,7 @@ namespace CMPG223_Base
     {
         protected double lat = -25.00000;
         protected double lng = 28.000000;
-        
+        private string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,21 +35,41 @@ namespace CMPG223_Base
             }
             else
             {
-                string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
                 SqlConnection cnn = new SqlConnection(mainconn);
-                string sql = "SELECT DISTINCT [EMERGENCY_SERVICE_TYPE], [EMERGENCY_SERVICE_ID] FROM EMERGENCY_SERVICE";
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, cnn);
+                string sql = "SELECT DISTINCT [EMERGENCY_SERVICE_TYPE] FROM EMERGENCY_SERVICE";
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlCommand command = new SqlCommand(sql, cnn);
                 cnn.Open();
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 ddlEmergencyType.DataSource = dt;
                 ddlEmergencyType.DataTextField = "EMERGENCY_SERVICE_TYPE";
-                ddlEmergencyType.DataValueField = "EMERGENCY_SERVICE_ID";       //change to only type
+                ddlEmergencyType.DataValueField = "EMERGENCY_SERVICE_TYPE";       
                 ddlEmergencyType.DataBind();
                 ddlEmergencyType.Items.Insert(0, new ListItem("---Select---", "N/A"));
                 ddlEmergencyType.Items.Insert(1, new ListItem("All"));
                 adapter.Dispose();
+                command.Dispose();
+                dt.Clear();
                 cnn.Close();
+
+                sql = "SELECT [EMERGENCY_SITUATION_TYPE_ID], [SITUATION_TYPE] FROM EMERGENCY_SITUATION_TYPE";
+                adapter = new SqlDataAdapter();
+                command = new SqlCommand(sql, cnn);
+                cnn.Open();
+                dt = new DataTable();
+                adapter.Fill(dt);
+                ddlE_Sit_Type.DataSource = dt;
+                ddlE_Sit_Type.DataTextField = "SITUATION_TYPE";
+                ddlE_Sit_Type.DataValueField = "EMERGENCY_SITUATION_TYPE_ID";
+                ddlE_Sit_Type.DataBind();
+                ddlE_Sit_Type.Items.Insert(0, new ListItem("---Select---", "N/A"));
+                adapter.Dispose();
+                command.Dispose();
+                dt.Clear();
+                cnn.Close();
+
+
 
                 // Only for testing purposes  session info to come from login
                 Session["E_ID"] = 1;
@@ -123,7 +143,6 @@ namespace CMPG223_Base
 
 
 
-                string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
                 SqlConnection cnn = new SqlConnection(mainconn);
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlDataReader reader;
@@ -219,7 +238,6 @@ namespace CMPG223_Base
 
         protected void ddlEmergencyType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
             SqlConnection cnn = new SqlConnection(mainconn);
             SqlDataAdapter adapter = new SqlDataAdapter();
             string sql;

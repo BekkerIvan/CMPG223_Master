@@ -1,12 +1,96 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <meta charset="utf-8" />
     <title></title>
 </head>
-<body>
-       <input type="button" />
+
+
+<body style="background-color:darkslategrey">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-6" style="height:40%;background-color:gray;box-shadow:5px 5px red">
+
+                <div id="header" class="justify-content-center" style="height:25%">
+                    <div class="row">
+                        <h2 class="text-center col-md-12"><i>Login to</i></h2>
+                    </div>
+                    <div class="row">
+                        <h2 class="text-center col-md-6"><i>INSERT LOGO HERE</i></h2>
+                        <img class="col-md-6" src="images-removebg-preview.png" />
+                    </div>
+
+                </div>
+
+
+                <div id="body" style="height:50%; padding:10px 10px 10px 10px;">
+                    <div class="row">
+                        <label>Username</label>
+                        <input type="text" class="form-control" id="txtUsername" />
+                    </div>
+
+                    <div class="row">
+                        <label>Password</label>
+                        <input type="password" class="form-control" id="txtPassword" />
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <input type="checkbox" id="RememberMe" />
+                            <label for="RememberMe">Remember User</label>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <a href="www.google.com" style="color:black">Forgotten Password</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="footer" style="height:25%;padding:10px 10px 10px 10px">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <input type="button" class="btn btn-danger fullWidth" id="btnLogin_Click" onclick="checkInput();" value="Login"/>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
-<script></script>
-<script></script>
+<script>
+    let LoginButtonClickedInt = 0;
+    function checkInput() {
+        if (LoginButtonClickedInt < 3) {
+            let PasswordObj = $("#txtPassword");
+            let UsernameObj = $("#txtUsername");
+            if (!PasswordObj.val() || !UsernameObj.val()) {
+                alert("Invalid input");
+                LoginButtonClickedInt++;
+            }
+        } else {
+            alert('Too many attempts have been logged.');
+            let btnLogin_ClickObj = $("#btnLogin_Click");
+            btnLogin_ClickObj.prop('disabled', true);
+        }
+    }
+
+</script>
+<style>
+    .fullWidth {
+        width:100%;
+    }
+</style>

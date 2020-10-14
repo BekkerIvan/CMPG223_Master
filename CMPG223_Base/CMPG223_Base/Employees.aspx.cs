@@ -12,6 +12,7 @@ namespace CMPG223_Base
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
         }
     }
 }

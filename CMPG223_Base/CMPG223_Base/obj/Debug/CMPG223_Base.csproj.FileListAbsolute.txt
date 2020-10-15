@@ -239,3 +239,4 @@ C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\
 C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.dll
 C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.pdb
 >>>>>>> Stashed changes
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll

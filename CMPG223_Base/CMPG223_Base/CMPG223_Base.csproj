@@ -67,6 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CBOX_DB.mdf" />
+    <Content Include="App_Data\CBOX_DB_log.ldf">
+      <DependentUpon>CBOX_DB.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\testDB.mdf" />
+    <Content Include="App_Data\testDB_log.ldf">
+      <DependentUpon>testDB.mdf</DependentUpon>
+    </Content>
     <Content Include="download.png" />
     <Content Include="Emergency_Service.aspx" />
     <Content Include="Employees.aspx" />

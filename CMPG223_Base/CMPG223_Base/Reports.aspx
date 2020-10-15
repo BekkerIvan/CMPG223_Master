@@ -12,6 +12,15 @@
             <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Larger" Text="Reports"></asp:Label>
             <br />
             <br />
+        <div>
+            <asp:Label ID="Label9" runat="server" Font-Bold="True" Text="Select report to generate:"></asp:Label></div>
+            <div class="fullWidth">        
+            <asp:RadioButtonList ID="rblReports" runat="server" RepeatDirection="Horizontal" CssClass="col-md-12" style="margin:10px" AutoPostBack="True" OnSelectedIndexChanged="rblAction_SelectedIndexChanged1">
+                 <asp:ListItem>&nbsp;Emergency Situations per Province</asp:ListItem>
+                 <asp:ListItem>&nbsp;Emergency Situations per time Period</asp:ListItem>
+                 <asp:ListItem>&nbsp;Employee Log Reports</asp:ListItem>
+             </asp:RadioButtonList>
+        </div>
         </div>
         <!--Simeon-->
         <div>

@@ -116,7 +116,7 @@ function initMap() {
   var pin = {lat: <%=lat%>, lng: <%=lng%>};
   // The map, centered at Uluru
     var map = new google.maps.Map(
-        document.getElementById('map'), { zoom: 4, center: pin });
+        document.getElementById('map'), { zoom: 10, center: pin });
   // The marker, positioned at Uluru
     var marker = new google.maps.Marker({ position: pin, map: map });
     //return false;

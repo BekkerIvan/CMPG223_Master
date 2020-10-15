@@ -9,7 +9,8 @@ namespace CMPG223_Base
     public class MethodClasses
     {
         public SqlConnection sqlConnectionObj;
-        protected string DatabaseConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='|DataDirectory|\\Database1.mdf';Integrated Security=True";
+        //protected string DatabaseConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='|DataDirectory|\\Database1.mdf';Integrated Security=True";
+        protected string DatabaseConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='|DataDirectory|\\CBOX_DB.mdf';Integrated Security=True";
         
         public bool openDatabaseConnection()
         {

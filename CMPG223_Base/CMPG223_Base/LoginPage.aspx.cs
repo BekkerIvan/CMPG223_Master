@@ -65,16 +65,17 @@ namespace CMPG223_Base
 
                     sqlCommandObj.Prepare();
                     sqlDataReader = sqlCommandObj.ExecuteReader();
-                    if (sqlDataReader != null) {
-                        while (sqlDataReader.Read()) {
-                            if (txtUsername.Text == sqlDataReader.GetString(3) &&
-                                txtPassword.Text == sqlDataReader.GetString(6)) {
-                                Session.Remove("TotalLoginAttemptsInt");
-                                Session["EMPLOYEE_ID"] = sqlDataReader.GetString(0);
-                            } else {
-                                MessageBox.Show("Login Failed.");
+                    while (sqlDataReader.Read()) {
+                        if (txtUsername.Text == sqlDataReader.GetString(3)) {
+                                if (txtPassword.Text == sqlDataReader.GetString(4)) {
+                                sqlCommandObj.Parameters.Clear();
+                                Session["EMPLOYEE_ID"] = sqlDataReader.GetInt32(0);
+                                sqlCommandObj.CommandText ="INSERT INTO EMPLOYEE_LOG (DATE, LOG_IN_TIME, EMPLOYEE_ID) VALUES ('"+DateTime.Today+"', '"+DateTime.Now+"', '"+ sqlDataReader.GetInt32(0) + "')";
+                                sqlDataReader.Close();
+                                sqlCommandObj.ExecuteNonQuery();
+                                Response.Redirect("Admin_Emergency_Situation.aspx");
                             }
-                        }
+                        } 
                     }
                     MethodObj.closeDatabaseConnection();
                 } else {

@@ -39,7 +39,7 @@ namespace CMPG223_Base
                 try
                 {
                     SqlConnection cnn = new SqlConnection(mainconn);
-                    string sql = "SELECT DISTINCT [EMERGENCY_SERVICE_TYPE] FROM EMERGENCY_SERVICE";
+                    string sql = "SELECT DISTINCT [EMERGENCY_SERVICE_TYPE] FROM EMERGENCY_SERVICE WHERE EMERGENCY_SERVICE_ARCHIVE = 1";
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     SqlCommand command = new SqlCommand(sql, cnn);
                     cnn.Open();

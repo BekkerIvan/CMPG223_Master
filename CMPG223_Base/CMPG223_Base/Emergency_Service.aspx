@@ -28,11 +28,7 @@
         <asp:Label ID="lblServiceID1" runat="server" Font-Bold="True" Text="Service ID:"></asp:Label>
 &nbsp;&nbsp;
         <asp:Label ID="lblServiceID2" runat="server" Font-Bold="True" Text="[lblServiceID2]"></asp:Label>
-        <p>
-            <asp:Label ID="lblId" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services ID:"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
-            <asp:TextBox ID="txbId" runat="server"></asp:TextBox>
-        </p>
+        <br />
         <asp:Label ID="lblName" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Name:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <asp:TextBox ID="txbName" runat="server"></asp:TextBox>
         <p>
@@ -47,17 +43,17 @@
         <br />
         <asp:Label ID="lblServiceArchive" runat="server" Font-Bold="True" Text="Emergency Services Archive:&nbsp;"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:RadioButton runat="server" />
+        <asp:RadioButton runat="server" ID="rbtArchive" Text="[ticked is archived]" />
         <br />
         <br />
-        <asp:Label ID="lblContact0" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Location Latitude:"></asp:Label>
+        <asp:Label ID="lblLat" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Location Latitude:"></asp:Label>
         &nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="txbContact0" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txbLat" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Label ID="lblContact1" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Location Longitude:"></asp:Label>
+        <asp:Label ID="lblLng" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Location Longitude:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="txbContact1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txbLng" runat="server"></asp:TextBox>
         <br />
         <br />
         <p>

@@ -94,24 +94,6 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.Label lblServiceID2;
         
         /// <summary>
-        /// lblId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblId;
-        
-        /// <summary>
-        /// txbId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbId;
-        
-        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>
@@ -175,40 +157,49 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.Label lblServiceArchive;
         
         /// <summary>
-        /// lblContact0 control.
+        /// rbtArchive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContact0;
+        protected global::System.Web.UI.WebControls.RadioButton rbtArchive;
         
         /// <summary>
-        /// txbContact0 control.
+        /// lblLat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbContact0;
+        protected global::System.Web.UI.WebControls.Label lblLat;
         
         /// <summary>
-        /// lblContact1 control.
+        /// txbLat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContact1;
+        protected global::System.Web.UI.WebControls.TextBox txbLat;
         
         /// <summary>
-        /// txbContact1 control.
+        /// lblLng control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbContact1;
+        protected global::System.Web.UI.WebControls.Label lblLng;
+        
+        /// <summary>
+        /// txbLng control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbLng;
         
         /// <summary>
         /// btnSubmit control.

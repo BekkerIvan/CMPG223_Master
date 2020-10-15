@@ -68,12 +68,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="download.png" />
+    <Content Include="Emergency_Service.aspx" />
     <Content Include="Employees.aspx" />
     <Content Include="images-removebg-preview.png" />
     <Content Include="TestPage.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Emergency_Service.aspx.cs">
+      <DependentUpon>Emergency_Service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emergency_Service.aspx.designer.cs">
+      <DependentUpon>Emergency_Service.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employees.aspx.cs">
       <DependentUpon>Employees.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

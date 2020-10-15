@@ -57,7 +57,7 @@
 
             <form class="form-inline">
                 <div class="md-form my-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
                 </div>
             </form>
         </div>
@@ -76,19 +76,19 @@
                     <div class="fullWidth"><br />
                         <div class="text-center"><asp:Label ID="Label9" runat="server" Font-Bold="True" Text="Select action to perform:"></asp:Label></div>
                         <div class="fullWidth">        
-                            <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" CssClass="col-md-12" style="margin:10px">
+                            <asp:RadioButtonList ID="rblAction" runat="server" RepeatDirection="Horizontal" CssClass="col-md-12" style="margin:10px" AutoPostBack="True" OnSelectedIndexChanged="rblAction_SelectedIndexChanged1">
                                 <asp:ListItem>&nbsp;Create new employee</asp:ListItem>
                                 <asp:ListItem>&nbsp;Update employee information</asp:ListItem>
                             </asp:RadioButtonList>
                         </div>
                     </div>
                     <br />
-                    <div class="fullWidth display-none" id="Update_Employee" style="padding-bottom:20px">
+                    <div id="Update_Employee" style="padding-bottom:20px">
                         <div class="row">
-                            <div class="text-center col-md-4"><asp:Label ID="lblSelectEmp" runat="server" Font-Bold="True" Text="Select Employee:" Visible="true"></asp:Label></div><br />
-                            <asp:DropDownList ID="dlEmpUser" runat="server" DataSourceID="CBOX_DB" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="true" CssClass="fullWidth form-control col-md-6 col-md-offset-4">
+                            <div class="text-center col-md-4"><asp:Label ID="lblSelectEmp" runat="server" Font-Bold="True" Text="Select Employee:" Visible="False"></asp:Label></div><br />
+                            <div class="col-md-6 text-center"><asp:DropDownList ID="drlUserName" runat="server" DataSourceID="CBOX_DB" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="False" CssClass="fullWidth form-control col-md-6 col-md-offset-4" AutoPostBack="True" OnSelectedIndexChanged="drlUserName_SelectedIndexChanged1" Width="300px">
                             </asp:DropDownList>
-                            <asp:SqlDataSource ID="CBOX_DB" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_USERNAME] FROM [EMPLOYEE]"></asp:SqlDataSource>                            
+                            <asp:SqlDataSource ID="CBOX_DB" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_USERNAME] FROM [EMPLOYEE]"></asp:SqlDataSource></div>                            
                         </div>
 
                     </div>
@@ -108,6 +108,7 @@
                         <div id="txtUsername_Div" class="row" style="padding-bottom:20px">
                             <div class="col-md-4 text-center" style="padding-top:5px"><asp:Label ID="Label5" runat="server" Font-Bold="True" Text="User Name:"></asp:Label></div>
                             <asp:TextBox ID="txbUName" runat="server" class="fullWidth col-md-6 form-control"></asp:TextBox>
+                            <asp:Label ID="lblInvalid" runat="server" Text="Invalid user name" Visible="False" ForeColor="#FF3300"></asp:Label>
                         </div>
                         <div id="txtPassword_Div" class="row" style="padding-bottom:20px">
                             <div class="col-md-4 text-center" style="padding-top:5px"><asp:Label ID="Label6" runat="server" Font-Bold="True" Text="Password:"></asp:Label></div>
@@ -129,7 +130,7 @@
                 </div>
                 <div id="Modal_Footer" class="row" style="border-top:1px solid lightgrey;padding:20px">
                     <div class="col-md-6">
-                        <asp:Button ID="btnCommit" runat="server" Text="Submit" class="btn btn-primary form-control fullWidth"/>
+                        <asp:Button ID="btnCommit" runat="server" Text="Submit" class="btn btn-primary form-control fullWidth" OnClick="btnCommit_Click1"/>
                     </div>
                     <div class="col-md-6">
                         <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="btn btn-danger form-control fullWidth"/>

@@ -18,7 +18,7 @@ namespace CMPG223_Base
 
         }
 
-        protected void rblAction_SelectedIndexChanged(object sender, EventArgs e)
+        protected void rblAction_SelectedIndexChanged1(object sender, EventArgs e)
         {
             //toggle the username drop down list
 
@@ -46,7 +46,7 @@ namespace CMPG223_Base
                 
         }
 
-        protected void drlUserName_SelectedIndexChanged(object sender, EventArgs e)
+        protected void drlUserName_SelectedIndexChanged1(object sender, EventArgs e)
         {
             //get user name to search
             string userName;
@@ -101,7 +101,7 @@ namespace CMPG223_Base
 
         }
 
-        protected void btnCommit_Click(object sender, EventArgs e)
+        protected void btnCommit_Click1(object sender, EventArgs e)
         {
             string fName, lName, uName, password, cNum, actionType;
             int userRole, empID;

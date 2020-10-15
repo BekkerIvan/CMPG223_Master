@@ -67,22 +67,22 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.DropDownList drlUserName;
         
         /// <summary>
-        /// EMPLOYEE_USERNAME control.
+        /// CBOX_DB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource EMPLOYEE_USERNAME;
+        protected global::System.Web.UI.WebControls.SqlDataSource CBOX_DB;
         
         /// <summary>
-        /// Label2 control.
+        /// Label11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
         /// lblEmp_ID control.
@@ -94,13 +94,13 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.Label lblEmp_ID;
         
         /// <summary>
-        /// Label3 control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
         /// txbFName control.
@@ -112,13 +112,13 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.TextBox txbFName;
         
         /// <summary>
-        /// Label4 control.
+        /// Label13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Label13;
         
         /// <summary>
         /// txbLName control.
@@ -209,15 +209,6 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblUserRole;
-        
-        /// <summary>
-        /// UserRole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource UserRole;
         
         /// <summary>
         /// btnCommit control.

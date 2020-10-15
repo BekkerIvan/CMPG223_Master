@@ -36,41 +36,50 @@ namespace CMPG223_Base
             }
             else
             {
-                SqlConnection cnn = new SqlConnection(mainconn);
-                string sql = "SELECT DISTINCT [EMERGENCY_SERVICE_TYPE] FROM EMERGENCY_SERVICE";
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                SqlCommand command = new SqlCommand(sql, cnn);
-                cnn.Open();
-                DataTable dt = new DataTable();
-                adapter.SelectCommand = command;
-                adapter.Fill(dt);
-                ddlEmergencyType.DataSource = dt;
-                ddlEmergencyType.DataTextField = "EMERGENCY_SERVICE_TYPE";
-                ddlEmergencyType.DataValueField = "EMERGENCY_SERVICE_TYPE";       
-                ddlEmergencyType.DataBind();
-                ddlEmergencyType.Items.Insert(0, new ListItem("---Select---", "N/A"));
-                ddlEmergencyType.Items.Insert(1, new ListItem("All"));
-                adapter.Dispose();
-                command.Dispose();
-                dt.Clear();
-                cnn.Close();
+                try
+                {
+                    SqlConnection cnn = new SqlConnection(mainconn);
+                    string sql = "SELECT DISTINCT [EMERGENCY_SERVICE_TYPE] FROM EMERGENCY_SERVICE";
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    SqlCommand command = new SqlCommand(sql, cnn);
+                    cnn.Open();
+                    DataTable dt = new DataTable();
+                    adapter.SelectCommand = command;
+                    adapter.Fill(dt);
+                    ddlEmergencyType.DataSource = dt;
+                    ddlEmergencyType.DataTextField = "EMERGENCY_SERVICE_TYPE";
+                    ddlEmergencyType.DataValueField = "EMERGENCY_SERVICE_TYPE";
+                    ddlEmergencyType.DataBind();
+                    ddlEmergencyType.Items.Insert(0, new ListItem("---Select---", "N/A"));
+                    ddlEmergencyType.Items.Insert(1, new ListItem("All"));
+                    adapter.Dispose();
+                    command.Dispose();
+                    dt.Clear();
+                    cnn.Close();
 
-                sql = "SELECT [EMERGENCY_SITUATION_TYPE_ID], [SITUATION_TYPE] FROM EMERGENCY_SITUATION_TYPE";
-                adapter = new SqlDataAdapter();
-                command = new SqlCommand(sql, cnn);
-                cnn.Open();
-                dt = new DataTable();
-                adapter.SelectCommand = command;
-                adapter.Fill(dt);
-                ddlE_Sit_Type.DataSource = dt;
-                ddlE_Sit_Type.DataTextField = "SITUATION_TYPE";
-                ddlE_Sit_Type.DataValueField = "EMERGENCY_SITUATION_TYPE_ID";
-                ddlE_Sit_Type.DataBind();
-                ddlE_Sit_Type.Items.Insert(0, new ListItem("---Select---", "N/A"));
-                adapter.Dispose();
-                command.Dispose();
-                dt.Clear();
-                cnn.Close();
+                    sql = "SELECT [EMERGENCY_SITUATION_TYPE_ID], [SITUATION_TYPE] FROM EMERGENCY_SITUATION_TYPE";
+                    adapter = new SqlDataAdapter();
+                    command = new SqlCommand(sql, cnn);
+                    cnn.Open();
+                    dt = new DataTable();
+                    adapter.SelectCommand = command;
+                    adapter.Fill(dt);
+                    ddlE_Sit_Type.DataSource = dt;
+                    ddlE_Sit_Type.DataTextField = "SITUATION_TYPE";
+                    ddlE_Sit_Type.DataValueField = "EMERGENCY_SITUATION_TYPE_ID";
+                    ddlE_Sit_Type.DataBind();
+                    ddlE_Sit_Type.Items.Insert(0, new ListItem("---Select---", "N/A"));
+                    adapter.Dispose();
+                    command.Dispose();
+                    dt.Clear();
+                    cnn.Close();
+                }
+                catch (Exception ex)
+                {
+                    lblFeedback.Visible = true;
+                    lblFeedback.Text = "An error has occured. Please reload the page and try again and if the problem presists contact your system administrator.\n" + ex;
+                }
+                
 
 
 
@@ -91,29 +100,39 @@ namespace CMPG223_Base
         }
         public void GeoCodeTest(string address)
         {
-            var _request = new AddressGeocodeRequest { Address = address };
-            _request.Key = "API-KEY";
-            var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
-            Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
-
-            
-            
-            foreach (Result item in jPars.results)
+            try
             {
-                lat = item.geometry.location.lat.ToString();       
-                lng = item.geometry.location.lng.ToString();
+                if (address != null)
+                {
+                    var _request = new AddressGeocodeRequest { Address = address };
+                    _request.Key = "API-KEY";
+                    var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
+                    Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
+
+                    foreach (Result item in jPars.results)
+                    {
+                        lat = item.geometry.location.lat.ToString();
+                        lng = item.geometry.location.lng.ToString();
+                    }
+                    lat = fixString(lat);
+                    lng = fixString(lng);
+                    tbCoordinates.Text = lat + ", " + lng;
+                    Session["LAT"] = lat;
+                    Session["LNG"] = lng;
+
+                    foreach (Result item in jPars.results)
+                    {
+                        sProvince = item.address_components[5].long_name;
+                    }
+                }
+                else { throw new Exception("No address. Please enter an address."); }
+                
             }
-            lat = fixString(lat);
-            lng = fixString(lng);
-            tbCoordinates.Text = lat + ", " + lng;
-            Session["LAT"] = lat;
-            Session["LNG"] = lng;
-            
-
-            //retreve province
-            foreach (Result item in jPars.results)
+            catch (Exception ex)
             {
-                sProvince = item.address_components[5].long_name;
+                lblFeedback.Visible = true;
+                lblFeedback.Text = "" + ex;
+
             }
             
             //tbDescription.Text = _response.RawJson.ToString();                //Ivan, hier is die raw json array as jy nog wil sien hoe dit lyk
@@ -247,75 +266,87 @@ namespace CMPG223_Base
 
         }
 
-        /*private void BtnCoordinates_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();                    //HUH???
-        }*/
-
         protected void ddlEmergencyType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlConnection cnn = new SqlConnection(mainconn);
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql;
-            if (ddlEmergencyType.SelectedItem.Text == "All")
+            try
             {
-                sql = "SELECT [EMERGENCY_SERVICE_ID], [EMERGENCY_SERVICE_NAME] + ' - ' + [EMERGENCY_SERVICE_CONTACT] AS Service FROM [EMERGENCY_SERVICE]";
+                SqlConnection cnn = new SqlConnection(mainconn);
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql;
+                if (ddlEmergencyType.SelectedItem.Text == "All")
+                {
+                    sql = "SELECT [EMERGENCY_SERVICE_ID], [EMERGENCY_SERVICE_NAME] + ' - ' + [EMERGENCY_SERVICE_CONTACT] AS Service FROM [EMERGENCY_SERVICE]";
+                }
+                else
+                { sql = "SELECT [EMERGENCY_SERVICE_ID], [EMERGENCY_SERVICE_NAME] + ' - ' + [EMERGENCY_SERVICE_CONTACT] AS Service FROM [EMERGENCY_SERVICE] WHERE [EMERGENCY_SERVICE_TYPE] LIKE '%" + ddlEmergencyType.SelectedItem.Text + "%'"; }
+                cnn.Open();
+
+                SqlCommand command = new SqlCommand(sql, cnn);
+
+                DataTable dt = new DataTable();
+                adapter.SelectCommand = command;
+                adapter.Fill(dt);
+                lbPersonnel.DataSource = dt;
+                lbPersonnel.DataTextField = "Service";
+                lbPersonnel.DataValueField = "EMERGENCY_SERVICE_ID";
+                lbPersonnel.DataBind();
+
+                command.Dispose();
+                adapter.Dispose();
+                cnn.Close();
+
+                Session["E_Type"] = ddlEmergencyType.SelectedIndex;
+                HttpCookie _Type = new HttpCookie("ET");
+                _Type["index"] = ddlEmergencyType.SelectedIndex.ToString();//remove cookie?
+                _Type["item"] = ddlEmergencyType.SelectedItem.Text;
+                Response.Cookies.Add(_Type);
             }
-            else
-            { sql = "SELECT [EMERGENCY_SERVICE_ID], [EMERGENCY_SERVICE_NAME] + ' - ' + [EMERGENCY_SERVICE_CONTACT] AS Service FROM [EMERGENCY_SERVICE] WHERE [EMERGENCY_SERVICE_TYPE] LIKE '%" + ddlEmergencyType.SelectedItem.Text + "%'"; }
-            cnn.Open();
-            
-            SqlCommand command = new SqlCommand(sql, cnn);
-
-            DataTable dt = new DataTable();
-            adapter.SelectCommand = command;
-            adapter.Fill(dt);
-            lbPersonnel.DataSource = dt;
-            lbPersonnel.DataTextField = "Service";
-            lbPersonnel.DataValueField = "EMERGENCY_SERVICE_ID";
-            lbPersonnel.DataBind();
-
-            command.Dispose();
-            adapter.Dispose();
-            cnn.Close();
-
-            Session["E_Type"] = ddlEmergencyType.SelectedIndex;
-            HttpCookie _Type = new HttpCookie("ET");
-            _Type["index"] = ddlEmergencyType.SelectedIndex.ToString();//remove cookie?
-            _Type["item"] = ddlEmergencyType.SelectedItem.Text;
-            Response.Cookies.Add(_Type);
+            catch (Exception ex)
+            {
+                lblFeedback.Visible = true;
+                lblFeedback.Text = "An error has occured. Please reload the page and try again and if the problem presists contact your system administrator.\n" + ex;
+            }
         }
 
         protected void btnAddEService_Click(object sender, EventArgs e)
         {
-            int.TryParse(lbPersonnel.SelectedValue.ToString(), out int iE_Service_ID);
-            SqlConnection cnn = new SqlConnection(mainconn);
-            string sql;
-            SqlDataAdapter adapter;
-            SqlCommand command;
-            SqlDataReader reader;
-            int iE_Sit_ID = 0;
-            sql = "SELECT MAX([EMERGENCY_SITUATION_ID]) FROM EMERGENCY_SITUATION";
-            command = new SqlCommand(sql, cnn);
-            cnn.Open();
-            reader = command.ExecuteReader();
-            while (reader.Read())
-                int.TryParse(reader.GetValue(0).ToString(), out iE_Sit_ID);
-            cnn.Close();
-            command.Dispose();
-            reader.Close();
+            try
+            {
+                int.TryParse(lbPersonnel.SelectedValue.ToString(), out int iE_Service_ID);
+                SqlConnection cnn = new SqlConnection(mainconn);
+                string sql;
+                SqlDataAdapter adapter;
+                SqlCommand command;
+                SqlDataReader reader;
+                int iE_Sit_ID = 0;
+                sql = "SELECT MAX([EMERGENCY_SITUATION_ID]) FROM EMERGENCY_SITUATION";
+                command = new SqlCommand(sql, cnn);
+                cnn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                    int.TryParse(reader.GetValue(0).ToString(), out iE_Sit_ID);
+                cnn.Close();
+                command.Dispose();
+                reader.Close();
 
-            sql = "INSERT INTO [SERVICE_SITUATION_LINK] ([EMERGENCY_SITUATION_ID], [EMERGENCY_SERVICE_ID]) VALUES (@situationID, @serviceID)";
-            adapter = new SqlDataAdapter();
-            command = new SqlCommand(sql, cnn);
-            cnn.Open();
-            command.Parameters.AddWithValue("@situationID", iE_Sit_ID);
-            command.Parameters.AddWithValue("@serviceID", iE_Service_ID);
-            adapter.InsertCommand = command;
-            adapter.InsertCommand.ExecuteNonQuery();
-            command.Dispose();
-            adapter.Dispose();
-            cnn.Close();
+                sql = "INSERT INTO [SERVICE_SITUATION_LINK] ([EMERGENCY_SITUATION_ID], [EMERGENCY_SERVICE_ID]) VALUES (@situationID, @serviceID)";
+                adapter = new SqlDataAdapter();
+                command = new SqlCommand(sql, cnn);
+                cnn.Open();
+                command.Parameters.AddWithValue("@situationID", iE_Sit_ID);
+                command.Parameters.AddWithValue("@serviceID", iE_Service_ID);
+                adapter.InsertCommand = command;
+                adapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
+                adapter.Dispose();
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                lblFeedback.Visible = true;
+                lblFeedback.Text = "An error has occured. Please reload the page and try again and if the problem presists contact your system administrator.\n" + ex;
+
+            }
 
         }
 

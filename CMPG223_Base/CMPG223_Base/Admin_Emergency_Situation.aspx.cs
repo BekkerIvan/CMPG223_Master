@@ -92,7 +92,7 @@ namespace CMPG223_Base
         public void GeoCodeTest(string address)
         {
             var _request = new AddressGeocodeRequest { Address = address };
-            _request.Key = "AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo";
+            _request.Key = "API-KEY";
             var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
             Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
 

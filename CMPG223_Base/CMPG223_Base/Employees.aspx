@@ -83,13 +83,12 @@
                         </div>
                     </div>
                     <br />
-                    <div id="Update_Employee" style="padding-bottom:20px">
+                    <div id="Update_Employee" class="fullWidth" style="padding-bottom:20px">
                         <div class="row">
                             <div class="text-center col-md-4"><asp:Label ID="lblSelectEmp" runat="server" Font-Bold="True" Text="Select Employee:" Visible="False"></asp:Label></div><br />
-                            <div class="col-md-6 text-center"><asp:DropDownList ID="drlUserName" runat="server" DataSourceID="CBOX_DB" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="False" CssClass="fullWidth form-control col-md-6 col-md-offset-4" AutoPostBack="True" OnSelectedIndexChanged="drlUserName_SelectedIndexChanged1" Width="300px">
+                            <asp:DropDownList ID="drlUserName" runat="server" DataSourceID="CBOX_DB" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="False" CssClass="fullWidth form-control col-md-6" AutoPostBack="True" OnSelectedIndexChanged="drlUserName_SelectedIndexChanged1" Width="300px">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="CBOX_DB" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_USERNAME] FROM [EMPLOYEE]"></asp:SqlDataSource></div>                            
-                        </div>
 
                     </div>
                     <div class=" fullWidth ">

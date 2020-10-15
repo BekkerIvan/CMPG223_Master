@@ -109,7 +109,6 @@ C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\rosl
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\vbc.rsp
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\VBCSCompiler.exe
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\obj\Debug\CMPG223_Base.csprojAssemblyReference.cache
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CoreCompileInputs.cache
@@ -178,3 +177,7 @@ E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\C
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CoreCompileInputs.cache
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.dll
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.pdb
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Buffers.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Memory.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll

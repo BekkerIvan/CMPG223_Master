@@ -26,13 +26,7 @@
         <asp:SqlDataSource ID="Emergency_Service_Name" runat="server" ConnectionString="<%$ ConnectionStrings:CBOX_DBConnectionString %>" SelectCommand="SELECT [EMERGENCY_SERVICE_NAME] FROM [EMERGENCY_SERVICE]"></asp:SqlDataSource>
         <br />
         <p>
-            <asp:Button ID="btnAdd" runat="server" Text="Add" />
-            <asp:Button ID="btnDelete" runat="server" Text="Delete" />
-            <asp:Button ID="btnModify" runat="server" style="margin-top: 0px" Text="Modify" />
-        </p>
-        <asp:Button ID="btnSearch" runat="server" Text="Search" />
-        <p>
-            &nbsp;<asp:Label ID="lblId" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services ID:"></asp:Label>
+            <asp:Label ID="lblId" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services ID:"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
             <asp:TextBox ID="txbId" runat="server"></asp:TextBox>
         </p>
@@ -52,9 +46,24 @@
         <asp:RadioButton runat="server" />
         <br />
         <br />
+        <asp:Label ID="lblContact0" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services Location Latitude:"></asp:Label>
+        &nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txbContact0" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Label ID="lblContact1" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services Location Longitude:"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txbContact1" runat="server"></asp:TextBox>
+        <br />
+        <br />
         <p>
-            &nbsp;&nbsp;<asp:Button ID="btnExit" runat="server" Text="Exit" />
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
         </p>
+        <p>
+            <asp:Button ID="btnExit" runat="server" Text="Exit" />
+        </p>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>

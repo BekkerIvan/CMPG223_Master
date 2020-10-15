@@ -69,8 +69,7 @@
         <br />
         <asp:Button ID="btnCommit" runat="server" Text="Submit" OnClick="btnCommit_Click" />
 &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
->>>>>>> Stashed changes
+        >>>>>>> Stashed changes
     </form>
 </body>
 </html>

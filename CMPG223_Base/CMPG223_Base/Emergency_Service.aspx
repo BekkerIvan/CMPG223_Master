@@ -14,44 +14,48 @@
         <br />
         <br />
         <asp:Label ID="lblSelectAction" runat="server" Font-Bold="True" Font-Size="Medium" Text="Select Action to perform:"></asp:Label>
-        <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+        <asp:RadioButtonList ID="rblAction" runat="server">
             <asp:ListItem>Create new Emergency Service</asp:ListItem>
             <asp:ListItem>Edit Emergency Service</asp:ListItem>
         </asp:RadioButtonList>
         <br />
         <asp:Label ID="lblSelectService" runat="server" Font-Bold="True" Font-Size="Medium" Text="Select Emergency Service:"></asp:Label>
         <br />
-        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="Emergency_Service_Name" DataTextField="EMERGENCY_SERVICE_NAME" DataValueField="EMERGENCY_SERVICE_NAME">
+        <asp:DropDownList ID="drlServiceName" runat="server" DataSourceID="Emergency_Service_Name" DataTextField="EMERGENCY_SERVICE_NAME" DataValueField="EMERGENCY_SERVICE_NAME">
         </asp:DropDownList>
         <asp:SqlDataSource ID="Emergency_Service_Name" runat="server" ConnectionString="<%$ ConnectionStrings:CBOX_DBConnectionString %>" SelectCommand="SELECT [EMERGENCY_SERVICE_NAME] FROM [EMERGENCY_SERVICE]"></asp:SqlDataSource>
         <br />
+        <asp:Label ID="lblServiceID1" runat="server" Font-Bold="True" Text="Service ID:"></asp:Label>
+&nbsp;&nbsp;
+        <asp:Label ID="lblServiceID2" runat="server" Font-Bold="True" Text="[lblServiceID2]"></asp:Label>
         <p>
-            <asp:Label ID="lblId" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services ID:"></asp:Label>
+            <asp:Label ID="lblId" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services ID:"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
             <asp:TextBox ID="txbId" runat="server"></asp:TextBox>
         </p>
-        <asp:Label ID="lblName" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services Name:"></asp:Label>
+        <asp:Label ID="lblName" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Name:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <asp:TextBox ID="txbName" runat="server"></asp:TextBox>
         <p>
-            <asp:Label ID="lblType" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services Type:"></asp:Label>
+            <asp:Label ID="lblType" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Type:"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
             <asp:TextBox ID="txbType" runat="server"></asp:TextBox>
         </p>
-        <asp:Label ID="lblContact" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services Contact:"></asp:Label>
+        <asp:Label ID="lblContact" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Contact:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txbContact" runat="server"></asp:TextBox>
         <br />
         <br />
-        Emergency Services Archive:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblServiceArchive" runat="server" Font-Bold="True" Text="Emergency Services Archive:&nbsp;"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:RadioButton runat="server" />
         <br />
         <br />
-        <asp:Label ID="lblContact0" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services Location Latitude:"></asp:Label>
+        <asp:Label ID="lblContact0" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Location Latitude:"></asp:Label>
         &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txbContact0" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Label ID="lblContact1" runat="server" Font-Bold="False" Font-Size="Medium" Text="Emergency Services Location Longitude:"></asp:Label>
+        <asp:Label ID="lblContact1" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Location Longitude:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txbContact1" runat="server"></asp:TextBox>
         <br />

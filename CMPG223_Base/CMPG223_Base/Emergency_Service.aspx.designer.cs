@@ -40,13 +40,13 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.Label lblSelectAction;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// rblAction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblAction;
         
         /// <summary>
         /// lblSelectService control.
@@ -58,13 +58,13 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.Label lblSelectService;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// drlServiceName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList drlServiceName;
         
         /// <summary>
         /// Emergency_Service_Name control.
@@ -74,6 +74,24 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource Emergency_Service_Name;
+        
+        /// <summary>
+        /// lblServiceID1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblServiceID1;
+        
+        /// <summary>
+        /// lblServiceID2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblServiceID2;
         
         /// <summary>
         /// lblId control.
@@ -146,6 +164,15 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txbContact;
+        
+        /// <summary>
+        /// lblServiceArchive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblServiceArchive;
         
         /// <summary>
         /// lblContact0 control.

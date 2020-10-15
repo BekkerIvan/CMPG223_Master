@@ -98,5 +98,10 @@ namespace CMPG223_Base
                 Response.Cookies.Add(CookieObj);
             }
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

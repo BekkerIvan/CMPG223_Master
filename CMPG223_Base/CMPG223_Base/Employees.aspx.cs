@@ -214,5 +214,10 @@ namespace CMPG223_Base
             }
            
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

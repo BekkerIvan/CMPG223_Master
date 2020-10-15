@@ -18,8 +18,8 @@ namespace CMPG223_Base
 {
     public partial class Admin_Emergency_Situation : System.Web.UI.Page
     {
-        protected double lat = -25.00000;
-        protected double lng = 28.000000;
+        protected string lat = "-25.00000";
+        protected string lng = "28.000000";
         private string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
         private string sProvince;
 
@@ -28,9 +28,9 @@ namespace CMPG223_Base
             if (IsPostBack)
             {
                 if (Session["LAT"] != null)
-                    double.TryParse(Session["LAT"].ToString(), out lat);
+                     lat = Session["LAT"].ToString();
                 if (Session["LNG"] != null)
-                    double.TryParse(Session["LNG"].ToString(), out lng);
+                     lng = Session["LNG"].ToString();
                 string initializeScript = "<script type='text/javascript'>initMap();</script>";
                 this.Page.ClientScript.RegisterStartupScript(this.GetType(), "Script", initializeScript, true);
             }
@@ -92,7 +92,7 @@ namespace CMPG223_Base
         public void GeoCodeTest(string address)
         {
             var _request = new AddressGeocodeRequest { Address = address };
-            _request.Key = "API-KEY";
+            _request.Key = "AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo";
             var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
             Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
 
@@ -100,10 +100,12 @@ namespace CMPG223_Base
             
             foreach (Result item in jPars.results)
             {
-                lat = item.geometry.location.lat;       
-                lng = item.geometry.location.lng;
+                lat = item.geometry.location.lat.ToString();       
+                lng = item.geometry.location.lng.ToString();
             }
-            tbCoordinates.Text = lat.ToString() + "   :   " + lng.ToString();
+            lat = fixString(lat);
+            lng = fixString(lng);
+            tbCoordinates.Text = lat + ", " + lng;
             Session["LAT"] = lat;
             Session["LNG"] = lng;
             
@@ -165,7 +167,7 @@ namespace CMPG223_Base
                 command.Parameters.AddWithValue("@Description", sDiscription);
                 command.Parameters.AddWithValue("@Timestamp", dtTimeStamp);
                 command.Parameters.AddWithValue("@EmployeeID", iEmployee_ID);
-                command.Parameters.AddWithValue("@EType", sEmergencyType);//?
+                command.Parameters.AddWithValue("@EType", sEmergencyType);//?  change var to lbSit_Type.selcdedIndex.value
                 command.Parameters.AddWithValue("@province", sProvince);
 
                 adapter.InsertCommand = command;
@@ -320,8 +322,8 @@ namespace CMPG223_Base
         protected void btnClear_Click(object sender, EventArgs e)
         {
             Submit.Enabled = true;
-            lat = 25.000;
-            lng = 28.000;
+            lat = "25.000";
+            lng = "28.000";
             sProvince = null;
             Session["LAT"] = null;
             Session["LNG"] = null;
@@ -330,9 +332,11 @@ namespace CMPG223_Base
             ddlEmergencyType.SelectedIndex = 0;
         }
 
-        private void closeCnn()
+        private string fixString(String sCoordinate)
         {
-            
+            string sFixed;
+            sFixed = sCoordinate.Replace(',', '.');
+            return sFixed;
         }
     }
 }          

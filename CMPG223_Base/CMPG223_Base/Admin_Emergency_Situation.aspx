@@ -116,7 +116,7 @@ function initMap() {
   var pin = {lat: <%=lat%>, lng: <%=lng%>};
   // The map, centered at Uluru
     var map = new google.maps.Map(
-        document.getElementById('map'), { zoom: 4, center: pin });
+        document.getElementById('map'), { zoom: 10, center: pin });
   // The marker, positioned at Uluru
     var marker = new google.maps.Marker({ position: pin, map: map });
     //return false;
@@ -127,7 +127,7 @@ function initMap() {
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function-->
     <script defer="defer"
-    src="https://maps.googleapis.com/maps/api/js?key=API-KEY&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo&callback=initMap">
     </script>
     
         

@@ -68,13 +68,9 @@ namespace CMPG223_Base
                     while (sqlDataReader.Read()) {
                         if (txtUsername.Text == sqlDataReader.GetString(3)) {
                                 if (txtPassword.Text == sqlDataReader.GetString(4)) {
-
-                                sqlCommandObj.CommandText
-
-
-
                                 sqlCommandObj.Parameters.Clear();
                                 Session["EMPLOYEE_ID"] = sqlDataReader.GetInt32(0);
+                                Session["EMPLOYEE_USERROLE"] = sqlDataReader.GetInt32(6);
                                 sqlCommandObj.CommandText ="INSERT INTO EMPLOYEE_LOG (DATE, LOG_IN_TIME, EMPLOYEE_ID) VALUES ('"+DateTime.Today+"', '"+DateTime.Now+"', '"+ sqlDataReader.GetInt32(0) + "')";
                                 sqlDataReader.Close();
                                 sqlCommandObj.ExecuteNonQuery();

@@ -20,7 +20,7 @@ namespace CMPG223_Base
     {
         protected string lat = "-25.00000";
         protected string lng = "28.000000";
-        private string mainconn = ConfigurationManager.ConnectionStrings["myCnn"].ConnectionString;
+        private string mainconn = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         private string sProvince;
 
         protected void Page_Load(object sender, EventArgs e)

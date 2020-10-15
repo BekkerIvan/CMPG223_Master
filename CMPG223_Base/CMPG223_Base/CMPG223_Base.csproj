@@ -45,8 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GoogleApi, Version=3.10.3.0, Culture=neutral, PublicKeyToken=781851e053b06e74, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleApi.3.10.3\lib\net45\GoogleApi.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -152,6 +156,9 @@
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="WhatsApp_Image_2020-10-13_at_20.49.20-removebg-preview.png" />
+    <Content Include="WhatsApp_Image_2020-10-15_at_18.41.12-removebg-preview.png" />
+    <Content Include="WhatsApp_Image_2020-10-15_at_18.41.12__1_-removebg-preview.png" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -235,9 +242,6 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="TestPage.html" />
     <Content Include="Web.config" />
-    <Content Include="WhatsApp Image 2020-10-13 at 20.49.20.jpeg" />
-    <Content Include="WhatsApp_Image_2020-10-13_at_20.49.20-icon.png" />
-    <Content Include="WhatsApp_Image_2020-10-13_at_20.49.20-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin_Emergency_Situation.aspx.cs">

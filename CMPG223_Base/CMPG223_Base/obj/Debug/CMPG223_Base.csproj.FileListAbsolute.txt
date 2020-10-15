@@ -89,7 +89,6 @@ C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\rosl
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.IO.Compression.ZipFile.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Net.Http.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -181,3 +180,9 @@ C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\rosl
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Memory.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Numerics.Vectors.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\GoogleApi.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\BouncyCastle.Crypto.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\GoogleApi.xml
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.xml
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\BouncyCastle.Crypto.xml

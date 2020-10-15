@@ -25,7 +25,7 @@
         <asp:Label ID="lblSelectEmp" runat="server" Font-Bold="True" Text="Select employee username:" Visible="False"></asp:Label>
         `<br />
         <asp:DropDownList ID="drlUserName" runat="server" DataSourceID="EMPLOYEE_USERNAME" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="False" AutoPostBack="True" OnSelectedIndexChanged="drlUserName_SelectedIndexChanged">
-            <asp:ListItem>n/a</asp:ListItem>
+            <asp:ListItem Text="" Value="" />
         </asp:DropDownList>
         <asp:SqlDataSource ID="EMPLOYEE_USERNAME" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_USERNAME] FROM [EMPLOYEE]"></asp:SqlDataSource>
         <br />

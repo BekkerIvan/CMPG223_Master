@@ -72,7 +72,7 @@ namespace CMPG223_Base
                                 Session.Remove("TotalLoginAttemptsInt");
                                 Session["EMPLOYEE_ID"] = sqlDataReader.GetString(0);
                             } else {
-                                MessageBox.Show("Login Failed.");
+                                //MessageBox.Show("Login Failed.");
                             }
                         }
                     }

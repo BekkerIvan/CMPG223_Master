@@ -40,13 +40,13 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// rblAction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblAction;
         
         /// <summary>
         /// lblSelectEmp control.
@@ -58,13 +58,13 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.Label lblSelectEmp;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// drlUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList drlUserName;
         
         /// <summary>
         /// EMPLOYEE_USERNAME control.
@@ -148,6 +148,15 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.TextBox txbUName;
         
         /// <summary>
+        /// lblInvalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInvalid;
+        
+        /// <summary>
         /// Label6 control.
         /// </summary>
         /// <remarks>
@@ -200,6 +209,15 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblUserRole;
+        
+        /// <summary>
+        /// UserRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource UserRole;
         
         /// <summary>
         /// btnCommit control.

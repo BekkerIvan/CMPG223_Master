@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" Async="true" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" %>
 
 <!DOCTYPE html>
 
@@ -72,22 +72,17 @@
                         </div><br />
                  <div>
                       <asp:Label ID="Label3" runat="server" Text="Coordinates: " AssociatedControlID="tbCoordinates"></asp:Label>
-                      <asp:TextBox ID="tbCoordinates" runat="server" ReadOnly="true" CssClass="form-control"></asp:TextBox><br />
-                      <asp:Button ID="btnAddEService" runat="server" Text="Add another emergency service" CssClass="btn btn-primary form-control" OnClick="btnAddEService_Click" />
+                     <asp:TextBox ID="tbCoordinates" runat="server" ReadOnly="true" CssClass="form-control"></asp:TextBox>
                  </div>
              </div>
              <div class="col-md-6">
                  <div>
-                     <asp:Label ID="lblE_Sit_Type" runat="server" Text="Type of emergency:" AssociatedControlID="ddlE_Sit_Type" ></asp:Label>
-                     <asp:DropDownList ID="ddlE_Sit_Type" runat="server" CssClass="form-control" AppendDataBoundItems="true"></asp:DropDownList>
-                 </div><br />
-                 <div>
-                    <asp:Label ID="Label2" runat="server" Text="Type of Emergency service:  " AssociatedControlID="ddlEmergencyType"></asp:Label>
-                    <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="true" ></asp:DropDownList>
+                    <asp:Label ID="Label2" runat="server" Text="Type of Emergency:  " AssociatedControlID="ddlEmergencyType"></asp:Label>
+                    <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" ></asp:DropDownList>
                  </div><br />        
                  <div>
                      <asp:Label ID="Label4" runat="server" Text="Assign emergency personnel: " AssociatedControlID="lbPersonnel"></asp:Label>
-                     <asp:ListBox ID="lbPersonnel" runat="server" CssClass="form-control" SelectionMode="Multiple"></asp:ListBox>
+                     <asp:ListBox ID="lbPersonnel" runat="server" CssClass="form-control"></asp:ListBox>
                  </div>
                 </div>
             </div>
@@ -99,10 +94,6 @@
                 </div><br />
                 <div>
                     <asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="form-control btn btn-primary" OnClick="Submit_Click" />
-                </div><br />
-                <div class="col-md-6">
-                    <asp:Label ID="lblFeedback" runat="server" Visible="false" AssociatedControlID="btnClear"></asp:Label><br />
-                    <asp:Button ID="btnClear" runat="server" Visible="false" Text="Create new emergency situation" CssClass="form-control btn btn-primary" OnClick="btnClear_Click" />
                 </div>
             </div><br />
         </div>
@@ -116,7 +107,7 @@ function initMap() {
   var pin = {lat: <%=lat%>, lng: <%=lng%>};
   // The map, centered at Uluru
     var map = new google.maps.Map(
-        document.getElementById('map'), { zoom: 10, center: pin });
+        document.getElementById('map'), { zoom: 4, center: pin });
   // The marker, positioned at Uluru
     var marker = new google.maps.Marker({ position: pin, map: map });
     //return false;

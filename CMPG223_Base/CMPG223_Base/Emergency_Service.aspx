@@ -21,7 +21,7 @@
         <br />
         <asp:Label ID="lblSelectService" runat="server" Font-Bold="True" Font-Size="Medium" Text="Select Emergency Service:"></asp:Label>
         <br />
-        <asp:DropDownList ID="drlServiceName" runat="server" DataSourceID="Emergency_Service_Name" DataTextField="EMERGENCY_SERVICE_NAME" DataValueField="EMERGENCY_SERVICE_NAME">
+        <asp:DropDownList ID="drlServiceName" runat="server" DataSourceID="Emergency_Service_Name" DataTextField="EMERGENCY_SERVICE_NAME" DataValueField="EMERGENCY_SERVICE_NAME" OnSelectedIndexChanged="drlServiceName_SelectedIndexChanged">
         </asp:DropDownList>
         <asp:SqlDataSource ID="Emergency_Service_Name" runat="server" ConnectionString="<%$ ConnectionStrings:CBOX_DBConnectionString %>" SelectCommand="SELECT [EMERGENCY_SERVICE_NAME] FROM [EMERGENCY_SERVICE]"></asp:SqlDataSource>
         <br />
@@ -43,7 +43,7 @@
         <br />
         <asp:Label ID="lblServiceArchive" runat="server" Font-Bold="True" Text="Emergency Services Archive:&nbsp;"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:RadioButton runat="server" ID="rbtArchive" Text="[ticked is archived]" />
+        <asp:CheckBox ID="chbArchive" runat="server" Text="[ticked is archived]" />
         <br />
         <br />
         <asp:Label ID="lblLat" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Location Latitude:"></asp:Label>

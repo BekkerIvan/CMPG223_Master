@@ -39,5 +39,24 @@ namespace CMPG223_Base
                 btnSubmit.Text = "Submit";
             }
         }
+
+        protected void drlServiceName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //get user name to search
+            string userName;
+            userName = drlServiceName.SelectedValue;
+
+            //retrieve information and display relevant fields
+            SqlCommand command;
+
+            string sql;
+            SqlConnection conn;
+            string constr;
+            constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
+            conn = new SqlConnection(constr);
+            conn.Open();
+
+            
+        }
     }
 }

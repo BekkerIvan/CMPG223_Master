@@ -80,11 +80,7 @@ namespace CMPG223_Base
                     lblFeedback.Text = "An error has occured. Please reload the page and try again and if the problem presists contact your system administrator.\n" + ex;
                 }
                 
-
-
-
-                // Only for testing purposes  session info to come from login
-                Session["E_ID"] = 1;
+                Session["EMPLOYEE_ID"] = 1;
             }  
         }
 
@@ -134,8 +130,6 @@ namespace CMPG223_Base
                 lblFeedback.Text = "" + ex;
 
             }
-            
-            //tbDescription.Text = _response.RawJson.ToString();                //Ivan, hier is die raw json array as jy nog wil sien hoe dit lyk
         }
 
         protected void Submit_Click(object sender, EventArgs e)
@@ -151,6 +145,7 @@ namespace CMPG223_Base
                 int iE_Sit_ID = 0;
                 int iLocation_ID = 0;
                 int.TryParse(lbPersonnel.SelectedValue, out int iE_Service_ID);
+                string sESitTypeID;
 
                 if (tbCoordinates.Text == "")
                 {
@@ -173,8 +168,11 @@ namespace CMPG223_Base
                     int.TryParse(sEmergencyPersonnel_ID, out iEmergencyPersonnel_ID);
                 }
                 else { throw new Exception("No emergency service selected. Please select a service."); }
-
-
+                if (ddlE_Sit_Type.SelectedIndex >= 0)
+                {
+                    sESitTypeID = ddlE_Sit_Type.SelectedValue;
+                }
+                else { throw new Exception("No emergency type selected. Please select a type of emergency."); }
 
                 SqlConnection cnn = new SqlConnection(mainconn);
                 SqlDataAdapter adapter = new SqlDataAdapter();
@@ -186,7 +184,7 @@ namespace CMPG223_Base
                 command.Parameters.AddWithValue("@Description", sDiscription);
                 command.Parameters.AddWithValue("@Timestamp", dtTimeStamp);
                 command.Parameters.AddWithValue("@EmployeeID", iEmployee_ID);
-                command.Parameters.AddWithValue("@EType", sEmergencyType);//?  change var to lbSit_Type.selcdedIndex.value
+                command.Parameters.AddWithValue("@EType", sESitTypeID);
                 command.Parameters.AddWithValue("@province", sProvince);
 
                 adapter.InsertCommand = command;
@@ -296,10 +294,6 @@ namespace CMPG223_Base
                 cnn.Close();
 
                 Session["E_Type"] = ddlEmergencyType.SelectedIndex;
-                HttpCookie _Type = new HttpCookie("ET");
-                _Type["index"] = ddlEmergencyType.SelectedIndex.ToString();//remove cookie?
-                _Type["item"] = ddlEmergencyType.SelectedItem.Text;
-                Response.Cookies.Add(_Type);
             }
             catch (Exception ex)
             {

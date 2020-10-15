@@ -10,6 +10,8 @@
     <form id="form1" runat="server">
         <div>
         </div>
+<<<<<<< Updated upstream
+=======
         <asp:Label ID="Label1" runat="server" Text="Employee Maintenance" Font-Bold="True" Font-Size="Larger"></asp:Label>
         <br />
         <br />
@@ -67,7 +69,8 @@
         <br />
         <asp:Button ID="btnCommit" runat="server" Text="Submit" OnClick="btnCommit_Click" />
 &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+>>>>>>> Stashed changes
     </form>
 </body>
 </html>

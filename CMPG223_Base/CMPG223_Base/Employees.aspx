@@ -11,6 +11,60 @@
     <title></title>
 </head>
 <body style="background-color:rgb(67, 119, 167);">
+        <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div>
+            </form>
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
     <form id="form1" runat="server">
         <br />
         <div class="d-flex justify-content-center">
@@ -29,13 +83,14 @@
                         </div>
                     </div>
                     <br />
-                    <div class="fullWidth display-none" id="Update_Employee">
-                        <div class="text-center"><asp:Label ID="lblSelectEmp" runat="server" Font-Bold="True" Text="Select employee username:" Visible="true"></asp:Label></div><br />
-                        <div class="d-flex justify-content-center">
-                            <asp:DropDownList ID="dlEmpUser" runat="server" DataSourceID="CBOX_DB" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="true" CssClass="form-control col-md-6">
+                    <div class="fullWidth display-none" id="Update_Employee" style="padding-bottom:20px">
+                        <div class="row">
+                            <div class="text-center col-md-4"><asp:Label ID="lblSelectEmp" runat="server" Font-Bold="True" Text="Select Employee:" Visible="true"></asp:Label></div><br />
+                            <asp:DropDownList ID="dlEmpUser" runat="server" DataSourceID="CBOX_DB" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="true" CssClass="fullWidth form-control col-md-6 col-md-offset-4">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="CBOX_DB" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_USERNAME] FROM [EMPLOYEE]"></asp:SqlDataSource>                            
                         </div>
+
                     </div>
                     <div class=" fullWidth ">
                         <div id="lblEmployeeID_Div" class="row display-none" style="padding-bottom:20px">
@@ -83,19 +138,6 @@
             </div>
         </div>
         <br />
-
-        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        
-        <br />
-        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <br />
-        <br />
-        
-&nbsp;&nbsp;&nbsp;
-        
     </form>
 </body>
 </html>

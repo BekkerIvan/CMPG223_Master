@@ -7,12 +7,12 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using GoogleApi.Entities.Common;
+/*using GoogleApi.Entities.Common;
 using GoogleApi.Entities.Maps.Geocoding;
 using GoogleApi.Entities.Maps.Geocoding.Address.Request;
 using GoogleApi.Entities.Common.Enums;
 using Newtonsoft.Json;
-
+*/
 
 namespace CMPG223_Base
 {
@@ -91,7 +91,7 @@ namespace CMPG223_Base
         }
         public void GeoCodeTest(string address)
         {
-            var _request = new AddressGeocodeRequest { Address = address };
+/*            var _request = new AddressGeocodeRequest { Address = address };
             _request.Key = "API-KEY";
             var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
             Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
@@ -115,7 +115,7 @@ namespace CMPG223_Base
             {
                 sProvince = item.address_components[5].long_name;
             }
-            
+            */
             //tbDescription.Text = _response.RawJson.ToString();                //Ivan, hier is die raw json array as jy nog wil sien hoe dit lyk
         }
 

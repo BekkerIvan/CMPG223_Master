@@ -17,13 +17,32 @@ namespace CMPG223_Base
         public SqlCommand sqlCommandObj;
         public SqlDataReader sqlDataReader;
         public string sqlStatementStr;
+        protected HttpCookie CookieObj = new HttpCookie("LoginCookies");
+
         protected void Page_Load(object sender, EventArgs e) {
+            CookieObj = Request.Cookies["LoginCookies"];
+            if (CookieObj != null) {
+                txtUsername.Text = CookieObj["Username"].ToString();
+                //txtPassword.Text = rememberMeCookieObj["Password"].ToString();
+                cbRememberMe.Checked = true;
+                txtPassword.Attributes["type"] = "text";
+                txtPassword.Text = CookieObj["Password"].ToString();
+                txtPassword.Attributes["type"] = "password";
+            }
             if (Page.IsPostBack) {
                 int TotalLoginAttemptsInt = Convert.ToInt32(Session["TotalLoginAttemptsInt"]);
-                if (TotalLoginAttemptsInt < 3) {
-
-                } else {   
+                if (TotalLoginAttemptsInt >= 3) {
                     btnLogin.Enabled = false;
+                }
+            } else {
+                Session["TotalLoginAttemptsInt"] = 0;
+                if (CookieObj != null) {
+                    txtUsername.Text = CookieObj["Username"].ToString();
+                    //txtPassword.Text = rememberMeCookieObj["Password"].ToString();
+                    cbRememberMe.Checked = true;
+                    txtPassword.Attributes["TextMode"] = "singleline";
+                    txtPassword.Text = CookieObj["Password"].ToString();
+                    txtPassword.Attributes["TextMode"] = "password";
                 }
             }
         }
@@ -31,6 +50,12 @@ namespace CMPG223_Base
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text != "" && txtPassword.Text != "") {
+                if (CookieObj != null) {
+                    CookieObj["Username"] = txtUsername.Text;
+                    CookieObj["Password"] = txtPassword.Text;
+                    CookieObj.Expires = DateTime.Now.AddDays(7);
+                    Response.Cookies.Add(CookieObj);
+                }
                 if(MethodObj.openDatabaseConnection()) {
                     sqlCommandObj = new SqlCommand(null, MethodObj.sqlConnectionObj);
                     sqlCommandObj.CommandText = "SELECT * FROM EMPLOYEE WHERE EMPLOYEE_USERNAME = @Username";
@@ -41,14 +66,12 @@ namespace CMPG223_Base
                     sqlCommandObj.Prepare();
                     sqlDataReader = sqlCommandObj.ExecuteReader();
                     if (sqlDataReader != null) {
-                        while (sqlDataReader.Read())
-                        {
+                        while (sqlDataReader.Read()) {
                             if (txtUsername.Text == sqlDataReader.GetString(3) &&
-                                txtPassword.Text == sqlDataReader.GetString(6))
-                            {
-                                MessageBox.Show("Login Success.");
-                            } else
-                            {
+                                txtPassword.Text == sqlDataReader.GetString(6)) {
+                                Session.Remove("TotalLoginAttemptsInt");
+                                Session["EMPLOYEE_ID"] = sqlDataReader.GetString(0);
+                            } else {
                                 MessageBox.Show("Login Failed.");
                             }
                         }
@@ -68,6 +91,12 @@ namespace CMPG223_Base
             }
         }
 
-
+        protected void cbRememberMe_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!cbRememberMe.Checked) {
+                CookieObj.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(CookieObj);
+            }
+        }
     }
 }

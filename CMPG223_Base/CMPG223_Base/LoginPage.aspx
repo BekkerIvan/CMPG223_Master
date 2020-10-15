@@ -5,11 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/jquery-3.0.0.min.js"></script>
-    <script src="Scripts/jquery-3.0.0.min.js"></script>
 </head>
 <body style="background-color:rgb(67, 119, 167)">
     <form id="form1" runat="server">
@@ -35,10 +34,10 @@
                     </div>
                     <div class="row fullWidth">
                         <div class="col-md-6"><br />
-                            <asp:CheckBox ID="cbRememberMe" runat="server" Text="Remember Me"/>
+                            <asp:CheckBox ID="cbRememberMe" runat="server" Text="Remember Me" OnCheckedChanged="cbRememberMe_CheckedChanged"/>
                         </div>
                         <div class="col-md-6"><br />
-                            <a href="" style="color:black">Forgotten Password</a>
+                            <a href="#" style="color:black">Forgotten Password</a>
                         </div>
                     </div>
                 </div><br />

@@ -137,6 +137,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="download.png" />
+    <Content Include="Emergency_Service.aspx" />
     <Content Include="Employees.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="images-removebg-preview.png" />
@@ -244,6 +245,12 @@
     </Compile>
     <Compile Include="Admin_Emergency_Situation.aspx.designer.cs">
       <DependentUpon>Admin_Emergency_Situation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency_Service.aspx.cs">
+      <DependentUpon>Emergency_Service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency_Service.aspx.designer.cs">
+      <DependentUpon>Emergency_Service.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employees.aspx.cs">
       <DependentUpon>Employees.aspx</DependentUpon>

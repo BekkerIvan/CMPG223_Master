@@ -9,19 +9,15 @@ using System.Data.SqlClient;
 namespace CMPG223_Base
 {
     public partial class Employees : System.Web.UI.Page
-    {
-        
-
+    {     
         protected void Page_Load(object sender, EventArgs e)
-        {
-            
+        {            
 
         }
 
         protected void rblAction_SelectedIndexChanged1(object sender, EventArgs e)
         {
             //toggle the username drop down list
-
             int i = rblAction.SelectedIndex;
 
             if(i == 1)
@@ -42,8 +38,7 @@ namespace CMPG223_Base
                 txbCNum.Text = "";
                 rblUserRole.SelectedIndex = -1;
                 btnCommit.Text = "Submit";
-            }
-                
+            }                
         }
 
         protected void drlUserName_SelectedIndexChanged1(object sender, EventArgs e)

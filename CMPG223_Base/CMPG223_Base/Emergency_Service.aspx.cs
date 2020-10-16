@@ -38,13 +38,14 @@ namespace CMPG223_Base
                 txbContact.Text = "";
                 txbLat.Text = "";
                 txbLng.Text = "";
+                CheckBox1.Checked = false;
                 btnSubmit.Text = "Submit";
             }
         }
 
         protected void drlServiceName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //get user name to search
+            //get service name to search
             string name;
             name = drlServiceName.SelectedValue;
 
@@ -59,6 +60,9 @@ namespace CMPG223_Base
             conn.Open();
 
             //read data from database
+            archive = -1;
+            string test1;
+            int test2 = 0;
 
             sql = "Select * From EMERGENCY_SERVICE WHERE EMERGENCY_SERVICE_NAME = '" + @name + "';";
             command = new SqlCommand(sql, conn);
@@ -70,16 +74,17 @@ namespace CMPG223_Base
                 txbName.Text = dr["EMERGENCY_SERVICE_NAME"].ToString();
                 txbType.Text = dr["EMERGENCY_SERVICE_TYPE"].ToString();
                 txbContact.Text = dr["EMERGENCY_SERVICE_CONTACT"].ToString();
-                if (CheckBox1.Checked)
+                test1 = dr["EMERGENCY_SERVICE_CONTACT"].ToString();
+                test2 = int.Parse(test1);
+                if (test2 == 1)
                 {
-                    archive = 1;
+                    CheckBox1.Checked = true;
                 }
                 else
                 {
-                    archive = 0;
+                    CheckBox1.Checked = false;
                 }
-                txbLat.Text = dr["LOCATION_LATITUDE"].ToString();
-                txbLng.Text = dr["LOCATION_LONGITUDE"].ToString();
+
             }
             dr.Close();
             conn.Close();
@@ -137,7 +142,7 @@ namespace CMPG223_Base
 
                 //add new record
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                //sql = "Insert into EMPLOYEE(EMPLOYEE_FIRSTNAME,EMPLOYEE_LASTNAME, EMPLOYEE_USERNAME, EMPLOYEE_PASSWORD, EMPLOYEE_CONTACTNUMBER, USERROLE) values('" + @fName + "','" + @lName + "','" + @uName + "','" + @password + "','" + @cNum + "','" + userRole + "');";
+                sql = "Insert into EMERGENCY_SERVICE(EMERGENCY_SERVICE_NAME,EMERGENCY_SERVICE_TYPE, EMERGENCY_SERVICE_CONTACT, EMERGENCY_SERVICE_ARCHIVE, LOCATION_LATITUDE, LOCATION_LONGITUDE) values('" + @name + "','" + @type + "','" + @contact + "','" + @archive + "','" + @lat + "','" + @lng + "');";
                 command = new SqlCommand(sql, conn);
                 adapter.InsertCommand = new SqlCommand(sql, conn);
                 adapter.InsertCommand.ExecuteNonQuery();

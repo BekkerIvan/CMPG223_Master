@@ -180,12 +180,6 @@ C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\rosl
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Memory.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Numerics.Vectors.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\GoogleApi.dll
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.dll
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\BouncyCastle.Crypto.dll
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\GoogleApi.xml
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.xml
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\BouncyCastle.Crypto.xml
 C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\CMPG223_Base.dll.config
 C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\CMPG223_Base.dll
 C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\CMPG223_Base.pdb
@@ -249,3 +243,9 @@ C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\
 C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CopyComplete
 C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.dll
 C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.pdb
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Net.Http.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\GoogleApi.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\GoogleApi.xml
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.xml

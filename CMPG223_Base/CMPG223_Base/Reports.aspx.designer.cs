@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CMPG223_Base {
-    
-    
-    public partial class Reports {
-        
+namespace CMPG223_Base
+{
+
+
+    public partial class Reports
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -29,7 +31,34 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
+        /// <summary>
+        /// Label9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label9;
+
+        /// <summary>
+        /// rblReports control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblReports;
+
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+
         /// <summary>
         /// cbLimpopo control.
         /// </summary>
@@ -38,7 +67,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbLimpopo;
-        
+
         /// <summary>
         /// cbGauteng control.
         /// </summary>
@@ -47,7 +76,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbGauteng;
-        
+
         /// <summary>
         /// cbMpumalanga control.
         /// </summary>
@@ -56,7 +85,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbMpumalanga;
-        
+
         /// <summary>
         /// cbNorthWest control.
         /// </summary>
@@ -65,7 +94,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbNorthWest;
-        
+
         /// <summary>
         /// cbFreestate control.
         /// </summary>
@@ -74,7 +103,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbFreestate;
-        
+
         /// <summary>
         /// cbKwaZuluNatal control.
         /// </summary>
@@ -83,7 +112,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbKwaZuluNatal;
-        
+
         /// <summary>
         /// cbNorthernCape control.
         /// </summary>
@@ -92,7 +121,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbNorthernCape;
-        
+
         /// <summary>
         /// cbEasternCape control.
         /// </summary>
@@ -101,7 +130,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbEasternCape;
-        
+
         /// <summary>
         /// cbWesternCape control.
         /// </summary>
@@ -110,7 +139,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbWesternCape;
-        
+
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -119,7 +148,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// drlFName control.
         /// </summary>
@@ -128,7 +157,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList drlFName;
-        
+
         /// <summary>
         /// User_FirstName control.
         /// </summary>
@@ -137,7 +166,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource User_FirstName;
-        
+
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -146,7 +175,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// drlLName control.
         /// </summary>
@@ -155,7 +184,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList drlLName;
-        
+
         /// <summary>
         /// User_LastName control.
         /// </summary>
@@ -164,7 +193,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource User_LastName;
-        
+
         /// <summary>
         /// lblStartDate control.
         /// </summary>
@@ -173,7 +202,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStartDate;
-        
+
         /// <summary>
         /// StartCalendar control.
         /// </summary>
@@ -182,7 +211,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar StartCalendar;
-        
+
         /// <summary>
         /// lblEndDate control.
         /// </summary>
@@ -191,7 +220,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEndDate;
-        
+
         /// <summary>
         /// EndCalendar control.
         /// </summary>
@@ -200,7 +229,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar EndCalendar;
-        
+
         /// <summary>
         /// btnProvinceReport control.
         /// </summary>
@@ -209,7 +238,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnProvinceReport;
-        
+
         /// <summary>
         /// btnExtract control.
         /// </summary>
@@ -218,7 +247,7 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnExtract;
-        
+
         /// <summary>
         /// grvOutput control.
         /// </summary>

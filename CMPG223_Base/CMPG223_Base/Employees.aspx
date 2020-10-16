@@ -4,51 +4,50 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
     <title></title>
 </head>
 <body style="background-color:rgb(67, 119, 167);">
-        <!--Navbar-->
+            <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">Navbar</a>
+
+        <img class="navbar-brand" height="50px" width="50px"  src="WhatsApp_Image_2020-10-15_at_18.41.12-removebg-preview.png" />
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                 aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
 
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="Admin_Emergency_Situation.aspx">
                         Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="Emergency_Service.aspx">Emergency Service</a>
                 </li>
 
                 <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle fa fa-cogs" id="navbarDropdownMenuLink" data-toggle="dropdown"style="padding:15px;" aria-haspopup="true" aria-expanded="false"></a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a></a>
+                        <a class="dropdown-item" href="Employees.aspx">Maintain Employess</a>
+                        <a class="dropdown-item" href="Reports.aspx">Reports</a>
+                        <a class="dropdown-item" href="#">Emergency Situation Type</a>
                     </div>
                 </li>
 
@@ -56,11 +55,24 @@
             <!-- Links -->
 
             <form class="form-inline">
+
                 <div class="md-form my-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
+                    <div>
+                        <a class="form-control" id="Logout_Span" href="LoginPage.aspx">Log out</a>
+                    </div>
                 </div>
             </form>
         </div>
+        <style>
+            #Logout_Span {
+                font-weight:600;
+            }
+                #Logout_Span:hover {
+                    background-color: rgb(67, 119, 167);
+                    color: black;
+                    border:none;
+                }
+        </style>
         <!-- Collapsible content -->
 
     </nav>
@@ -83,13 +95,12 @@
                         </div>
                     </div>
                     <br />
-                    <div id="Update_Employee" style="padding-bottom:20px">
+                    <div id="Update_Employee" class="fullWidth" style="padding-bottom:20px">
                         <div class="row">
                             <div class="text-center col-md-4"><asp:Label ID="lblSelectEmp" runat="server" Font-Bold="True" Text="Select Employee:" Visible="False"></asp:Label></div><br />
-                            <div class="col-md-6 text-center"><asp:DropDownList ID="drlUserName" runat="server" DataSourceID="CBOX_DB" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="False" CssClass="fullWidth form-control col-md-6 col-md-offset-4" AutoPostBack="True" OnSelectedIndexChanged="drlUserName_SelectedIndexChanged1" Width="300px">
+                            <asp:DropDownList ID="drlUserName" runat="server" DataSourceID="CBOX_DB" DataTextField="EMPLOYEE_USERNAME" DataValueField="EMPLOYEE_USERNAME" Visible="False" CssClass="fullWidth form-control col-md-6" AutoPostBack="True" OnSelectedIndexChanged="drlUserName_SelectedIndexChanged1" Width="300px">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="CBOX_DB" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_USERNAME] FROM [EMPLOYEE]"></asp:SqlDataSource></div>                            
-                        </div>
 
                     </div>
                     <div class=" fullWidth ">

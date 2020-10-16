@@ -44,14 +44,14 @@ namespace CMPG223_Base
 
         }
 
-        private void ExportGridToExcel(string reportName)//add parameter report name
+        private void ExportGridToExcel()//add parameter report name
         {
             Response.Clear();
             Response.Buffer = true;
             Response.ClearContent();
             Response.ClearHeaders();
             Response.Charset = "";
-            string FileName = reportName + DateTime.Now + ".xlsx";
+            string FileName = "reportName" + DateTime.Now + ".xlsx";
             StringWriter strwritter = new StringWriter();
             HtmlTextWriter htmltextwrtter = new HtmlTextWriter(strwritter);
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
@@ -67,6 +67,10 @@ namespace CMPG223_Base
 
         protected void btnExtract_Click(object sender, EventArgs e)
         {
+           /* if (rblReports.SelectedIndex >= 0)
+            {
+                ExportGridToExcel("progress Report");
+            }*/
             ExportGridToExcel();
             string sqlQuery = "SELECT * FROM EMERGENCY_SERVICE";
             //extractReport(sqlQuery);

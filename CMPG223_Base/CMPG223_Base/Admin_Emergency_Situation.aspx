@@ -1,14 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" Async="true" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
     <title></title>
     <style>
        /* Set the size of the div element that contains the map */
@@ -53,12 +53,90 @@
     </style>
     
 </head>
-<body style="background-color:lightgray">
+<body style="background-color:rgb(67, 119, 167);">
     <form id="form1" runat="server">
-        <br /><br />
-        <div class="container" style="background-color:white;box-shadow:2px 2px blue">
-            <br />
-            <div class="text-center">
+                    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+        <!-- Navbar brand -->
+
+        <img class="navbar-brand" height="50px" width="50px"  src="WhatsApp_Image_2020-10-15_at_18.41.12-removebg-preview.png" />
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Admin_Emergency_Situation.aspx">
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Emergency_Service.aspx">Emergency Service</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle fa fa-cogs" id="navbarDropdownMenuLink" data-toggle="dropdown"style="padding:15px;" aria-haspopup="true" aria-expanded="false"></a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a></a>
+                        <a class="dropdown-item" href="Employees.aspx">Maintain Employess</a>
+                        <a class="dropdown-item" href="Reports.aspx">Reports</a>
+                        <a class="dropdown-item" href="#">Emergency Situation Type</a>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline">
+
+                <div class="md-form my-0">
+                    <div>
+                        <a class="form-control" id="Logout_Span" href="LoginPage.aspx">Log out</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <style>
+            #Logout_Span {
+                font-weight:600;
+            }
+                #Logout_Span:hover {
+                    background-color: rgb(67, 119, 167);
+                    color: black;
+                    border:none;
+                }
+        </style>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="d-flex justify-content-center">
+            <div class="col-md-6" style="background-color:white;;box-shadow:3px 3px red;border-radius:10px">
+                            <div class="text-center">
                 <asp:Label ID="lblTitle" runat="server" Text="Maintain Emergency Situations" style="font-size:xx-large"></asp:Label>
             </div><br />
                 <div class="row">
@@ -95,16 +173,25 @@
             <div class="col-md-12">
                 <div>
                     <asp:Label ID="lblDescription" runat="server" Text="Description or details of emergency situation:" AssociatedControlID="tbDescription"></asp:Label>              
-                    <asp:TextBox ID="tbDescription" runat="server" CssClass="form-control" TextMode="MultiLine" style="resize:none"></asp:TextBox>
+                    <asp:TextBox ID="tbDescription" runat="server" CssClass="form-control" TextMode="MultiLine" style="resize:none;height:250px"></asp:TextBox>
                 </div><br />
                 <div>
-                    <asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="form-control btn btn-primary" OnClick="Submit_Click" />
+                    <asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="form-control btn btn-danger" OnClick="Submit_Click" />
                 </div><br />
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <asp:Label ID="lblFeedback" runat="server" Visible="false" AssociatedControlID="btnClear"></asp:Label><br />
                     <asp:Button ID="btnClear" runat="server" Visible="false" Text="Create new emergency situation" CssClass="form-control btn btn-primary" OnClick="btnClear_Click" />
                 </div>
             </div><br />
+
+
+
+
+
+
+            </div>
+            <br />
+
         </div>
          <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->

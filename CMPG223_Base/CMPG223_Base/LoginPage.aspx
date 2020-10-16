@@ -7,8 +7,9 @@
     <title></title>
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <script src="Scripts/popper.min.js"></script>
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
 </head>
 <body style="background-color:rgb(67, 119, 167)">
     <form id="form1" runat="server">
@@ -19,8 +20,8 @@
         <div class="d-flex justify-content-center" >
             <div class="col-md-6" style="background-color:white;box-shadow:3px 3px red;border-radius:10px" />
                 <div id="modal_Header" class="row">
-                    <div class="col-md-12">
-                        <img class="fullWidth" style="height:200px;object-fit:contain;" alt="C-Box.logo" src="C-BOX.png" height="150px">
+                    <div class="col-md-12 text-center">
+                        <img src="WhatsApp_Image_2020-10-15_at_18.41.12__1_-removebg-preview.png" />
                     </div>
                 </div><br />
                 <div id="modal_Body" class="row">
@@ -37,7 +38,7 @@
                             <asp:CheckBox ID="cbRememberMe" runat="server" Text="Remember Me" OnCheckedChanged="cbRememberMe_CheckedChanged"/>
                         </div>
                         <div class="col-md-6"><br />
-                            <a href="#" style="color:black">Forgotten Password</a>
+                            
                         </div>
                     </div>
                 </div><br />
@@ -59,6 +60,8 @@
 
 </style>
 <script>
+
+    
     function myHTMLInclude() {
         var z, i, a, file, xhttp;
         z = document.getElementsByTagName("*");

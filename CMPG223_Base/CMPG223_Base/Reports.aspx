@@ -15,7 +15,7 @@
         <div>
             <asp:Label ID="Label9" runat="server" Font-Bold="True" Text="Select report to generate:"></asp:Label></div>
             <div class="fullWidth">        
-            <asp:RadioButtonList ID="rblReports" runat="server" RepeatDirection="Horizontal" CssClass="col-md-12" style="margin:10px" AutoPostBack="True" OnSelectedIndexChanged="rblAction_SelectedIndexChanged1">
+            <asp:RadioButtonList ID="rblReports" runat="server" RepeatDirection="Horizontal" CssClass="col-md-12" style="margin:10px" AutoPostBack="True" >
                  <asp:ListItem>&nbsp;Emergency Situations per Province</asp:ListItem>
                  <asp:ListItem>&nbsp;Emergency Situations per time Period</asp:ListItem>
                  <asp:ListItem>&nbsp;Employee Log Reports</asp:ListItem>
@@ -69,7 +69,7 @@
             <asp:Button ID="btnProvinceReport" runat="server" Text="Run Report" OnClick="btnProvinceReport_Click" />
         &nbsp;&nbsp;&nbsp;
             
-            <asp:Button ID="btnExtract" runat="server" Text="Extract Report" />
+            <asp:Button ID="btnExtract" runat="server" Text="Extract Report" OnClick="btnExtract_Click" />
             <br />
             <br />
             <asp:GridView ID="grvOutput" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AutoGenerateColumns="False" DataKeyNames="EMPLOYEE_ID,LOG_ID" DataSourceID="SqlDataSource1">

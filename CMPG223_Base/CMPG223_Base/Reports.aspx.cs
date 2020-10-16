@@ -5,17 +5,53 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.IO;
+using System.Data;
+using System.Text;
 
 namespace CMPG223_Base
 {
     public partial class Reports : System.Web.UI.Page
     {
+        private string mainconn = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //string sqlQuery = "SELECT * FROM EMPLOYEE, EMPLOYEE_LOG WHERE EMPLOYEE.EMPLOYEE_ID = EMPLOYEE_LOG.EMPLOYEE_ID AND EMPLOYEE.EMPLOYEE_FIRSTNAME = '" + @firstName + "' AND EMPLOYEE.EMPLOYEE_LASTNAME = '" + @lastName + "' EMPLOYEE_LOG.DATE >= '" + @beginDate + "' AND EMPLOYEE_LOG.DATE <= '" + @endDate + "';";
 
         }
 
-        protected void btnProvinceReport_Click(object sender, EventArgs e)
+        private void extractReport(string sql)
+        {
+            try
+            {
+                SqlConnection cnn = new SqlConnection(mainconn);
+                string temp;
+
+                SqlCommand command = new SqlCommand(sql, cnn);
+                SqlDataReader reader = command.ExecuteReader();
+                StreamWriter outputFile;
+                outputFile = File.CreateText("Report.csv");
+                while (reader.Read())
+                {
+                    temp = reader.NextResult().ToString() + ",";
+                    outputFile.WriteLine(temp);
+
+                }
+                outputFile.Close();
+            }
+            catch (Exception ex)
+            { }
+        }
+
+        protected void btnExtract_Click(object sender, EventArgs e)
+        {
+            string sqlQuery = "SELECT * FROM EMERGENCY_SERVICE";
+            extractReport(sqlQuery);
+        }
+
+        /*private void btnGetScores_Click(object sender, EventArgs e)
         {
             //variables for reports
             string provGP, provLP, provMP, provNW, provKZN, provFS, provEC, provWC, provNC;
@@ -170,4 +206,5 @@ ds.Dispose();
 catch (Exception ex) { MessageBox.Show(ex.Message, "Unable to get score sheet", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 }*/
     }
+
 }

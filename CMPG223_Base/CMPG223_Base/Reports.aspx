@@ -95,7 +95,7 @@
                     <div class="fullWidth">
                         <asp:Label ID="Label9" runat="server" Font-Bold="True" Text="Select report to generate:"></asp:Label>
                         <div class="col-md-12">        
-                            <asp:RadioButtonList ID="rblReports" runat="server" RepeatDirection="Horizontal" CssClass="col-md-12" style="margin:10px;" AutoPostBack="True" >
+                            <asp:RadioButtonList ID="rblReports" runat="server" RepeatDirection="Horizontal" CssClass="auto-style1" style="margin:10px;" AutoPostBack="True" >
                                     <asp:ListItem>&nbsp;Emergency Situations per Province</asp:ListItem>
                                     <asp:ListItem>&nbsp;Emergency Situations per time Period</asp:ListItem>
                                     <asp:ListItem>&nbsp;Employee Log Reports</asp:ListItem>
@@ -146,13 +146,12 @@
                     </div>
                 </div>
                 <div id="Modal_Footer" class="row" style="border-top:1px solid lightgrey;padding:20px">
-                    <div class="col-md-5"><asp:Button ID="btnProvinceReport" runat="server" Text="Run Report" class="form-control btn btn-danger"/></div><div class="col-md-2"></div>
-                    <div class="col-md-5 2"><asp:Button ID="btnExtract" runat="server" Text="Extract Report" class="form-control btn btn-primary"/></div>
+                    <div class="col-md-5"><asp:Button ID="btnProvinceReport" runat="server" Text="Run Report" class="form-control btn btn-danger" OnClick="btnProvinceReport_Click"/></div><div class="col-md-2"></div>
+                    <div class="col-md-5 2"><asp:Button ID="btnExtract" runat="server" Text="Extract Report" class="form-control btn btn-primary" OnClick="btnExtract_Click"/></div>
                 </div>
                 <p>
                   <button class="btn btn-primary fullWidth" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Show search results
-                  </button>
+                    Show search results</button>
                 </p>
                 <div class="collapse" id="collapseExample">
                   <div class="card card-body">
@@ -187,6 +186,18 @@
 
     .display-initial {
         display:initial;
+    }
+
+    .auto-style1 {
+        position: relative;
+        width: 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        left: 0px;
+        top: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
 </style>

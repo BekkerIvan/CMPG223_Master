@@ -88,7 +88,7 @@
                     <div class="fullWidth"><br />
                         <div class="text-center"><asp:Label ID="Label9" runat="server" Font-Bold="True" Text="Select action to perform:"></asp:Label></div>
                         <div class="fullWidth">        
-                            <asp:RadioButtonList ID="rblAction" runat="server" RepeatDirection="Horizontal" CssClass="col-md-12" style="margin:10px" AutoPostBack="True" OnSelectedIndexChanged="rblAction_SelectedIndexChanged1">
+                            <asp:RadioButtonList ID="rblAction" runat="server" RepeatDirection="Horizontal" CssClass="col-md-12" style="margin:10px; top: 0px; left: 0px;" AutoPostBack="True" OnSelectedIndexChanged="rblAction_SelectedIndexChanged1">
                                 <asp:ListItem>&nbsp;Create new employee</asp:ListItem>
                                 <asp:ListItem>&nbsp;Update employee information</asp:ListItem>
                             </asp:RadioButtonList>

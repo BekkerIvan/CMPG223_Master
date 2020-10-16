@@ -1,11 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="Scripts/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/jquery-3.0.0.min.js"></script>
-    <script src="Scripts/jquery-3.0.0.min.js"></script>
+
+
     <meta charset="utf-8" />
     <title></title>
 </head>
@@ -16,40 +19,38 @@
     <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">Navbar</a>
+
+        <img class="navbar-brand" height="50px" width="50px"  src="WhatsApp_Image_2020-10-15_at_18.41.12-removebg-preview.png" />
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                 aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
 
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                        Home
+                    <a class="nav-link" href="Admin_Emergency_Situation.aspx">
+                        Home (All)
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="Emergency_Service.aspx">Emergency Service (All)</a>
                 </li>
 
                 <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle fa fa-cogs" id="navbarDropdownMenuLink" data-toggle="dropdown"style="padding:15px;" aria-haspopup="true" aria-expanded="false"></a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a></a>
+                        <a class="dropdown-item" href="Employees.aspx">Maintain Employess</a>
+                        <a class="dropdown-item" href="Reports.aspx">Reports</a>
+                        <a class="dropdown-item" href="#">Emergency Situation Type</a>
                     </div>
                 </li>
 
@@ -57,11 +58,24 @@
             <!-- Links -->
 
             <form class="form-inline">
+
                 <div class="md-form my-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <div>
+                        <span class="form-control" id="Logout_Span">Log out</span>
+                    </div>
                 </div>
             </form>
         </div>
+        <style>
+            #Logout_Span {
+                font-weight:600;
+            }
+                #Logout_Span:hover {
+                    background-color: rgb(67, 119, 167);
+                    color: black;
+                    border:none;
+                }
+        </style>
         <!-- Collapsible content -->
 
     </nav>

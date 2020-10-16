@@ -146,13 +146,12 @@
                     </div>
                 </div>
                 <div id="Modal_Footer" class="row" style="border-top:1px solid lightgrey;padding:20px">
-                    <div class="col-md-5"><asp:Button ID="btnProvinceReport" runat="server" Text="Run Report" class="form-control btn btn-danger"/></div><div class="col-md-2"></div>
-                    <div class="col-md-5 2"><asp:Button ID="btnExtract" runat="server" Text="Extract Report" class="form-control btn btn-primary"/></div>
+                    <div class="col-md-5"><asp:Button ID="btnProvinceReport" runat="server" Text="Run Report" class="form-control btn btn-danger" OnClick="btnProvinceReport_Click"/></div><div class="col-md-2"></div>
+                    <div class="col-md-5 2"><asp:Button ID="btnExtract" runat="server" Text="Extract Report" class="form-control btn btn-primary" OnClick="btnExtract_Click"/></div>
                 </div>
                 <p>
                   <button class="btn btn-primary fullWidth" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Show search results
-                  </button>
+                    Show search results</button>
                 </p>
                 <div class="collapse" id="collapseExample">
                   <div class="card card-body">

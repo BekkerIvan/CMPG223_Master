@@ -87,25 +87,25 @@ namespace CMPG223_Base
                 }
             }
             dr.Close();
-            /*
+            
             sql = "Select LOCATION_LATITUDE From LOCATION;";
             command = new SqlCommand(sql, conn);
             SqlDataReader dr2 = command.ExecuteReader();
             if (dr2.Read())
             {
-                txbLat.Text = dr["LOCATION_LATITUDE"].ToString();                
+                txbLat.Text = dr2["LOCATION_LATITUDE"].ToString();                
             }
             dr2.Close();
-
+            
             sql = "Select LOCATION_LONGITUDE From LOCATION;";
             command = new SqlCommand(sql, conn);
             SqlDataReader dr3 = command.ExecuteReader();
             if (dr3.Read())
             {
-                txbLat.Text = dr["LOCATION_LONGITUDE"].ToString();
+                txbLng.Text = dr3["LOCATION_LONGITUDE"].ToString();
             }
             dr3.Close();
-            */
+            
             conn.Close();
         }
 
@@ -162,6 +162,8 @@ namespace CMPG223_Base
                 adapter.InsertCommand = new SqlCommand(sql, conn);
                 adapter.InsertCommand.ExecuteNonQuery();
                 command.Dispose();
+
+
 
                 lblInvalid.Visible = false;
                 conn.Close();

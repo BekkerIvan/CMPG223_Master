@@ -98,7 +98,7 @@
                         </div><br />
                         <div class="fullWidth row">
                             <div class="col-md-4 text-center"><asp:Label ID="lblSelectService" runat="server" Font-Bold="True" Font-Size="Medium" Text="Select Emergency Service:" Visible="False"></asp:Label></div>
-                            <asp:DropDownList ID="drlServiceName" runat="server" DataSourceID="Emergency_Service_Name" DataTextField="EMERGENCY_SERVICE_NAME" CssClass="col-md-8 form-control" DataValueField="EMERGENCY_SERVICE_NAME" Visible="False">
+                            <asp:DropDownList ID="drlServiceName" runat="server" DataSourceID="Emergency_Service_Name" DataTextField="EMERGENCY_SERVICE_NAME" CssClass="col-md-8 form-control" DataValueField="EMERGENCY_SERVICE_NAME" Visible="False" AutoPostBack="True" OnSelectedIndexChanged="drlServiceName_SelectedIndexChanged1">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="Emergency_Service_Name" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMERGENCY_SERVICE_NAME] FROM [EMERGENCY_SERVICE]"></asp:SqlDataSource>
                         </div><br />

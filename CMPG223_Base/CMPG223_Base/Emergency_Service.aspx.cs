@@ -19,7 +19,6 @@ namespace CMPG223_Base
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //toggle the username drop down list
             int i = rblAction.SelectedIndex;
             if (i == 1)
             {
@@ -45,8 +44,9 @@ namespace CMPG223_Base
             }
         }
 
-        protected void drlServiceName_SelectedIndexChanged(object sender, EventArgs e)
+        protected void drlServiceName_SelectedIndexChanged1(object sender, EventArgs e)
         {
+            
             //get service name to search
             string name;
             name = drlServiceName.SelectedValue;
@@ -56,7 +56,7 @@ namespace CMPG223_Base
             string sql;
             SqlConnection conn;
             string constr;
-            constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
+            constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CBOX_DB.mdf;Integrated Security=True";
             conn = new SqlConnection(constr);
             conn.Open();
 
@@ -75,8 +75,7 @@ namespace CMPG223_Base
                 txbName.Text = dr["EMERGENCY_SERVICE_NAME"].ToString();
                 txbType.Text = dr["EMERGENCY_SERVICE_TYPE"].ToString();
                 txbContact.Text = dr["EMERGENCY_SERVICE_CONTACT"].ToString();
-
-                test1 = dr["EMERGENCY_SERVICE_CONTACT"].ToString();
+                test1 = dr["EMERGENCY_SERVICE_ARCHIVE"].ToString();
                 test2 = int.Parse(test1);
                 if (test2 == 1)
                 {
@@ -88,6 +87,25 @@ namespace CMPG223_Base
                 }
             }
             dr.Close();
+            /*
+            sql = "Select LOCATION_LATITUDE From LOCATION;";
+            command = new SqlCommand(sql, conn);
+            SqlDataReader dr2 = command.ExecuteReader();
+            if (dr2.Read())
+            {
+                txbLat.Text = dr["LOCATION_LATITUDE"].ToString();                
+            }
+            dr2.Close();
+
+            sql = "Select LOCATION_LONGITUDE From LOCATION;";
+            command = new SqlCommand(sql, conn);
+            SqlDataReader dr3 = command.ExecuteReader();
+            if (dr3.Read())
+            {
+                txbLat.Text = dr["LOCATION_LONGITUDE"].ToString();
+            }
+            dr3.Close();
+            */
             conn.Close();
         }
 
@@ -96,15 +114,14 @@ namespace CMPG223_Base
             string name, type, contact, lng, lat, aType;
             int ServiceID;
 
-            //get values from form            
+            //get values from form
             name = txbName.Text;
             type = txbType.Text;
             contact = txbContact.Text;
-            //lng = txbLng.Text;
-            //lat = txbLat.Text;
+            lng = txbLng.Text;
+            lat = txbLat.Text;
             aType = btnSubmit.Text;
 
-            //test if username exists and add record
             if (aType == "Submit")
             {
                 //retrieve information and display relevant fields
@@ -113,7 +130,7 @@ namespace CMPG223_Base
                 string sql;
                 SqlConnection conn;
                 string constr;
-                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
+                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CBOX_DB.mdf;Integrated Security=True";
                 conn = new SqlConnection(constr);
                 conn.Open();
 
@@ -133,7 +150,6 @@ namespace CMPG223_Base
                 }
                 dr.Close();
 
-                //stops method if duplicate username appears
                 if (pause)
                 {
                     return;
@@ -175,7 +191,7 @@ namespace CMPG223_Base
                 string sql;
                 SqlConnection conn;
                 string constr;
-                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
+                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CBOX_DB.mdf;Integrated Security=True";
                 conn = new SqlConnection(constr);
                 conn.Open();
 
@@ -196,6 +212,6 @@ namespace CMPG223_Base
                 txbLng.Text = "";
                 CheckBox1.Checked = false;
             }
-        }        
+        }
     }
 }

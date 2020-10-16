@@ -91,10 +91,10 @@
                         </div><br />
                         <div class="fullWidth row">
                             <div class="col-md-4 text-center"><asp:Label ID="lblServiceID1" runat="server" Font-Bold="True" Text="Service ID:"></asp:Label></div>
-                            <div class="col-md-8 text-center"><asp:Label ID="lblName" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Name:"></asp:Label></div>
+                            <div class="col-md-8 text-center"><asp:Label ID="lblServiceID2" runat="server" Font-Bold="True" Text="[lblServiceID2]"></asp:Label></div>
                         </div><br />
                         <div class="fullWidth row">
-                            <div class="col-md-4 text-center"><asp:Label ID="lblServiceID2" runat="server" Font-Bold="True" Text="[lblServiceID2]"></asp:Label></div>
+                            <div class="col-md-4 text-center"><asp:Label ID="lblName" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Name:"></asp:Label></div>
                             <asp:TextBox CssClass="col-md-8 form-control" ID="txbName" runat="server"></asp:TextBox>
                         </div><br />
                         <div class="fullWidth row">
@@ -107,7 +107,7 @@
                         </div><br />
                         <div class="fullWidth row">
                             <div class="col-md-4 text-center"><asp:Label ID="lblServiceArchive" runat="server" Font-Bold="True" Text="Emergency Services Archive:&nbsp;"></asp:Label></div>
-                            <asp:RadioButton CssClass="col-md-8 " runat="server" ID="rbtArchive" Text="[ticked is archived]" />
+                            <asp:CheckBox ID="CheckBox1" runat="server" Text="[ticked is archived]" />
                         </div><br />                     
                         <div class="fullWidth row">
                             <div class="col-md-4 text-center"><asp:Label ID="lblLat" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Location Latitude:"></asp:Label></div>
@@ -121,7 +121,7 @@
                     </div>
                 </div>
                 <div id="Modal_Footer" class="row" style="border-top:1px solid lightgrey;padding:20px">
-                    <div class="col-md-4"><asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="fullWidth btn btn-primary form-control" /></div>
+                    <div class="col-md-4"><asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="fullWidth btn btn-primary form-control" OnClick="btnSubmit_Click" /></div>
                     <div class="col-md-4"></div>
                     <div class="col-md-4"><asp:Button ID="btnExit" runat="server" Text="Cancel" CssClass="fullWidth btn btn-danger form-control"/></div>
                 </div>

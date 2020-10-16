@@ -12,9 +12,9 @@ namespace CMPG223_Base
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
+        }
+        int archive;
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //toggle the username drop down list
@@ -56,7 +56,54 @@ namespace CMPG223_Base
             conn = new SqlConnection(constr);
             conn.Open();
 
-            
+            //read data from database
+
+            sql = "Select * From EMPLOYEE WHERE EMPLOYEE_USERNAME = '" + @userName + "';";
+            command = new SqlCommand(sql, conn);
+            SqlDataReader dr = command.ExecuteReader();
+
+            if (dr.Read())
+            {
+                lblServiceID2.Text = dr["EMERGENCY_SERVICE_ID"].ToString();
+                txbName.Text = dr["EMERGENCY_SERVICE_NAME"].ToString();
+                txbType.Text = dr["EMERGENCY_SERVICE_TYPE"].ToString();
+                txbContact.Text = dr["EMERGENCY_SERVICE_CONTACT"].ToString();
+                if (CheckBox1.Checked)
+                {
+                    archive = 1;
+                }
+                else
+                {
+                    archive = 0;
+                }
+                txbLat.Text = dr["LOCATION_LATITUDE"].ToString();
+                txbLng.Text = dr["LOCATION_LONGITUDE"].ToString();
+            }
+            dr.Close();
+            conn.Close();
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string name, type, contact, lng, lat, aType;
+
+
+            //get values from form            
+            name = txbName.Text;
+            type = txbType.Text;
+            contact = txbContact.Text;
+            lng = txbLng.Text;
+            lat = txbLat.Text;
+            aType = btnSubmit.Text;
+
+            //test if username exists and add record
+            if (aType == "Submit")
+            {
+
+            }else if (aType == "Update")
+            {
+
+            }
         }
     }
 }

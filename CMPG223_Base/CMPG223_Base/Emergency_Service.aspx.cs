@@ -25,12 +25,14 @@ namespace CMPG223_Base
             {
                 lblSelectService.Visible = true;
                 drlServiceName.Visible = true;
+                lblServiceID2.Visible = true;
                 btnSubmit.Text = "Update";
             }
             else
             {
                 lblSelectService.Visible = false;
                 drlServiceName.Visible = false;
+                lblServiceID2.Visible = true;
                 //clear form
                 lblServiceID2.Text = "";
                 txbName.Text = "";
@@ -84,7 +86,6 @@ namespace CMPG223_Base
                 {
                     CheckBox1.Checked = false;
                 }
-
             }
             dr.Close();
             conn.Close();
@@ -95,13 +96,12 @@ namespace CMPG223_Base
             string name, type, contact, lng, lat, aType;
             int ServiceID;
 
-
             //get values from form            
             name = txbName.Text;
             type = txbType.Text;
             contact = txbContact.Text;
-            lng = txbLng.Text;
-            lat = txbLat.Text;
+            //lng = txbLng.Text;
+            //lat = txbLat.Text;
             aType = btnSubmit.Text;
 
             //test if username exists and add record
@@ -130,7 +130,6 @@ namespace CMPG223_Base
                         pause = true;
                         break;
                     }
-
                 }
                 dr.Close();
 
@@ -142,7 +141,7 @@ namespace CMPG223_Base
 
                 //add new record
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                sql = "Insert into EMERGENCY_SERVICE(EMERGENCY_SERVICE_NAME,EMERGENCY_SERVICE_TYPE, EMERGENCY_SERVICE_CONTACT, EMERGENCY_SERVICE_ARCHIVE, LOCATION_LATITUDE, LOCATION_LONGITUDE) values('" + @name + "','" + @type + "','" + @contact + "','" + @archive + "','" + @lat + "','" + @lng + "');";
+                sql = "Insert into EMERGENCY_SERVICE(EMERGENCY_SERVICE_NAME,EMERGENCY_SERVICE_TYPE, EMERGENCY_SERVICE_CONTACT, EMERGENCY_SERVICE_ARCHIVE) values('" + @name + "','" + @type + "','" + @contact + "','" + @archive  + "');";
                 command = new SqlCommand(sql, conn);
                 adapter.InsertCommand = new SqlCommand(sql, conn);
                 adapter.InsertCommand.ExecuteNonQuery();
@@ -181,7 +180,7 @@ namespace CMPG223_Base
                 conn.Open();
 
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                sql = "Update EMERGENCY_SERVICE set EMERGENCY_SERVICE_NAME='" + @name + "',EMERGENCY_SERVICE_TYPE='" + @type + "',EMERGENCY_SERVICE_CONTACT='" + @contact + "',EMERGENCY_SERVICE_ARCHIVE='" + @archive + "',LOCATION_LATITUDE='" + @lat + "', LOCATION_LONGITUDE" +lng + "' where EMERGENCY_SERVICE_ID =" + ServiceID + ";";
+                sql = "Update EMERGENCY_SERVICE set EMERGENCY_SERVICE_NAME='" + @name + "',EMERGENCY_SERVICE_TYPE='" + @type + "',EMERGENCY_SERVICE_CONTACT='" + @contact + "',EMERGENCY_SERVICE_ARCHIVE='" + @archive + "' where EMERGENCY_SERVICE_ID =" + ServiceID + ";";
                 command = new SqlCommand(sql, conn);
                 adapter.UpdateCommand = new SqlCommand(sql, conn);
                 adapter.UpdateCommand.ExecuteNonQuery();
@@ -196,10 +195,7 @@ namespace CMPG223_Base
                 txbLat.Text = "";
                 txbLng.Text = "";
                 CheckBox1.Checked = false;
-
             }
-        }
-
-        
+        }        
     }
 }

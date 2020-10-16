@@ -51,7 +51,6 @@ namespace CMPG223_Base
 
             //retrieve information and display relevant fields
             SqlCommand command;
-
             string sql;
             SqlConnection conn;
             string constr;
@@ -62,7 +61,7 @@ namespace CMPG223_Base
             //read data from database
             archive = -1;
             string test1;
-            int test2 = 0;
+            int test2;
 
             sql = "Select * From EMERGENCY_SERVICE WHERE EMERGENCY_SERVICE_NAME = '" + @name + "';";
             command = new SqlCommand(sql, conn);
@@ -74,6 +73,7 @@ namespace CMPG223_Base
                 txbName.Text = dr["EMERGENCY_SERVICE_NAME"].ToString();
                 txbType.Text = dr["EMERGENCY_SERVICE_TYPE"].ToString();
                 txbContact.Text = dr["EMERGENCY_SERVICE_CONTACT"].ToString();
+
                 test1 = dr["EMERGENCY_SERVICE_CONTACT"].ToString();
                 test2 = int.Parse(test1);
                 if (test2 == 1)

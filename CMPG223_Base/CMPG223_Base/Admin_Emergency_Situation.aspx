@@ -11,10 +11,10 @@
     <script src="Scripts/popper.min.js"></script>
     <title></title>
     <style>
-       /* Set the size of the div element that contains the map */
+       
       #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
+        height: 400px;  
+        width: 100%;  
        }
       .Location {
           width:300px;
@@ -126,14 +126,6 @@
 
 
 
-
-
-
-
-
-
-
-
         <div class="d-flex justify-content-center">
             <div class="col-md-6" style="background-color:white;;box-shadow:3px 3px red;border-radius:10px">
                             <div class="text-center">
@@ -209,12 +201,9 @@ function initMap() {
     //return false;
 }
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function-->
+ 
     <script defer="defer"
-    src="https://maps.googleapis.com/maps/api/js?key=API-KEY&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo&callback=initMap">
     </script>
     
         

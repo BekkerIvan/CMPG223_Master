@@ -190,10 +190,8 @@ E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Memory.dll
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Numerics.Vectors.dll
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
-E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\BouncyCastle.Crypto.dll
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\GoogleApi.dll
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\Newtonsoft.Json.dll
-E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\BouncyCastle.Crypto.xml
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\GoogleApi.xml
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\Newtonsoft.Json.xml
 C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Buffers.dll

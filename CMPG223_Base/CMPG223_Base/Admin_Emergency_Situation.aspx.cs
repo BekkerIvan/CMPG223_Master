@@ -74,8 +74,8 @@ namespace CMPG223_Base
 
 
 
-                // Only for testing purposes  session info to come from login
-                Session["E_ID"] = 1;
+                
+                Session["EMPLOYEE_ID"] = 1;
             }  
         }
 
@@ -91,8 +91,8 @@ namespace CMPG223_Base
         }
         public void GeoCodeTest(string address)
         {
-/*            var _request = new AddressGeocodeRequest { Address = address };
-            _request.Key = "API-KEY";
+            var _request = new AddressGeocodeRequest { Address = address };
+            _request.Key = "AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo";
             var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
             Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
 
@@ -110,13 +110,13 @@ namespace CMPG223_Base
             Session["LNG"] = lng;
 
 
-            //retreve province
+            
             foreach (Result item in jPars.results)
             {
                 sProvince = item.address_components[5].long_name;
             }
-*/
-            //tbDescription.Text = _response.RawJson.ToString();                //Ivan, hier is die raw json array as jy nog wil sien hoe dit lyk
+
+            
         }
 
         protected void Submit_Click(object sender, EventArgs e)
@@ -132,6 +132,7 @@ namespace CMPG223_Base
                 int iE_Sit_ID = 0;
                 int iLocation_ID = 0;
                 int.TryParse(lbPersonnel.SelectedValue, out int iE_Service_ID);
+                string sE_Sit_Type;
 
                 if (tbCoordinates.Text == "")
                 {
@@ -154,8 +155,11 @@ namespace CMPG223_Base
                     int.TryParse(sEmergencyPersonnel_ID, out iEmergencyPersonnel_ID);
                 }
                 else { throw new Exception("No emergency service selected. Please select a service."); }
-
-
+                if (ddlE_Sit_Type.SelectedIndex >= 0)
+                {
+                    sE_Sit_Type = ddlE_Sit_Type.SelectedItem.Text;
+                }
+                else { throw new Exception("No emergency situation type selected. Please select a situation type."); }
 
                 SqlConnection cnn = new SqlConnection(mainconn);
                 SqlDataAdapter adapter = new SqlDataAdapter();
@@ -167,7 +171,7 @@ namespace CMPG223_Base
                 command.Parameters.AddWithValue("@Description", sDiscription);
                 command.Parameters.AddWithValue("@Timestamp", dtTimeStamp);
                 command.Parameters.AddWithValue("@EmployeeID", iEmployee_ID);
-                command.Parameters.AddWithValue("@EType", sEmergencyType);//?  change var to lbSit_Type.selcdedIndex.value
+                command.Parameters.AddWithValue("@EType", sE_Sit_Type);
                 command.Parameters.AddWithValue("@province", sProvince);
 
                 adapter.InsertCommand = command;
@@ -247,10 +251,7 @@ namespace CMPG223_Base
 
         }
 
-        /*private void BtnCoordinates_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();                    //HUH???
-        }*/
+        
 
         protected void ddlEmergencyType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -280,10 +281,7 @@ namespace CMPG223_Base
             cnn.Close();
 
             Session["E_Type"] = ddlEmergencyType.SelectedIndex;
-            HttpCookie _Type = new HttpCookie("ET");
-            _Type["index"] = ddlEmergencyType.SelectedIndex.ToString();//remove cookie?
-            _Type["item"] = ddlEmergencyType.SelectedItem.Text;
-            Response.Cookies.Add(_Type);
+            
         }
 
         protected void btnAddEService_Click(object sender, EventArgs e)

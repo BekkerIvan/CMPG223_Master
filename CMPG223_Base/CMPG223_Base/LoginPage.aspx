@@ -4,84 +4,85 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <title></title>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
-    <script src="Scripts/jquery-3.0.0.min.js"></script>
-    <title></title>
 </head>
-<body>
+<body style="background-color:rgb(67, 119, 167)">
     <form id="form1" runat="server">
-        <div class="container">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div class="container">
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-6" style="height:40%;background-color:gray;box-shadow:5px 5px red">
-                        <div id="header" class="justify-content-center" style="height:25%">
-                            <div class="row">
-                                <h2 class="text-center col-md-12"><i>Login to</i></h2>
-                            </div>
-                            <div class="row">
-                                <h2 class="text-center col-md-6"><i>INSERT LOGO HERE</i></h2>
-                                <img class="col-md-6" src="images-removebg-preview.png" />
-                            </div>
+        <div data-include="TestPage.html"></div>
+        <br />
+        <br />
+        <br />
+        <div class="d-flex justify-content-center" >
+            <div class="col-md-6" style="background-color:white;box-shadow:3px 3px red;border-radius:10px" />
+                <div id="modal_Header" class="row">
+                    <div class="col-md-12 text-center">
+                        <img src="WhatsApp_Image_2020-10-15_at_18.41.12__1_-removebg-preview.png" />
+                    </div>
+                </div><br />
+                <div id="modal_Body" class="row">
+                    <div class="fullWidth">
+                        <asp:Label ID="lblUsername" runat="server" AssociatedControlID="txtUsername">Username</asp:Label>
+                        <asp:TextBox runat="server" id="txtUsername" class="form-control fullWidth" /><br />
+                    </div>
+                    <div class="fullWidth">
+                        <asp:Label ID="lblPassword" runat="server" AssociatedControlID="txtPassword">Password</asp:Label>
+                        <asp:TextBox runat="server" id="txtPassword" class="form-control fullWidth" TextMode="Password"/>
+                    </div>
+                    <div class="row fullWidth">
+                        <div class="col-md-6"><br />
+                            <asp:CheckBox ID="cbRememberMe" runat="server" Text="Remember Me" OnCheckedChanged="cbRememberMe_CheckedChanged"/>
                         </div>
-
-                        <div id="body" style="height:50%; padding:10px 10px 10px 10px;">
-                            <div class="row">
-                                <label>Username</label>
-                                <asp:TextBox runat="server" class="form-control" id="txtUsername"/>
-                            </div>
-
-                            <div class="row">
-                                <label>Password</label>
-                                <asp:TextBox runat="server"  class="form-control" id="txtPassword" TextMode="Password"/>
-                            </div>
-                            <br />
-                            <div class="row">
-                                <div class="col-md-6 text-center">
-                                    <asp:CheckBox Text="Remember User" runat="server" />
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <a href="www.google.com" style="color:black">Forgotten Password</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="footer" style="height:25%;padding:10px 10px 10px 10px">
-                            <div class="row">
-                                <div class="col align-self-center">
-                                    <asp:Button Text="Login" runat="server" class="btn btn-danger col-md-12" id="btnLogin_Click" OnClick="Unnamed_Click" OnClientClick="checkInput();"/>
-                                </div>
-                            </div>
+                        <div class="col-md-6"><br />
+                            
                         </div>
                     </div>
-                </div>
+                </div><br />
+                <div id="modal_Footer" class="row">
+                    <div class="fullWidth">
+                        <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-danger form-control" Text="Login" OnClick="btnLogin_Click"/>
+                    </div>
+                </div><br />
             </div>
         </div>
     </form>
 </body>
 </html>
-<script>
-    let LoginButtonClickedInt = 0;
-    function checkInput() {
-        alert(LoginButtonClickedInt);
-        if (LoginButtonClickedInt < 3) {
-            let PasswordObj = $("#txtPassword");
-            let UsernameObj = $("#txtUsername");
-            if (!PasswordObj.val() || !UsernameObj.val()) {
-                alert("Invalid input");
-                LoginButtonClickedInt++;
-            }
-        } else {
-            alert('Too many attempts have been logged.');
-            let btnLogin_ClickObj = $("#btnLogin_Click");
-            btnLogin_ClickObj.prop('disabled', true);
-        }
+<style>
+    .fullWidth {
+        width: 100%;
+        padding:0 10px 0 10px;
     }
 
+</style>
+<script>
+
+    
+    function myHTMLInclude() {
+        var z, i, a, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            if (z[i].getAttribute("w3-include-html")) {
+                a = z[i].cloneNode(false);
+                file = z[i].getAttribute("w3-include-html");
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) {
+                        a.removeAttribute("w3-include-html");
+                        a.innerHTML = xhttp.responseText;
+                        z[i].parentNode.replaceChild(a, z[i]);
+                        myHTMLInclude();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }
+        }
+    }
 </script>
+

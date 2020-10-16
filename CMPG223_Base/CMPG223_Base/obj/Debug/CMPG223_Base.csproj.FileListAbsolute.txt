@@ -89,7 +89,6 @@ C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\rosl
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.IO.Compression.ZipFile.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Net.Http.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -109,10 +108,144 @@ C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\rosl
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\vbc.rsp
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\VBCSCompiler.exe
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\obj\Debug\CMPG223_Base.csprojAssemblyReference.cache
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CoreCompileInputs.cache
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CopyComplete
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\obj\Debug\CMPG223_Base.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\obj\Debug\CMPG223_Base.pdb
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\CMPG223_Base.dll.config
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\CMPG223_Base.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\CMPG223_Base.pdb
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csc.exe
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csc.exe.config
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csc.rsp
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csi.exe
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csi.exe.config
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csi.rsp
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.AppContext.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Console.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.IO.Compression.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Net.Http.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.ValueTuple.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\vbc.exe
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\vbc.exe.config
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\vbc.rsp
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\VBCSCompiler.exe
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csprojAssemblyReference.cache
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CoreCompileInputs.cache
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CopyComplete
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.dll
+C:\Users\Andre\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.pdb
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csprojAssemblyReference.cache
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CoreCompileInputs.cache
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.dll
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.pdb
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Buffers.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Memory.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\CMPG223_Base.dll.config
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\CMPG223_Base.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\CMPG223_Base.pdb
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csc.exe
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csc.exe.config
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csc.rsp
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csi.exe
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csi.exe.config
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\csi.rsp
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.AppContext.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Buffers.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Console.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.IO.Compression.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Memory.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Net.Http.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Net.Sockets.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.ValueTuple.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.XPath.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\vbc.exe
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\vbc.exe.config
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\vbc.rsp
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\VBCSCompiler.exe
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csprojAssemblyReference.cache
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CoreCompileInputs.cache
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.csproj.CopyComplete
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\obj\Debug\CMPG223_Base.pdb
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\roslyn\System.Net.Http.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\GoogleApi.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.dll
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\GoogleApi.xml
+C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.xml

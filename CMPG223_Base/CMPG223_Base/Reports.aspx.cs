@@ -44,7 +44,7 @@ namespace CMPG223_Base
 
         }
 
-        private void ExportGridToExcel(string reportName)//add parameter report name
+        private void ExportGridToExcel(string reportName)
         {
             Response.Clear();
             Response.Buffer = true;
@@ -78,14 +78,53 @@ namespace CMPG223_Base
         protected void btnProvinceReport_Click(object sender, EventArgs e)
         {
             string sqlQuery = "SELECT * FROM EMERGENCY_SERVICE";
+            DateTime beginDate = DateTime.Now;
+            DateTime endDate = DateTime.Now;
             if (rblReports.SelectedIndex == 0)
-                sqlQuery = "";
+            {
+                string PROV = getProv();
+                beginDate = StartCalendar.SelectedDate;
+                endDate = EndCalendar.SelectedDate;
+                if (PROV != "")
+                    sqlQuery = "SELECT * FROM Emergency_Situation WHERE PROVINCE ='" + @PROV + "' AND EMERGENCY_SITUATION_DATETIME >= '" + @beginDate + "' AND EMERGENCY_SITUATION_DATETIME <= '" + @endDate + "';";
+                else
+                    sqlQuery = "SELECT * FROM Emergency_Situation WHERE EMERGENCY_SITUATION_DATETIME >= '" + @beginDate + "' AND EMERGENCY_SITUATION_DATETIME <= '" + @endDate + "';";
+            }
+                
             if (rblReports.SelectedIndex == 1)
-                sqlQuery = "";
+            {
+                beginDate = StartCalendar.SelectedDate;
+                endDate = EndCalendar.SelectedDate;
+                sqlQuery = "SELECT * FROM Emergency_Situation WHERE EMERGENCY_SITUATION_DATETIME >= '" + @beginDate + "' AND EMERGENCY_SITUATION_DATETIME <= '" + @endDate + "';";
+            }
+                
             if (rblReports.SelectedIndex == 2)
-                sqlQuery = "";
+                sqlQuery = "SELECT* FROM EMPLOYEE WHERE USERROLE = 3";
             
             Bindgrid(sqlQuery);
+        }
+        private string getProv()
+        {
+            string province = "";
+            if (cbEasternCape.Checked)
+                province = cbEasternCape.Text;
+            if (cbFreestate.Checked)
+                province = cbFreestate.Text;
+            if (cbGauteng.Checked)
+                province = cbGauteng.Text;
+            if (cbKwaZuluNatal.Checked)
+                province = cbKwaZuluNatal.Text;
+            if (cbLimpopo.Checked)
+                province = cbLimpopo.Text;
+            if (cbMpumalanga.Checked)
+                province = cbMpumalanga.Text;
+            if (cbNorthernCape.Checked)
+                province = cbNorthernCape.Text;
+            if (cbNorthWest.Checked)
+                province = cbNorthWest.Text;
+            if (cbWesternCape.Checked)
+                province = cbWesternCape.Text;
+            return province;
         }
     }
 

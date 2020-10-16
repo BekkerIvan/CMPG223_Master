@@ -14,8 +14,10 @@ namespace CMPG223_Base
         {
 
         }
+
         int archive;
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //toggle the username drop down list
             int i = rblAction.SelectedIndex;
@@ -43,8 +45,8 @@ namespace CMPG223_Base
         protected void drlServiceName_SelectedIndexChanged(object sender, EventArgs e)
         {
             //get user name to search
-            string userName;
-            userName = drlServiceName.SelectedValue;
+            string name;
+            name = drlServiceName.SelectedValue;
 
             //retrieve information and display relevant fields
             SqlCommand command;
@@ -58,7 +60,7 @@ namespace CMPG223_Base
 
             //read data from database
 
-            sql = "Select * From EMPLOYEE WHERE EMPLOYEE_USERNAME = '" + @userName + "';";
+            sql = "Select * From EMERGENCY_SERVICE WHERE EMERGENCY_SERVICE_NAME = '" + @name + "';";
             command = new SqlCommand(sql, conn);
             SqlDataReader dr = command.ExecuteReader();
 
@@ -86,6 +88,7 @@ namespace CMPG223_Base
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string name, type, contact, lng, lat, aType;
+            int ServiceID;
 
 
             //get values from form            
@@ -99,11 +102,99 @@ namespace CMPG223_Base
             //test if username exists and add record
             if (aType == "Submit")
             {
+                //retrieve information and display relevant fields
+                SqlCommand command;
+                Boolean pause = false;
+                string sql;
+                SqlConnection conn;
+                string constr;
+                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
+                conn = new SqlConnection(constr);
+                conn.Open();
 
-            }else if (aType == "Update")
-            {
+                //read data from database
+                sql = "Select EMERGENCY_SERVICE_NAME From EMERGENCY_SERVICE;";
+                command = new SqlCommand(sql, conn);
+                SqlDataReader dr = command.ExecuteReader();
+                while (dr.Read())
+                {
+                    if (dr["EMERGENCY_SERVICE_NAME"].ToString() == name)
+                    {
+                        txbName.Text = "";
+                        lblInvalid.Visible = true;
+                        pause = true;
+                        break;
+                    }
+
+                }
+                dr.Close();
+
+                //stops method if duplicate username appears
+                if (pause)
+                {
+                    return;
+                }
+
+                //add new record
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                //sql = "Insert into EMPLOYEE(EMPLOYEE_FIRSTNAME,EMPLOYEE_LASTNAME, EMPLOYEE_USERNAME, EMPLOYEE_PASSWORD, EMPLOYEE_CONTACTNUMBER, USERROLE) values('" + @fName + "','" + @lName + "','" + @uName + "','" + @password + "','" + @cNum + "','" + userRole + "');";
+                command = new SqlCommand(sql, conn);
+                adapter.InsertCommand = new SqlCommand(sql, conn);
+                adapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
+
+                lblInvalid.Visible = false;
+                conn.Close();
+
+                //clear form
+                lblServiceID2.Text = "";
+                txbName.Text = "";
+                txbType.Text = "";
+                txbContact.Text = "";
+                txbLat.Text = "";
+                txbLng.Text = "";
+                CheckBox1.Checked = false;
+
+            }
+            else if (aType == "Update")
+            {// update record
+
+                ServiceID = int.Parse(lblServiceID2.Text);
+
+                if (name == drlServiceName.SelectedValue)
+                {
+                    name = drlServiceName.SelectedValue;
+                    txbName.Text = name;
+                }
+                SqlCommand command;
+
+                string sql;
+                SqlConnection conn;
+                string constr;
+                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
+                conn = new SqlConnection(constr);
+                conn.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                sql = "Update EMERGENCY_SERVICE set EMERGENCY_SERVICE_NAME='" + @name + "',EMERGENCY_SERVICE_TYPE='" + @type + "',EMERGENCY_SERVICE_CONTACT='" + @contact + "',EMERGENCY_SERVICE_ARCHIVE='" + @archive + "',LOCATION_LATITUDE='" + @lat + "', LOCATION_LONGITUDE" +lng + "' where EMERGENCY_SERVICE_ID =" + ServiceID + ";";
+                command = new SqlCommand(sql, conn);
+                adapter.UpdateCommand = new SqlCommand(sql, conn);
+                adapter.UpdateCommand.ExecuteNonQuery();
+                command.Dispose();
+                conn.Close();
+
+                //clear form
+                lblServiceID2.Text = "";
+                txbName.Text = "";
+                txbType.Text = "";
+                txbContact.Text = "";
+                txbLat.Text = "";
+                txbLng.Text = "";
+                CheckBox1.Checked = false;
 
             }
         }
+
+        
     }
 }

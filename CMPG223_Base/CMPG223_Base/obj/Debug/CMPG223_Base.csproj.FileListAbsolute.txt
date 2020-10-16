@@ -249,3 +249,7 @@ C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Goog
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.dll
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\GoogleApi.xml
 C:\Users\Ivan\Desktop\CMPG 223\CMPG223_Master\CMPG223_BASE\CMPG223_Base\bin\Newtonsoft.Json.xml
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\GoogleApi.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\Newtonsoft.Json.dll
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\GoogleApi.xml
+C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\Newtonsoft.Json.xml

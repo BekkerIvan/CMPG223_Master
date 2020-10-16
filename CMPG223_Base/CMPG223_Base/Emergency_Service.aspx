@@ -89,24 +89,27 @@
                         <div class="fullWidth text-center">
                             <asp:Label ID="lblSelectAction" runat="server" Font-Bold="True" Font-Size="Medium" Text="Select Action to perform:"></asp:Label>
                         </div>
-                        <div class="fullWidth"><br />
-                            <asp:RadioButtonList ID="rblAction" runat="server" RepeatDirection="Horizontal" CssClass="col-md-10">
-                                <asp:ListItem>&nbsp;Create new Emergency Service</asp:ListItem>
-                                <asp:ListItem>&nbsp;Edit Emergency Service</asp:ListItem>
+                        <div class="fullWidth">
+                            <asp:RadioButtonList ID="rblAction" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal" Width="871px">
+                                <asp:ListItem>Add new emergency service</asp:ListItem>
+                                <asp:ListItem>Edit current emergency service</asp:ListItem>
                             </asp:RadioButtonList>
+                            <br />
                         </div><br />
                         <div class="fullWidth row">
-                            <div class="col-md-4 text-center"><asp:Label ID="lblSelectService" runat="server" Font-Bold="True" Font-Size="Medium" Text="Select Emergency Service:"></asp:Label></div>
-                            <asp:DropDownList ID="drlServiceName" runat="server" DataSourceID="Emergency_Service_Name" DataTextField="EMERGENCY_SERVICE_NAME" CssClass="col-md-8 form-control" DataValueField="EMERGENCY_SERVICE_NAME">
+                            <div class="col-md-4 text-center"><asp:Label ID="lblSelectService" runat="server" Font-Bold="True" Font-Size="Medium" Text="Select Emergency Service:" Visible="False"></asp:Label></div>
+                            <asp:DropDownList ID="drlServiceName" runat="server" DataSourceID="Emergency_Service_Name" DataTextField="EMERGENCY_SERVICE_NAME" CssClass="col-md-8 form-control" DataValueField="EMERGENCY_SERVICE_NAME" Visible="False">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="Emergency_Service_Name" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMERGENCY_SERVICE_NAME] FROM [EMERGENCY_SERVICE]"></asp:SqlDataSource>
                         </div><br />
                         <div class="fullWidth row">
                             <div class="col-md-4 text-center"><asp:Label ID="lblServiceID1" runat="server" Font-Bold="True" Text="Service ID:"></asp:Label></div>
-                            <div class="col-md-8 text-center"><asp:Label ID="lblServiceID2" runat="server" Font-Bold="True" Text="[lblServiceID2]"></asp:Label></div>
+                            <div class="col-md-8 text-center"><asp:Label ID="lblServiceID2" runat="server" Font-Bold="True" Text="[lblServiceID2]" Visible="False"></asp:Label></div>
                         </div><br />
                         <div class="fullWidth row">
-                            <div class="col-md-4 text-center"><asp:Label ID="lblName" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Name:"></asp:Label></div>
+                            <div class="col-md-4 text-center"><asp:Label ID="lblName" runat="server" Font-Bold="True" Font-Size="Medium" Text="Emergency Services Name:"></asp:Label>
+                                <asp:Label ID="lblInvalid" runat="server" ForeColor="Red" Text="Name already in use" Visible="False"></asp:Label>
+                            </div>
                             <asp:TextBox CssClass="col-md-8 form-control" ID="txbName" runat="server"></asp:TextBox>
                         </div><br />
                         <div class="fullWidth row">

@@ -130,13 +130,13 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.CheckBox cbWesternCape;
         
         /// <summary>
-        /// Label2 control.
+        /// lblFname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblFname;
         
         /// <summary>
         /// drlFName control.
@@ -157,13 +157,13 @@ namespace CMPG223_Base {
         protected global::System.Web.UI.WebControls.SqlDataSource User_FirstName;
         
         /// <summary>
-        /// Label3 control.
+        /// lblLName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lblLName;
         
         /// <summary>
         /// drlLName control.
@@ -245,5 +245,14 @@ namespace CMPG223_Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvOutput;
+        
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

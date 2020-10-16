@@ -7,12 +7,12 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-/*using GoogleApi.Entities.Common;
+using GoogleApi.Entities.Common;
 using GoogleApi.Entities.Maps.Geocoding;
 using GoogleApi.Entities.Maps.Geocoding.Address.Request;
 using GoogleApi.Entities.Common.Enums;
 using Newtonsoft.Json;
-*/
+
 
 namespace CMPG223_Base
 {
@@ -96,11 +96,11 @@ namespace CMPG223_Base
             var _response = GoogleApi.GoogleMaps.AddressGeocode.Query(_request);
             Json_Parsing jPars = JsonConvert.DeserializeObject<Json_Parsing>(_response.RawJson.ToString());
 
-            
-            
+
+
             foreach (Result item in jPars.results)
             {
-                lat = item.geometry.location.lat.ToString();       
+                lat = item.geometry.location.lat.ToString();
                 lng = item.geometry.location.lng.ToString();
             }
             lat = fixString(lat);
@@ -108,14 +108,14 @@ namespace CMPG223_Base
             tbCoordinates.Text = lat + ", " + lng;
             Session["LAT"] = lat;
             Session["LNG"] = lng;
-            
+
 
             //retreve province
             foreach (Result item in jPars.results)
             {
                 sProvince = item.address_components[5].long_name;
             }
-            */
+*/
             //tbDescription.Text = _response.RawJson.ToString();                //Ivan, hier is die raw json array as jy nog wil sien hoe dit lyk
         }
 

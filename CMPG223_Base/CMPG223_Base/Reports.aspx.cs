@@ -51,6 +51,11 @@ namespace CMPG223_Base
             extractReport(sqlQuery);
         }
 
+        protected void btnProvinceReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*private void btnGetScores_Click(object sender, EventArgs e)
         {
             //variables for reports

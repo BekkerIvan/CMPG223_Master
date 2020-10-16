@@ -18,8 +18,8 @@ namespace CMPG223_Base
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string sqlQuery = "SELECT * FROM EMPLOYEE, EMPLOYEE_LOG WHERE EMPLOYEE.EMPLOYEE_ID = EMPLOYEE_LOG.EMPLOYEE_ID AND EMPLOYEE.EMPLOYEE_FIRSTNAME = '" + @firstName + "' AND EMPLOYEE.EMPLOYEE_LASTNAME = '" + @lastName + "' EMPLOYEE_LOG.DATE >= '" + @beginDate + "' AND EMPLOYEE_LOG.DATE <= '" + @endDate + "';";
-            extractReport(sqlQuery);
+            //string sqlQuery = "SELECT * FROM EMPLOYEE, EMPLOYEE_LOG WHERE EMPLOYEE.EMPLOYEE_ID = EMPLOYEE_LOG.EMPLOYEE_ID AND EMPLOYEE.EMPLOYEE_FIRSTNAME = '" + @firstName + "' AND EMPLOYEE.EMPLOYEE_LASTNAME = '" + @lastName + "' EMPLOYEE_LOG.DATE >= '" + @beginDate + "' AND EMPLOYEE_LOG.DATE <= '" + @endDate + "';";
+            
         }
 
         private void extractReport(string sql)
@@ -43,6 +43,12 @@ namespace CMPG223_Base
             }
             catch (Exception ex)
             { }
+        }
+
+        protected void btnExtract_Click(object sender, EventArgs e)
+        {
+            string sqlQuery = "SELECT * FROM EMERGENCY_SERVICE";
+            extractReport(sqlQuery);
         }
 
         /*private void btnGetScores_Click(object sender, EventArgs e)
@@ -107,7 +113,7 @@ namespace CMPG223_Base
             else { MessageBox.Show("Tempalte was not saved.", "Operation canceled.", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }*/
 
-        
+
     }
 
 }

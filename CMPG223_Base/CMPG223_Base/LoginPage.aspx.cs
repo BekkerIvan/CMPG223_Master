@@ -35,7 +35,7 @@ namespace CMPG223_Base
                     btnLogin.Enabled = false;
                 }
             } else {
-                this.Page.ClientScript.RegisterObjectAsVariable(typeof(MyPage), "myVariable", new { myProperty = 123 });
+                //this.Page.ClientScript.RegisterObjectAsVariable(typeof(MyPage), "myVariable", new { myProperty = 123 });
 
                 Session["TotalLoginAttemptsInt"] = 0;
                 if (CookieObj != null) {

@@ -92,7 +92,7 @@ namespace CMPG223_Base
                 else
                     sqlQuery = "SELECT * FROM Emergency_Situation WHERE EMERGENCY_SITUATION_DATETIME >= '" + @beginDate + "' AND EMERGENCY_SITUATION_DATETIME <= '" + @endDate + "';";
 
-                
+               
                 
                 
 

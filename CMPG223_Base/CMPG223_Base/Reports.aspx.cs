@@ -21,6 +21,9 @@ namespace CMPG223_Base
             //string sqlQuery = "SELECT * FROM EMPLOYEE, EMPLOYEE_LOG WHERE EMPLOYEE.EMPLOYEE_ID = EMPLOYEE_LOG.EMPLOYEE_ID AND EMPLOYEE.EMPLOYEE_FIRSTNAME = '" + @firstName + "' AND EMPLOYEE.EMPLOYEE_LASTNAME = '" + @lastName + "' EMPLOYEE_LOG.DATE >= '" + @beginDate + "' AND EMPLOYEE_LOG.DATE <= '" + @endDate + "';";
             if (!IsPostBack)
             {
+                if (Session["EMPLOYEE_ID"] == null) {
+                    Response.Redirect("LoginPage.aspx");
+                }
                 string sqlQuery = "SELECT * FROM EMERGENCY_SERVICE";
                 Bindgrid(sqlQuery);
             }

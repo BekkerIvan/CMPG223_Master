@@ -2347,9 +2347,9 @@
             Roundabout_Right.
             </summary>
         </member>
-        <member name="F:GoogleApi.Entities.Maps.Directions.Response.Enums.ManeuverAction.Kepp_Left">
+        <member name="F:GoogleApi.Entities.Maps.Directions.Response.Enums.ManeuverAction.Keep_Left">
             <summary>
-            Kepp_Left.
+            Keep_Left.
             </summary>
         </member>
         <member name="F:GoogleApi.Entities.Maps.Directions.Response.Enums.ManeuverAction.Keep_Right">

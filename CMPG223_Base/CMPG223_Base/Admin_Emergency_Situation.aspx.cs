@@ -138,9 +138,9 @@ namespace CMPG223_Base
                 {
                     btnCoordinates_Click(btnCoordinates, EventArgs.Empty);
                 }
-                if (Session["E_ID"] != null)
+                if (Session["EMPLOYEE_ID"] != null)
                 {
-                    int.TryParse(Session["E_ID"].ToString(), out iEmployee_ID);
+                    int.TryParse(Session["EMPLOYEE_ID"].ToString(), out iEmployee_ID);
                 }
                 else { throw new HttpException("No user ID found. Please contact systm adminastrator."); }
                 if (Session["E_Type"] != null)

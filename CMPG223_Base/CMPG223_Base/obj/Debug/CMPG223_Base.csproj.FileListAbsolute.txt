@@ -229,3 +229,5 @@ E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.XPath.dll
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\roslyn\System.Xml.XPath.XDocument.dll
 E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\BouncyCastle.Crypto.dll
+E:\2020 IT\CMPG 223\Project\CMPG223_Master\CMPG223_Base\CMPG223_Base\bin\BouncyCastle.Crypto.xml

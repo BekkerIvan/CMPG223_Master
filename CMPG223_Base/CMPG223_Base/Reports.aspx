@@ -58,7 +58,7 @@
 
                 <div class="md-form my-0">
                     <div>
-                        <a class="form-control" id="Logout_Span" href="LoginPage.aspx">Log out</a>
+                        <a class="form-control" id="Logout_Span" href="Logout.aspx">Log out</a>
                     </div>
                 </div>
             </form>
@@ -92,10 +92,13 @@
                     <div class="fullWidth text-center"><asp:Label ID="Label1" runat="server" Font-Bold="True" style="font-size:xx-large" Text="Reports"></asp:Label></div>
                 </div>
                 <div id="Modal-Body" class="row" style="border-top:1px solid lightgrey">
+                    <div>
+                        <asp:Label ID="Feedback" runat="server" Visible="false"></asp:Label>
+                    </div>
                     <div class="fullWidth">
                         <asp:Label ID="Label9" runat="server" Font-Bold="True" Text="Select report to generate:"></asp:Label>
                         <div class="col-md-12">        
-                            <asp:RadioButtonList ID="rblReports" runat="server" RepeatDirection="Horizontal" CssClass="col-md-12" style="margin:10px;" AutoPostBack="True" >
+                            <asp:RadioButtonList ID="rblReports" runat="server" RepeatDirection="Horizontal" CssClass="auto-style1" style="margin:10px;" AutoPostBack="True" >
                                     <asp:ListItem>&nbsp;Emergency Situations per Province</asp:ListItem>
                                     <asp:ListItem>&nbsp;Emergency Situations per time Period</asp:ListItem>
                                     <asp:ListItem>&nbsp;Employee Log Reports</asp:ListItem>
@@ -123,15 +126,12 @@
                     <div class="fullWidth">
                         <div class="row">
                             <div class="col-md-4 text-center"><asp:Label ID="Label2" runat="server" Font-Bold="true" Text="Select User First Name:"></asp:Label></div>
-                            <asp:DropDownList ID="drlFName" runat="server" DataSourceID="User_FirstName" DataTextField="EMPLOYEE_FIRSTNAME" DataValueField="EMPLOYEE_FIRSTNAME" CssClass="col-md-6 form-control">
+                            <asp:DropDownList ID="drlFName" runat="server" DataSourceID="User_FirstName" DataTextField="EMPLOYEE" DataValueField="EMPLOYEE_ID" CssClass="col-md-6 form-control">
                             </asp:DropDownList>
-                            <asp:SqlDataSource ID="User_FirstName" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_FIRSTNAME] FROM [EMPLOYEE]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="User_FirstName" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_ID], [EMPLOYEE_FIRSTNAME] +' '+ [EMPLOYEE_LASTNAME] as EMPLOYEE FROM [EMPLOYEE]"></asp:SqlDataSource>
                         </div><br />
                         <div class="row">
-                            <div class="col-md-4 text-center"><asp:Label ID="Label3" runat="server" Font-Bold="true" Text="Select User Last Name:"></asp:Label></div>
-                            <asp:DropDownList ID="drlLName" runat="server" DataSourceID="User_LastName" DataTextField="EMPLOYEE_LASTNAME" DataValueField="EMPLOYEE_LASTNAME" CssClass="col-md-6 form-control">
-                            </asp:DropDownList>
-                            <asp:SqlDataSource ID="User_LastName" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_LASTNAME] FROM [EMPLOYEE]"></asp:SqlDataSource>                    
+                                               
                         </div><br /> 
                         <div class="row">
                             <div class="col-md-6">
@@ -146,13 +146,12 @@
                     </div>
                 </div>
                 <div id="Modal_Footer" class="row" style="border-top:1px solid lightgrey;padding:20px">
-                    <div class="col-md-5"><asp:Button ID="btnProvinceReport" runat="server" Text="Run Report" class="form-control btn btn-danger"/></div><div class="col-md-2"></div>
-                    <div class="col-md-5 2"><asp:Button ID="btnExtract" runat="server" Text="Extract Report" class="form-control btn btn-primary"/></div>
+                    <div class="col-md-5"><asp:Button ID="btnProvinceReport" runat="server" Text="Run Report" class="form-control btn btn-danger" OnClick="btnProvinceReport_Click"/></div><div class="col-md-2"></div>
+                    <div class="col-md-5 2"><asp:Button ID="btnExtract" runat="server" Text="Extract Report" class="form-control btn btn-primary" OnClick="btnExtract_Click"/></div>
                 </div>
                 <p>
                   <button class="btn btn-primary fullWidth" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Show search results
-                  </button>
+                    Show search results</button>
                 </p>
                 <div class="collapse" id="collapseExample">
                   <div class="card card-body">
@@ -187,6 +186,18 @@
 
     .display-initial {
         display:initial;
+    }
+
+    .auto-style1 {
+        position: relative;
+        width: 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        left: 0px;
+        top: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
 </style>

@@ -35,7 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.2</LangVersion>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,8 +47,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GoogleApi, Version=3.10.1.0, Culture=neutral, PublicKeyToken=781851e053b06e74, processorArchitecture=MSIL">
-      <HintPath>..\packages\GoogleApi.3.10.1\lib\net45\GoogleApi.dll</HintPath>
+    <Reference Include="GoogleApi, Version=3.10.3.0, Culture=neutral, PublicKeyToken=781851e053b06e74, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleApi.3.10.3\lib\net45\GoogleApi.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -82,10 +82,6 @@
     <Content Include="App_Data\CBOX_DB_log.ldf">
       <DependentUpon>CBOX_DB.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\testDB.mdf" />
-    <Content Include="App_Data\testDB_log.ldf">
-      <DependentUpon>testDB.mdf</DependentUpon>
-    </Content>
     <Content Include="bin\CMPG223_Base.dll" />
     <Content Include="bin\CMPG223_Base.pdb" />
     <Content Include="bootstrap-4.5.2-dist\css\bootstrap-grid.css" />
@@ -98,6 +94,8 @@
     <Content Include="bootstrap-4.5.2-dist\js\bootstrap.bundle.min.js" />
     <Content Include="bootstrap-4.5.2-dist\js\bootstrap.js" />
     <Content Include="bootstrap-4.5.2-dist\js\bootstrap.min.js" />
+    <Content Include="C-BOX.ico" />
+    <Content Include="C-BOX.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />

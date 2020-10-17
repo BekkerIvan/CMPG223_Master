@@ -5,20 +5,29 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using CMPG223_Base;
 
 namespace CMPG223_Base
 {
     public partial class Emergency_Service : System.Web.UI.Page
     {
+        MethodClasses methods = new MethodClasses();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack) {
+                if (Session["EMPLOYEE_ID"] == null)
+                {
+                    Response.Redirect("LoginPage.aspx");
+                }
+            }
         }
 
         int archive;
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //toggle the username drop down list
             int i = rblAction.SelectedIndex;
             if (i == 1)
             {
@@ -44,9 +53,8 @@ namespace CMPG223_Base
             }
         }
 
-        protected void drlServiceName_SelectedIndexChanged1(object sender, EventArgs e)
+        protected void drlServiceName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             //get service name to search
             string name;
             name = drlServiceName.SelectedValue;
@@ -56,7 +64,7 @@ namespace CMPG223_Base
             string sql;
             SqlConnection conn;
             string constr;
-            constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CBOX_DB.mdf;Integrated Security=True";
+            constr = methods.DatabaseConnectionStr;
             conn = new SqlConnection(constr);
             conn.Open();
 
@@ -75,7 +83,8 @@ namespace CMPG223_Base
                 txbName.Text = dr["EMERGENCY_SERVICE_NAME"].ToString();
                 txbType.Text = dr["EMERGENCY_SERVICE_TYPE"].ToString();
                 txbContact.Text = dr["EMERGENCY_SERVICE_CONTACT"].ToString();
-                test1 = dr["EMERGENCY_SERVICE_ARCHIVE"].ToString();
+
+                test1 = dr["EMERGENCY_SERVICE_CONTACT"].ToString();
                 test2 = int.Parse(test1);
                 if (test2 == 1)
                 {
@@ -87,25 +96,6 @@ namespace CMPG223_Base
                 }
             }
             dr.Close();
-            
-            sql = "Select LOCATION_LATITUDE From LOCATION;";
-            command = new SqlCommand(sql, conn);
-            SqlDataReader dr2 = command.ExecuteReader();
-            if (dr2.Read())
-            {
-                txbLat.Text = dr2["LOCATION_LATITUDE"].ToString();                
-            }
-            dr2.Close();
-            
-            sql = "Select LOCATION_LONGITUDE From LOCATION;";
-            command = new SqlCommand(sql, conn);
-            SqlDataReader dr3 = command.ExecuteReader();
-            if (dr3.Read())
-            {
-                txbLng.Text = dr3["LOCATION_LONGITUDE"].ToString();
-            }
-            dr3.Close();
-            
             conn.Close();
         }
 
@@ -122,6 +112,7 @@ namespace CMPG223_Base
             lat = txbLat.Text;
             aType = btnSubmit.Text;
 
+            //test if username exists and add record
             if (aType == "Submit")
             {
                 //retrieve information and display relevant fields
@@ -130,7 +121,7 @@ namespace CMPG223_Base
                 string sql;
                 SqlConnection conn;
                 string constr;
-                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CBOX_DB.mdf;Integrated Security=True";
+                constr = methods.DatabaseConnectionStr;
                 conn = new SqlConnection(constr);
                 conn.Open();
 
@@ -150,6 +141,7 @@ namespace CMPG223_Base
                 }
                 dr.Close();
 
+                //stops method if duplicate username appears
                 if (pause)
                 {
                     return;
@@ -162,8 +154,6 @@ namespace CMPG223_Base
                 adapter.InsertCommand = new SqlCommand(sql, conn);
                 adapter.InsertCommand.ExecuteNonQuery();
                 command.Dispose();
-
-
 
                 lblInvalid.Visible = false;
                 conn.Close();
@@ -193,7 +183,7 @@ namespace CMPG223_Base
                 string sql;
                 SqlConnection conn;
                 string constr;
-                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CBOX_DB.mdf;Integrated Security=True";
+                constr = methods.DatabaseConnectionStr;
                 conn = new SqlConnection(constr);
                 conn.Open();
 

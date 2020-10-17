@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -11,10 +11,10 @@
     <script src="Scripts/popper.min.js"></script>
     <title></title>
     <style>
-       /* Set the size of the div element that contains the map */
+
       #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
+        height: 400px;
+        width: 100%;
        }
       .Location {
           width:300px;
@@ -49,12 +49,12 @@
           width:300px;
           margin-left:850px;
       }
-      
+
     </style>
-    
+
 </head>
 <body style="background-color:rgb(67, 119, 167);">
-    <form id="form1" runat="server">
+
                     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
@@ -67,7 +67,7 @@
                 aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
 
@@ -101,7 +101,7 @@
 
                 <div class="md-form my-0">
                     <div>
-                        <a class="form-control" id="Logout_Span" href="LoginPage.aspx">Log out</a>
+                        <a class="form-control" id="Logout_Span" href="Logout.aspx">Log out</a>
                     </div>
                 </div>
             </form>
@@ -125,17 +125,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
+<form id="form2" runat="server">
         <div class="d-flex justify-content-center">
-            <div class="col-md-6" style="background-color:white;;box-shadow:3px 3px red;border-radius:10px">
+            <div class="col-md-6" style="background-color:white;box-shadow:3px 3px red;border-radius:10px">
                             <div class="text-center">
                 <asp:Label ID="lblTitle" runat="server" Text="Maintain Emergency Situations" style="font-size:xx-large"></asp:Label>
             </div><br />
@@ -146,12 +138,13 @@
                            <asp:TextBox ID="tbLocation" runat="server" class="form-control"></asp:TextBox>
                       </div><br />
                        <div>
-                             <asp:Button ID="btnCoordinates" runat="server" Text="Get Coordinates" CssClass="btn btn-primary form-control" OnClick="btnCoordinates_Click" />
+                             <asp:Button ID="btnCoordinates" runat="server" Text="Get Coordinates" CssClass="btn btn-primary form-control" OnClick="btnCoordinates_Click" CausesValidation="False" />
+
                         </div><br />
                  <div>
                       <asp:Label ID="Label3" runat="server" Text="Coordinates: " AssociatedControlID="tbCoordinates"></asp:Label>
                       <asp:TextBox ID="tbCoordinates" runat="server" ReadOnly="true" CssClass="form-control"></asp:TextBox><br />
-                      <asp:Button ID="btnAddEService" runat="server" Text="Add another emergency service" CssClass="btn btn-primary form-control" OnClick="btnAddEService_Click" />
+                      <asp:Button ID="btnAddEService" runat="server" Text="Add another emergency service" CssClass="btn btn-primary form-control" OnClick="btnAddEService_Click" CausesValidation="False" />
                  </div>
              </div>
              <div class="col-md-6">
@@ -161,8 +154,8 @@
                  </div><br />
                  <div>
                     <asp:Label ID="Label2" runat="server" Text="Type of Emergency service:  " AssociatedControlID="ddlEmergencyType"></asp:Label>
-                    <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="true" ></asp:DropDownList>
-                 </div><br />        
+                    <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" AppendDataBoundItems="True" ></asp:DropDownList>
+                 </div><br />
                  <div>
                      <asp:Label ID="Label4" runat="server" Text="Assign emergency personnel: " AssociatedControlID="lbPersonnel"></asp:Label>
                      <asp:ListBox ID="lbPersonnel" runat="server" CssClass="form-control" SelectionMode="Multiple"></asp:ListBox>
@@ -172,15 +165,15 @@
 
             <div class="col-md-12">
                 <div>
-                    <asp:Label ID="lblDescription" runat="server" Text="Description or details of emergency situation:" AssociatedControlID="tbDescription"></asp:Label>              
+                    <asp:Label ID="lblDescription" runat="server" Text="Description or details of emergency situation:" AssociatedControlID="tbDescription"></asp:Label>
                     <asp:TextBox ID="tbDescription" runat="server" CssClass="form-control" TextMode="MultiLine" style="resize:none;height:250px"></asp:TextBox>
                 </div><br />
                 <div>
-                    <asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="form-control btn btn-danger" OnClick="Submit_Click" />
+                    <asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="form-control btn btn-danger" OnClick="Submit_Click" CausesValidation="False" />
                 </div><br />
                 <div class="col-md-12">
                     <asp:Label ID="lblFeedback" runat="server" Visible="false" AssociatedControlID="btnClear"></asp:Label><br />
-                    <asp:Button ID="btnClear" runat="server" Visible="false" Text="Create new emergency situation" CssClass="form-control btn btn-primary" OnClick="btnClear_Click" />
+                    <asp:Button ID="btnClear" runat="server" Visible="false" Text="Create new emergency situation" CssClass="form-control btn btn-primary" OnClick="btnClear_Click" CausesValidation="False" />
                 </div>
             </div><br />
 
@@ -209,15 +202,12 @@ function initMap() {
     //return false;
 }
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function-->
+
     <script defer="defer"
-    src="https://maps.googleapis.com/maps/api/js?key=API-KEY&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo&callback=initMap">
     </script>
-    
-        
+
+
     </form>
 </body>
 </html>

@@ -11,8 +11,14 @@ namespace CMPG223_Base
     public partial class Employees : System.Web.UI.Page
     {     
         protected void Page_Load(object sender, EventArgs e)
-        {            
-
+        {
+            if (!Page.IsPostBack)
+            {
+                if (Session["EMPLOYEE_ID"] == null)
+                {
+                    Response.Redirect("LoginPage.aspx");
+                }
+            }
         }
 
         protected void rblAction_SelectedIndexChanged1(object sender, EventArgs e)

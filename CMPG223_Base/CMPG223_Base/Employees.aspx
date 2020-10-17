@@ -58,7 +58,7 @@
 
                 <div class="md-form my-0">
                     <div>
-                        <a class="form-control" id="Logout_Span" href="LoginPage.aspx">Log out</a>
+                        <a class="form-control" id="Logout_Span" href="Logout.aspx">Log out</a>
                     </div>
                 </div>
             </form>

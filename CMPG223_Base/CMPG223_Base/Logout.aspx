@@ -8,7 +8,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label Text="text" OnLoad="Unnamed_Load" runat="server" />
     </form>
 </body>
 </html>

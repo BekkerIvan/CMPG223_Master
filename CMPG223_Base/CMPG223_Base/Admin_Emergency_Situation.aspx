@@ -54,7 +54,7 @@
     
 </head>
 <body style="background-color:rgb(67, 119, 167);">
-    <form id="form1" runat="server">
+    
                     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
@@ -101,7 +101,7 @@
 
                 <div class="md-form my-0">
                     <div>
-                        <a class="form-control" id="Logout_Span" href="LoginPage.aspx">Log out</a>
+                        <a class="form-control" id="Logout_Span" href="Logout.aspx">Log out</a>
                     </div>
                 </div>
             </form>
@@ -125,7 +125,7 @@
 
 
 
-
+     <form id="form1" runat="server">
         <div class="d-flex justify-content-center">
             <div class="col-md-6" style="background-color:white;;box-shadow:3px 3px red;border-radius:10px">
                             <div class="text-center">
@@ -138,7 +138,7 @@
                            <asp:TextBox ID="tbLocation" runat="server" class="form-control"></asp:TextBox>
                       </div><br />
                        <div>
-                             <asp:Button ID="btnCoordinates" runat="server" Text="Get Coordinates" CssClass="btn btn-primary form-control" OnClick="btnCoordinates_Click" />
+                             <asp:Button ID="btnCoordinates" runat="server" Text="Get Coordinates" CssClass="btn btn-primary form-control" Onclick="btnCoordinates_Click" />
                         </div><br />
                  <div>
                       <asp:Label ID="Label3" runat="server" Text="Coordinates: " AssociatedControlID="tbCoordinates"></asp:Label>

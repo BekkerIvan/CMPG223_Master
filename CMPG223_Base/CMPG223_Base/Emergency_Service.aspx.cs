@@ -5,14 +5,22 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using CMPG223_Base;
 
 namespace CMPG223_Base
 {
     public partial class Emergency_Service : System.Web.UI.Page
     {
+        MethodClasses methods = new MethodClasses();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack) {
+                if (Session["EMPLOYEE_ID"] == null)
+                {
+                    Response.Redirect("LoginPage.aspx");
+                }
+            }
         }
 
         int archive;
@@ -56,7 +64,7 @@ namespace CMPG223_Base
             string sql;
             SqlConnection conn;
             string constr;
-            constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
+            constr = methods.DatabaseConnectionStr;
             conn = new SqlConnection(constr);
             conn.Open();
 
@@ -113,7 +121,7 @@ namespace CMPG223_Base
                 string sql;
                 SqlConnection conn;
                 string constr;
-                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
+                constr = methods.DatabaseConnectionStr;
                 conn = new SqlConnection(constr);
                 conn.Open();
 
@@ -175,7 +183,7 @@ namespace CMPG223_Base
                 string sql;
                 SqlConnection conn;
                 string constr;
-                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
+                constr = methods.DatabaseConnectionStr;
                 conn = new SqlConnection(constr);
                 conn.Open();
 

@@ -11,10 +11,10 @@
     <script src="Scripts/popper.min.js"></script>
     <title></title>
     <style>
-       
+
       #map {
-        height: 400px;  
-        width: 100%;  
+        height: 400px;
+        width: 100%;
        }
       .Location {
           width:300px;
@@ -49,12 +49,12 @@
           width:300px;
           margin-left:850px;
       }
-      
+
     </style>
-    
+
 </head>
 <body style="background-color:rgb(67, 119, 167);">
-    
+
                     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
@@ -67,7 +67,7 @@
                 aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
 
@@ -101,7 +101,7 @@
 
                 <div class="md-form my-0">
                     <div>
-                        <a class="form-control" id="Logout_Span" href="LoginPage.aspx">Log out</a>
+                        <a class="form-control" id="Logout_Span" href="Logout.aspx">Log out</a>
                     </div>
                 </div>
             </form>
@@ -124,7 +124,7 @@
 
 
 
-        
+
 <form id="form2" runat="server">
         <div class="d-flex justify-content-center">
             <div class="col-md-6" style="background-color:white;box-shadow:3px 3px red;border-radius:10px">
@@ -139,7 +139,7 @@
                       </div><br />
                        <div>
                              <asp:Button ID="btnCoordinates" runat="server" Text="Get Coordinates" CssClass="btn btn-primary form-control" OnClick="btnCoordinates_Click" CausesValidation="False" />
-                           
+
                         </div><br />
                  <div>
                       <asp:Label ID="Label3" runat="server" Text="Coordinates: " AssociatedControlID="tbCoordinates"></asp:Label>
@@ -155,7 +155,7 @@
                  <div>
                     <asp:Label ID="Label2" runat="server" Text="Type of Emergency service:  " AssociatedControlID="ddlEmergencyType"></asp:Label>
                     <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" AppendDataBoundItems="True" ></asp:DropDownList>
-                 </div><br />        
+                 </div><br />
                  <div>
                      <asp:Label ID="Label4" runat="server" Text="Assign emergency personnel: " AssociatedControlID="lbPersonnel"></asp:Label>
                      <asp:ListBox ID="lbPersonnel" runat="server" CssClass="form-control" SelectionMode="Multiple"></asp:ListBox>
@@ -165,7 +165,7 @@
 
             <div class="col-md-12">
                 <div>
-                    <asp:Label ID="lblDescription" runat="server" Text="Description or details of emergency situation:" AssociatedControlID="tbDescription"></asp:Label>              
+                    <asp:Label ID="lblDescription" runat="server" Text="Description or details of emergency situation:" AssociatedControlID="tbDescription"></asp:Label>
                     <asp:TextBox ID="tbDescription" runat="server" CssClass="form-control" TextMode="MultiLine" style="resize:none;height:250px"></asp:TextBox>
                 </div><br />
                 <div>
@@ -202,12 +202,12 @@ function initMap() {
     //return false;
 }
     </script>
- 
+
     <script defer="defer"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGi-pgCiTiXbNVa7pnLMHieEzb3oUW5Oo&callback=initMap">
     </script>
-    
-        
+
+
     </form>
 </body>
 </html>

@@ -76,6 +76,12 @@ namespace CMPG223_Base
                                 sqlCommandObj.CommandText ="INSERT INTO EMPLOYEE_LOG (DATE, LOG_IN_TIME, EMPLOYEE_ID) VALUES ('"+DateTime.Today+"', '"+DateTime.Now+"', '"+ sqlDataReader.GetInt32(0) + "')";
                                 sqlDataReader.Close();
                                 sqlCommandObj.ExecuteNonQuery();
+                                sqlCommandObj.CommandText = "SELECT MAX(LOG_ID) FROM EMPLOYEE_LOG";
+                                sqlDataReader = sqlCommandObj.ExecuteReader();
+                                while (sqlDataReader.Read()) {
+                                    Session["LOG_ID"] = sqlDataReader.GetInt32(0);
+                                }
+                                sqlDataReader.Close();
                                 Response.Redirect("Admin_Emergency_Situation.aspx");
                             }
                         } 

@@ -5,17 +5,22 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-using System.Configuration;
+using CMPG223_Base;
 
 namespace CMPG223_Base
 {
     public partial class Emergency_Service : System.Web.UI.Page
     {
-        private string mainconn = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        MethodClasses methods = new MethodClasses();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack) {
+                if (Session["EMPLOYEE_ID"] == null)
+                {
+                    Response.Redirect("LoginPage.aspx");
+                }
+            }
         }
 
         int archive;
@@ -58,7 +63,9 @@ namespace CMPG223_Base
             SqlCommand command;
             string sql;
             SqlConnection conn;
-            conn = new SqlConnection(mainconn);
+            string constr;
+            constr = methods.DatabaseConnectionStr;
+            conn = new SqlConnection(constr);
             conn.Open();
 
             //read data from database
@@ -97,7 +104,7 @@ namespace CMPG223_Base
             string name, type, contact, lng, lat, aType;
             int ServiceID;
 
-            //get values from form            
+            //get values from form
             name = txbName.Text;
             type = txbType.Text;
             contact = txbContact.Text;
@@ -113,7 +120,9 @@ namespace CMPG223_Base
                 Boolean pause = false;
                 string sql;
                 SqlConnection conn;
-                conn = new SqlConnection(mainconn);
+                string constr;
+                constr = methods.DatabaseConnectionStr;
+                conn = new SqlConnection(constr);
                 conn.Open();
 
                 //read data from database
@@ -173,7 +182,9 @@ namespace CMPG223_Base
 
                 string sql;
                 SqlConnection conn;
-                conn = new SqlConnection(mainconn);
+                string constr;
+                constr = methods.DatabaseConnectionStr;
+                conn = new SqlConnection(constr);
                 conn.Open();
 
                 SqlDataAdapter adapter = new SqlDataAdapter();
@@ -193,6 +204,6 @@ namespace CMPG223_Base
                 txbLng.Text = "";
                 CheckBox1.Checked = false;
             }
-        }        
+        }
     }
 }

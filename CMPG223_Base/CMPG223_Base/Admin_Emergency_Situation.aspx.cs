@@ -36,6 +36,10 @@ namespace CMPG223_Base
             }
             else
             {
+                if (Session["EMPLOYEE_ID"] == null)
+                {
+                    Response.Redirect("LoginPage.aspx");
+                }
                 SqlConnection cnn = new SqlConnection(mainconn);
                 string sql = "SELECT DISTINCT [EMERGENCY_SERVICE_TYPE] FROM EMERGENCY_SERVICE";
                 SqlDataAdapter adapter = new SqlDataAdapter();

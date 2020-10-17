@@ -18,8 +18,8 @@ namespace CMPG223_Base
 {
     public partial class Admin_Emergency_Situation : System.Web.UI.Page
     {
-        protected string lat = "-25.00000";
-        protected string lng = "28.000000";
+        protected string lat = "-25.867375";
+        protected string lng = "28.167189";
         private string mainconn = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         private string sProvince;
 
@@ -72,10 +72,6 @@ namespace CMPG223_Base
                 dt.Clear();
                 cnn.Close();
 
-
-
-                
-                Session["EMPLOYEE_ID"] = 1;
             }  
         }
 
@@ -336,5 +332,7 @@ namespace CMPG223_Base
             sFixed = sCoordinate.Replace(',', '.');
             return sFixed;
         }
+
+       
     }
 }          

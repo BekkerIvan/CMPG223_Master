@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CMPG223_Base
 {
     public partial class Emergency_Service : System.Web.UI.Page
     {
+        private string mainconn = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -55,9 +58,7 @@ namespace CMPG223_Base
             SqlCommand command;
             string sql;
             SqlConnection conn;
-            string constr;
-            constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
-            conn = new SqlConnection(constr);
+            conn = new SqlConnection(mainconn);
             conn.Open();
 
             //read data from database
@@ -100,8 +101,8 @@ namespace CMPG223_Base
             name = txbName.Text;
             type = txbType.Text;
             contact = txbContact.Text;
-            //lng = txbLng.Text;
-            //lat = txbLat.Text;
+            lng = txbLng.Text;
+            lat = txbLat.Text;
             aType = btnSubmit.Text;
 
             //test if username exists and add record
@@ -112,9 +113,7 @@ namespace CMPG223_Base
                 Boolean pause = false;
                 string sql;
                 SqlConnection conn;
-                string constr;
-                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
-                conn = new SqlConnection(constr);
+                conn = new SqlConnection(mainconn);
                 conn.Open();
 
                 //read data from database
@@ -174,9 +173,7 @@ namespace CMPG223_Base
 
                 string sql;
                 SqlConnection conn;
-                string constr;
-                constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LazyEspresso\Documents\GitHub\CMPG223_Master\CMPG223_Base\CMPG223_Base\App_Data\CBOX_DB.mdf;Integrated Security=True";
-                conn = new SqlConnection(constr);
+                conn = new SqlConnection(mainconn);
                 conn.Open();
 
                 SqlDataAdapter adapter = new SqlDataAdapter();

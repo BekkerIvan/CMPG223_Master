@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Emergency_Situation.aspx.cs" Inherits="CMPG223_Base.Admin_Emergency_Situation" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -54,7 +54,7 @@
     
 </head>
 <body style="background-color:rgb(67, 119, 167);">
-    <form id="form1" runat="server">
+    
                     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
@@ -124,10 +124,10 @@
 
 
 
-
-
+        
+<form id="form2" runat="server">
         <div class="d-flex justify-content-center">
-            <div class="col-md-6" style="background-color:white;;box-shadow:3px 3px red;border-radius:10px">
+            <div class="col-md-6" style="background-color:white;box-shadow:3px 3px red;border-radius:10px">
                             <div class="text-center">
                 <asp:Label ID="lblTitle" runat="server" Text="Maintain Emergency Situations" style="font-size:xx-large"></asp:Label>
             </div><br />
@@ -138,12 +138,13 @@
                            <asp:TextBox ID="tbLocation" runat="server" class="form-control"></asp:TextBox>
                       </div><br />
                        <div>
-                             <asp:Button ID="btnCoordinates" runat="server" Text="Get Coordinates" CssClass="btn btn-primary form-control" OnClick="btnCoordinates_Click" />
+                             <asp:Button ID="btnCoordinates" runat="server" Text="Get Coordinates" CssClass="btn btn-primary form-control" OnClick="btnCoordinates_Click" CausesValidation="False" />
+                           
                         </div><br />
                  <div>
                       <asp:Label ID="Label3" runat="server" Text="Coordinates: " AssociatedControlID="tbCoordinates"></asp:Label>
                       <asp:TextBox ID="tbCoordinates" runat="server" ReadOnly="true" CssClass="form-control"></asp:TextBox><br />
-                      <asp:Button ID="btnAddEService" runat="server" Text="Add another emergency service" CssClass="btn btn-primary form-control" OnClick="btnAddEService_Click" />
+                      <asp:Button ID="btnAddEService" runat="server" Text="Add another emergency service" CssClass="btn btn-primary form-control" OnClick="btnAddEService_Click" CausesValidation="False" />
                  </div>
              </div>
              <div class="col-md-6">
@@ -153,7 +154,7 @@
                  </div><br />
                  <div>
                     <asp:Label ID="Label2" runat="server" Text="Type of Emergency service:  " AssociatedControlID="ddlEmergencyType"></asp:Label>
-                    <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="true" ></asp:DropDownList>
+                    <asp:DropDownList ID="ddlEmergencyType" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlEmergencyType_SelectedIndexChanged" AppendDataBoundItems="True" ></asp:DropDownList>
                  </div><br />        
                  <div>
                      <asp:Label ID="Label4" runat="server" Text="Assign emergency personnel: " AssociatedControlID="lbPersonnel"></asp:Label>
@@ -168,11 +169,11 @@
                     <asp:TextBox ID="tbDescription" runat="server" CssClass="form-control" TextMode="MultiLine" style="resize:none;height:250px"></asp:TextBox>
                 </div><br />
                 <div>
-                    <asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="form-control btn btn-danger" OnClick="Submit_Click" />
+                    <asp:Button ID="Submit" runat="server" Text="Submit Emergency Situation" CssClass="form-control btn btn-danger" OnClick="Submit_Click" CausesValidation="False" />
                 </div><br />
                 <div class="col-md-12">
                     <asp:Label ID="lblFeedback" runat="server" Visible="false" AssociatedControlID="btnClear"></asp:Label><br />
-                    <asp:Button ID="btnClear" runat="server" Visible="false" Text="Create new emergency situation" CssClass="form-control btn btn-primary" OnClick="btnClear_Click" />
+                    <asp:Button ID="btnClear" runat="server" Visible="false" Text="Create new emergency situation" CssClass="form-control btn btn-primary" OnClick="btnClear_Click" CausesValidation="False" />
                 </div>
             </div><br />
 

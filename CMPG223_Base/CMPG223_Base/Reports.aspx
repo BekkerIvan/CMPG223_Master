@@ -92,6 +92,9 @@
                     <div class="fullWidth text-center"><asp:Label ID="Label1" runat="server" Font-Bold="True" style="font-size:xx-large" Text="Reports"></asp:Label></div>
                 </div>
                 <div id="Modal-Body" class="row" style="border-top:1px solid lightgrey">
+                    <div>
+                        <asp:Label ID="Feedback" runat="server" Visible="false"></asp:Label>
+                    </div>
                     <div class="fullWidth">
                         <asp:Label ID="Label9" runat="server" Font-Bold="True" Text="Select report to generate:"></asp:Label>
                         <div class="col-md-12">        
@@ -123,15 +126,12 @@
                     <div class="fullWidth">
                         <div class="row">
                             <div class="col-md-4 text-center"><asp:Label ID="Label2" runat="server" Font-Bold="true" Text="Select User First Name:"></asp:Label></div>
-                            <asp:DropDownList ID="drlFName" runat="server" DataSourceID="User_FirstName" DataTextField="EMPLOYEE_FIRSTNAME" DataValueField="EMPLOYEE_FIRSTNAME" CssClass="col-md-6 form-control">
+                            <asp:DropDownList ID="drlFName" runat="server" DataSourceID="User_FirstName" DataTextField="EMPLOYEE" DataValueField="EMPLOYEE_ID" CssClass="col-md-6 form-control">
                             </asp:DropDownList>
-                            <asp:SqlDataSource ID="User_FirstName" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_FIRSTNAME] FROM [EMPLOYEE]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="User_FirstName" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_ID], [EMPLOYEE_FIRSTNAME] +' '+ [EMPLOYEE_LASTNAME] as EMPLOYEE FROM [EMPLOYEE]"></asp:SqlDataSource>
                         </div><br />
                         <div class="row">
-                            <div class="col-md-4 text-center"><asp:Label ID="Label3" runat="server" Font-Bold="true" Text="Select User Last Name:"></asp:Label></div>
-                            <asp:DropDownList ID="drlLName" runat="server" DataSourceID="User_LastName" DataTextField="EMPLOYEE_LASTNAME" DataValueField="EMPLOYEE_LASTNAME" CssClass="col-md-6 form-control">
-                            </asp:DropDownList>
-                            <asp:SqlDataSource ID="User_LastName" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EMPLOYEE_LASTNAME] FROM [EMPLOYEE]"></asp:SqlDataSource>                    
+                                               
                         </div><br /> 
                         <div class="row">
                             <div class="col-md-6">

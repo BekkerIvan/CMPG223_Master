@@ -82,6 +82,8 @@ namespace CMPG223_Base
             DateTime endDate = DateTime.Now;
             if (rblReports.SelectedIndex == 0)
             {
+                drlFName.Enabled = false;
+                
                 string PROV = getProv();
                 beginDate = StartCalendar.SelectedDate;
                 endDate = EndCalendar.SelectedDate;
@@ -89,6 +91,11 @@ namespace CMPG223_Base
                     sqlQuery = "SELECT * FROM Emergency_Situation WHERE PROVINCE ='" + @PROV + "' AND EMERGENCY_SITUATION_DATETIME >= '" + @beginDate + "' AND EMERGENCY_SITUATION_DATETIME <= '" + @endDate + "';";
                 else
                     sqlQuery = "SELECT * FROM Emergency_Situation WHERE EMERGENCY_SITUATION_DATETIME >= '" + @beginDate + "' AND EMERGENCY_SITUATION_DATETIME <= '" + @endDate + "';";
+
+                
+                
+                
+
             }
                 
             if (rblReports.SelectedIndex == 1)
@@ -100,7 +107,8 @@ namespace CMPG223_Base
                 
             if (rblReports.SelectedIndex == 2)
                 sqlQuery = "SELECT* FROM EMPLOYEE WHERE USERROLE = 3";
-            
+            //SELECT A.LOG_DATE, A.LOG_IN_TIME, A.LOG_OUT_TIME, B.EMPLOYEE_ID FROM EMPLOYEE_LOG as A INNER JOIN
+            //EMPLOYEE AS B ON A.EMPLOYEE_ID = B.EMPLOYEE_ID
             Bindgrid(sqlQuery);
         }
         private string getProv()
